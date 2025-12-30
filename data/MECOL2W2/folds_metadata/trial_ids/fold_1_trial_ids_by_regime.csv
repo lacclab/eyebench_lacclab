@@ -773,6 +773,7 @@ unique_paragraph_id,participant_id,unique_trial_id,lextale,regime
 8,se_26,se_26_8,75.0,train_train
 8,se_3,se_3_8,67.5,train_train
 8,se_30,se_30_8,58.75,train_train
+8,se_38,se_38_8,52.5,train_train
 8,se_56,se_56_8,92.5,train_train
 8,se_57,se_57_8,66.25,train_train
 8,se_60,se_60_8,75.0,train_train
@@ -973,7 +974,6 @@ unique_paragraph_id,participant_id,unique_trial_id,lextale,regime
 9,se_19,se_19_9,90.0,train_train
 9,se_23,se_23_9,75.0,train_train
 9,se_30,se_30_9,58.75,train_train
-9,se_38,se_38_9,52.5,train_train
 9,se_46,se_46_9,93.75,train_train
 9,se_55,se_55_9,61.25,train_train
 9,se_56,se_56_9,92.5,train_train
@@ -1159,6 +1159,7 @@ unique_paragraph_id,participant_id,unique_trial_id,lextale,regime
 12,se_28,se_28_12,66.25,train_train
 12,se_3,se_3_12,67.5,train_train
 12,se_30,se_30_12,58.75,train_train
+12,se_38,se_38_12,52.5,train_train
 12,se_52,se_52_12,60.0,train_train
 12,se_55,se_55_12,61.25,train_train
 12,se_60,se_60_12,75.0,train_train
@@ -3253,7 +3254,6 @@ unique_paragraph_id,participant_id,unique_trial_id,lextale,regime
 4,se_30,se_30_4,58.75,test_seen_subject_unseen_item
 4,se_35,se_35_4,81.25,test_seen_subject_unseen_item
 4,se_36,se_36_4,58.75,test_seen_subject_unseen_item
-4,se_38,se_38_4,52.5,test_seen_subject_unseen_item
 4,se_43,se_43_4,61.25,test_seen_subject_unseen_item
 4,se_47,se_47_4,56.25,test_seen_subject_unseen_item
 4,se_48,se_48_4,95.0,test_seen_subject_unseen_item

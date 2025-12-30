@@ -412,6 +412,12 @@ class OneStop(DataArgs):
         )
         self.onestopqa_path = self.base_path / 'additional_raw' / 'onestop_qa.json'
 
+@register_data
+@dataclass
+class OneStopL2(OneStop):
+    """
+    OneStop L2 English Learners data.
+    """
 
 @register_data
 @dataclass

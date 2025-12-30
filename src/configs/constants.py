@@ -5,6 +5,7 @@ from pathlib import Path
 
 from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
 
+
 STATS_FOLDER = Path('data/stats')
 FEATURES_CACHE_FOLDER = Path('data/cache/features')
 SCANPATH_PADDING_VAL = -10
@@ -486,6 +487,7 @@ class DataSets(StrEnum):
         MECO_L2 (str): Represents the MECO L2 dataset.
         MECO_L2W1 (str): Represents the MECO L2W1 dataset.
         MECO_L2W2 (str): Represents the MECO L2W2 dataset.
+        ONESTOPL2 (str): Represents the OneStop L2 dataset.
     """
 
     ONESTOP = 'OneStop'
@@ -496,6 +498,7 @@ class DataSets(StrEnum):
     MECO_L2 = 'MECOL2'
     MECO_L2W1 = 'MECOL2W1'
     MECO_L2W2 = 'MECOL2W2'
+    ONESTOPL2 = 'OneStopL2'
 
 
 class DiscriSupportedMetrics(StrEnum):

@@ -95,7 +95,7 @@
       "justMyCode": false,
       "args": [
         "--dataset",
-        "PoTeC"
+        "OneStopL2"
       ],
       "env": {
         "PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT": "20.0",
@@ -113,7 +113,7 @@
       },
       "args": [
         "--dataset",
-        "PoTeC"
+        "OneStopL2"
       ],
     },
     {
@@ -128,7 +128,7 @@
       },
       "args": [
         "--dataset",
-        "SBSAT"
+        "OneStopL2"
       ],
     },
     {

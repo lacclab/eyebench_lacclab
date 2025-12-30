@@ -22,5 +22,8 @@ MECOL2/*
 !MECOL2/folds_metadata
 IITBHGC/*
 !IITBHGC/folds_metadata
+OneStopL2/*
+!OneStopL2/folds_metadata
+!OneStopL2/additional_raw
 
 cache

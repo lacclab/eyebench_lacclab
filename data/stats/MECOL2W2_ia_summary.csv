@@ -1,5 +1,5 @@
 column,type,count,percent_null,min,quantile_10,mean,median,quantile_90,max,std,nunique,distribution
-AbsDistance2Head,numeric,1658,99.7,0.0,1.0,2.1911942098914357,1.0,5.0,22.0,2.365563575397687,20,
+AbsDistance2Head,numeric,1645,99.8,0.0,1.0,2.188449848024316,1.0,4.600000000000136,22.0,2.3811890223256276,21,
 CURRENT_FIX_INTEREST_AREA_INDEX,numeric,658820,0.0,1.0,14.0,71.97282717585988,70.0,133.0,187.0,43.926794296993776,187,
 CURRENT_FIX_NEAREST_INTEREST_AREA_DISTANCE,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_BOTTOM,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
@@ -12,22 +12,23 @@ IA_FIRST_RUN_DWELL_TIME,numeric,499328,24.2,1.0,137.0,284.17979364265574,238.0,4
 IA_FIRST_RUN_FIXATION_COUNT,numeric,499328,24.2,1.0,1.0,1.2523832030248654,1.0,2.0,23.0,0.6080410865812933,19,
 IA_FIRST_RUN_LANDING_POSITION,numeric,499328,24.2,0.0,0.0,5.910925884388618,2.0,7.0,239.9,14.853408277432694,1568,
 IA_FIRST_RUN_LAUNCH_SITE,numeric,494424,25.0,-1120.0,-6.0,-4.7946135300875365,5.0,13.0,1003.8,93.05144074161674,6690,
-IA_FIXATION_%,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_FIXATION_%,numeric,499328,24.2,0.0012531328320802004,0.0043859649122807015,0.009552839015637016,0.00784313725490196,0.016853932584269662,0.1853932584269663,0.006011072543314584,2774,
 IA_FIXATION_COUNT,numeric,499328,24.2,1.0,1.0,1.730962413483722,1.0,3.0,46.0,1.2683080225474692,35,
+IA_ID,numeric,658820,0.0,1.0,14.0,71.97282717585988,70.0,133.0,187.0,43.926794296993776,187,
 IA_LABEL,categorical,658820,0.0,,,,,,,,806,
 IA_LAST_FIXATION_DURATION,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_LAST_RUN_DWELL_TIME,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_LAST_RUN_FIXATION_COUNT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_LEFT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_REGRESSION_IN,numeric,499328,24.2,0.0,0.0,0.23085026275314022,0.0,1.0,1.0,0.4213772354261864,2,"{0.0: 76.9, 1.0: 23.1}"
-IA_REGRESSION_IN_COUNT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_REGRESSION_IN_COUNT,numeric,499328,24.2,0.0,0.0,0.23085026275314022,0.0,1.0,1.0,0.4213772354261864,2,"{0.0: 76.9, 1.0: 23.1}"
 IA_REGRESSION_OUT,numeric,499328,24.2,0.0,0.0,0.22322401307357087,0.0,1.0,1.0,0.4164077332596213,2,"{0.0: 77.7, 1.0: 22.3}"
-IA_REGRESSION_OUT_COUNT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
-IA_REGRESSION_OUT_FULL_COUNT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_REGRESSION_OUT_COUNT,numeric,499328,24.2,0.0,0.0,0.22322401307357087,0.0,1.0,1.0,0.4164077332596213,2,"{0.0: 77.7, 1.0: 22.3}"
+IA_REGRESSION_OUT_FULL_COUNT,numeric,499328,24.2,0.0,0.0,0.22322401307357087,0.0,1.0,1.0,0.4164077332596213,2,"{0.0: 77.7, 1.0: 22.3}"
 IA_REGRESSION_PATH_DURATION,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 IA_RIGHT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
-IA_RUN_COUNT,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
-IA_SELECTIVE_REGRESSION_PATH_DURATION,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_RUN_COUNT,numeric,499328,24.2,1.0,1.0,1.3801288932325044,1.0,2.0,17.0,0.7432562144510423,15,"{1.0: 72.5, 2.0: 20.3, 3.0: 5.0, 4.0: 1.4, 5.0: 0.5, 6.0: 0.2, 7.0: 0.1, 8.0: 0.0, 9.0: 0.0, 10.0: 0.0, 11.0: 0.0, 12.0: 0.0, 14.0: 0.0, 13.0: 0.0, 17.0: 0.0}"
+IA_SELECTIVE_REGRESSION_PATH_DURATION,numeric,458339,30.4,0.0,0.0,248.4513427833983,219.0,498.0,10893.0,241.2639102439437,2407,
 IA_SKIP,numeric,658820,0.0,0.0,0.0,0.24208736832518746,0.0,1.0,1.0,0.4283472340549739,2,"{0.0: 75.8, 1.0: 24.2}"
 IA_TOP,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 LengthCategory,categorical,658820,0.0,,,,,,,,4,"{1: 48.2, 2: 45.2, 3: 4.2, 0: 2.4}"
@@ -40,21 +41,21 @@ NEXT_SAC_END_Y,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 NEXT_SAC_START_X,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 NEXT_SAC_START_Y,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 PARAGRAPH_RT,numeric,658820,0.0,10734668.0,12849525.0,16772167.745106403,15694051.0,20080133.0,20080133.0,2840949.8526616865,12,"{20080133.0: 11.5, 19728251.0: 10.6, 19075177.0: 9.9, 15694051.0: 8.8, 19669975.0: 8.7, 18127238.0: 8.1, 15263254.0: 7.9, 15106903.0: 7.6, 13809346.0: 7.3, 15158268.0: 7.1, 12849525.0: 6.6, 10734668.0: 5.9}"
-Relationship,categorical,1658,99.7,,,,,,,,39,
-TAG,categorical,1658,99.7,,,,,,,,29,
+Relationship,categorical,1645,99.8,,,,,,,,39,
+TAG,categorical,1645,99.8,,,,,,,,30,
 TOWRE_nonword,numeric,606626,7.9,0.0,32.0,49.79493625396867,53.0,62.0,63.0,11.511921069105473,51,
 TOWRE_word,numeric,606626,7.9,25.0,60.0,80.51537850339419,83.0,99.0,104.0,16.54601406840734,74,
 TRIAL_IA_COUNT,numeric,658820,0.0,98.0,107.0,142.94565435171975,142.0,187.0,187.0,26.087678963041203,18,
-Token,categorical,1658,99.7,,,,,,,,793,
-Token_idx,numeric,1658,99.7,0.0,13.0,70.96260554885404,69.0,132.0,186.0,43.89457442758334,187,
-Word,categorical,1658,99.7,,,,,,,,793,
-Word_idx,numeric,1658,99.7,1.0,14.0,71.96260554885404,70.0,133.0,187.0,43.89457442758334,187,
+Token,categorical,1645,99.8,,,,,,,,788,
+Token_idx,numeric,1645,99.8,0.0,13.0,70.44072948328268,68.0,131.0,184.0,43.61635633123789,185,
+Word,categorical,1645,99.8,,,,,,,,788,
+Word_idx,numeric,1645,99.8,1.0,14.0,71.44072948328268,69.0,132.0,185.0,43.61635633123789,185,
 blink,numeric,611481,7.2,0.0,0.0,0.0899799012561306,0.0,0.0,1.0,0.2861531976694419,2,"{0.0: 91.0, 1.0: 9.0}"
 cft20,numeric,608121,7.7,2.0,7.0,9.34498233081903,10.0,12.0,15.0,1.947399467066435,14,"{10.0: 22.5, 9.0: 17.5, 11.0: 16.8, 8.0: 12.2, 12.0: 10.2, 7.0: 10.1, 6.0: 6.4, 13.0: 1.2, 5.0: 1.2, 14.0: 0.8, 4.0: 0.5, 3.0: 0.4, 15.0: 0.2, 2.0: 0.2}"
 cond,numeric,658820,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1,{1.0: 100.0}
-distance_to_head,numeric,1658,99.7,-22.0,-3.0,-0.17913148371531967,0.0,3.0,18.0,3.219939944537977,34,
+distance_to_head,numeric,1645,99.8,-22.0,-3.0,-0.19939209726443768,0.0,3.0,18.0,3.228390576270867,35,
 end_of_line,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
-entity_type,categorical,77,100.0,,,,,,,,9,"{'DATE': 29.9, 'PERSON': 18.2, 'TIME': 13.0, 'CARDINAL': 10.4, 'ORG': 7.8, 'ORDINAL': 7.8, 'GPE': 6.5, 'FAC': 5.2, 'NORP': 1.3}"
+entity_type,categorical,73,100.0,,,,,,,,9,"{'DATE': 28.8, 'PERSON': 17.8, 'TIME': 13.7, 'CARDINAL': 9.6, 'ORG': 8.2, 'ORDINAL': 8.2, 'GPE': 6.8, 'FAC': 5.5, 'NORP': 1.4}"
 firstfix.cland,numeric,462754,29.8,-8.0,-3.0,-0.7986521996568371,-0.5,1.5,7.0,1.8363901547361126,31,
 firstfix.sac.in,numeric,458205,30.5,-144.0,-7.0,0.29071267227550984,7.0,13.0,135.0,25.615837436041154,252,
 firstfix.sac.out,numeric,461126,30.0,-142.0,-8.0,-0.3109475501272971,5.0,11.0,135.0,22.148956896947308,255,
@@ -64,24 +65,24 @@ firstrun.refix,numeric,499328,24.2,0.0,0.0,0.19489193476031788,0.0,1.0,1.0,0.396
 firstrun.reg.in,numeric,462754,29.8,0.0,0.0,0.11034588571897812,0.0,1.0,1.0,0.31332073561539636,2,"{0.0: 89.0, 1.0: 11.0}"
 firstrun.reg.out,numeric,462754,29.8,0.0,0.0,0.19640024721558322,0.0,1.0,1.0,0.39727513283699223,2,"{0.0: 80.4, 1.0: 19.6}"
 firstrun.skip,numeric,658820,0.0,0.0,0.0,0.42045019884035095,0.0,1.0,1.0,0.4936316430264874,2,"{0.0: 58.0, 1.0: 42.0}"
-gpt2_surprisal,numeric,1658,99.7,0.0007412070408463478,0.4240911900997162,3.432800769805908,2.8173789978027344,7.175531387329102,15.558481216430664,2.743746042251587,1657,
-head_direction,categorical,1658,99.7,,,,,,,,3,"{'RIGHT': 49.5, 'LEFT': 44.9, 'SELF': 5.5}"
-head_word_index,numeric,1658,99.7,1.0,14.700000000000017,71.78347406513872,69.5,132.0,187.0,43.76088030714323,176,
-is_content_word,numeric,1658,99.7,0.0,0.0,0.5615199034981906,1.0,1.0,1.0,0.4963505741734446,2,"{np.int64(1): 56.2, np.int64(0): 43.8}"
+gpt2_surprisal,numeric,1645,99.8,0.000739539333153516,0.4199162423610687,3.4666662216186523,2.8083670139312744,7.17411470413208,45.73716735839844,3.0719010829925537,1643,
+head_direction,categorical,1645,99.8,,,,,,,,3,"{'RIGHT': 49.2, 'LEFT': 45.2, 'SELF': 5.5}"
+head_word_index,numeric,1645,99.8,1.0,15.0,71.24133738601823,68.0,132.0,185.0,43.49067347691362,172,
+is_content_word,numeric,1645,99.8,0.0,0.0,0.5580547112462007,1.0,1.0,1.0,0.49676923066722384,2,"{np.int64(1): 55.8, np.int64(0): 44.2}"
 itemid,numeric,658820,0.0,1.0,2.0,6.412605871102881,6.0,11.0,12.0,3.359808482533325,12,"{5: 11.5, 7: 10.6, 1: 9.9, 6: 8.8, 4: 8.7, 12: 8.1, 8: 7.9, 10: 7.6, 9: 7.3, 11: 7.1, 3: 6.6, 2: 5.9}"
 lang_x,categorical,658820,0.0,,,,,,,,15,"{'hi_iiith': 10.4, 'en_uk': 9.7, 'ge_zu': 8.8, 'ru_mo': 7.7, 'sp_ch': 7.3, 'ch_s': 7.2, 'ge_po': 7.0, 'se': 7.0, 'hi_iitk': 6.8, 'ch_t': 6.8, 'ic': 6.4, 'ba': 6.2, 'da': 3.8, 'no': 2.8, 'tr': 2.1}"
 lang_y,categorical,658820,0.0,,,,,,,,15,"{'hi_iiith': 10.4, 'en_uk': 9.7, 'ge_zu': 8.8, 'ru_mo': 7.7, 'sp_ch': 7.3, 'ch_s': 7.2, 'ge_po': 7.0, 'se': 7.0, 'hi_iitk': 6.8, 'ch_t': 6.8, 'ic': 6.4, 'ba': 6.2, 'da': 3.8, 'no': 2.8, 'tr': 2.1}"
-left_dependents_count,numeric,1658,99.7,0.0,0.0,0.4951749095295537,0.0,2.0,6.0,0.8707897757786465,7,"{0.0: 67.7, 1.0: 21.0, 2.0: 7.4, 3.0: 2.4, 4.0: 1.3, 5.0: 0.2, 6.0: 0.1}"
+left_dependents_count,numeric,1645,99.8,0.0,0.0,0.49240121580547114,0.0,2.0,6.0,0.8660798412864172,7,"{0.0: 67.8, 1.0: 20.7, 2.0: 7.6, 3.0: 2.4, 4.0: 1.2, 5.0: 0.2, 6.0: 0.1}"
 lextale,numeric,658820,0.0,41.25,60.0,77.7031165568744,78.75,95.0,100.0,12.842173126269637,53,
 motiv,numeric,646558,1.9,2.3,3.1,3.5600830861268435,3.6,4.0,4.4,0.37092342709376214,21,
-normalized_ID,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+normalized_ID,numeric,658820,0.0,0.0,0.06989247311827956,0.38157433965516063,0.3709677419354839,0.7096774193548387,1.0,0.23616556073652573,187,
 nrun,numeric,499328,24.2,1.0,1.0,1.3801288932325044,1.0,2.0,17.0,0.7432562144510423,15,"{1.0: 72.5, 2.0: 20.3, 3.0: 5.0, 4.0: 1.4, 5.0: 0.5, 6.0: 0.2, 7.0: 0.1, 8.0: 0.0, 9.0: 0.0, 10.0: 0.0, 11.0: 0.0, 12.0: 0.0, 14.0: 0.0, 13.0: 0.0, 17.0: 0.0}"
-paragraph,categorical,658820,0.0,,,,,,,,18,
+paragraph,categorical,658820,0.0,,,,,,,,12,"{'The Internet has made life a whole lot easier for many people, but being online also brings with it very real risks. Hackers can steal personal and financial information. There are several precautions that computer users can take to minimize the level of risk that is involved with being online. One of the most obvious safety precautions is to purchase a good anti-virus and anti-spyware program. Passwords are also a very important part of online security, and several tips can help users create more secure passwords. First, they should be something that can easily be remembered, but they should not be something others can guess easily. Your first or last name, phone number, or the name of your street are all bad choices, as people could learn this information quite easily. Longer passwords are more secure, and those that use a mixture of upper and lower case letters and a combination of letters and numbers are more secure than those that do not. Finally, passwords should be changed often. This can make remembering them more difficult, but the extra effort is worth the added security.': 11.5, ""A bird's feathers are extremely important, and when they clean and smooth them, it is known as preening. Birds in the wild preen their feathers on a regular basis. This is true of most captive birds as well, but not all. For example, some birds do not preen their feathers at all. This problem is most common in birds that are taken from their mothers at a very young age. Presumably, the absence of preening is due to the fact that they were never shown how to do it properly. A more common problem among captive birds is excessive preening. Some birds may pull out large numbers of their feathers or bite them down to the skin. It should be noted that wild birds never exhibit this kind of behavior. There are several suggestions about how the problem of excessive preening can be solved, such as giving birds baths or placing them in an area that has more activity to prevent boredom. However, these measures are often not sufficient to solve the problem."": 10.6, 'Samuel Morse, best known today as the inventor of Morse Code and one of the inventors of the telegraph, was originally a prominent painter. While he was always interested in technology and studied electrical engineering in college, Morse went to Paris to learn from famous artists of his day and later painted many pictures that now hang in museums, including a portrait of former President John Adams. In 1825, Morse was in Washington, D.C., painting a portrait of the Marquis de Lafayette when a messenger arrived on horseback to tell him that his wife was gravely ill back at his home in Connecticut. The message had taken several days to reach him because of the distance. Morse rushed to his home as fast as he could, but his wife had already passed away by the time he arrived. Grief-stricken, he gave up painting and devoted the rest of his life to finding ways to transmit messages over long distances faster.': 9.9, ""Many people fail to realize just how crucial getting a good night's sleep actually is. It is usually suggested that adults get about seven hours of sleep every night, and younger children should get even more. Sleep has several benefits. First, it is believed to improve memory. This is one reason why it is always preferable to sleep the night before a test rather than stay up for the entire night to review the information. On a related note, sleep also improves concentration and mental alertness. Those who get sufficient sleep are able to concentrate on work tasks better and also react faster when they are driving a car, for example. Finally, people who get enough sleep have better immunity against illness. The reason for this is not fully understood, but researchers believe that an increase in the production of growth hormone and melatonin plays a role."": 8.8, 'Howard Gardner was a psychologist best known for developing the theory of multiple intelligences. Basically, the theory states that the idea of general intelligence or overall intelligence is somewhat inaccurate. This is because people often show intelligence in different areas. He argued that there are actually different types of intelligence. One type of intelligence that Gardner identified was interpersonal intelligence. People who possess this type of intelligence relate and interact well with others. Intrapersonal intelligence, on the other hand, implies that people are in touch with their own feelings. They enjoy thinking about theories and developing their own thoughts and ideas. People who have linguistic intelligence learn best by taking notes and reading textbooks. These people usually excel in traditional academic environments, as many academic subjects stress these types of activities. The other types of intelligence are kinesthetic, musical, spatial, and logical.': 8.7, 'Technology is rapidly expanding the scope of capabilities for both professional and personal use; such is the case with smart phones. Professionals now have mobile devices available to them capable of digital media, internet access, phone communication, multi-person scheduling and office tools for documents and presentations. Businesspeople that are often mobile may maximize the use of these critical features on smart phones. Individuals who simply enjoy the luxury of multi-function devices often use these devices for frivolous pursuits such as downloading catchy ring tones, instant messaging about the latest gossip and looking up the world record for most cans crushed on one\x92s head during the Superbowl. This fusion of capabilities and increased availability of such devices could be a sign of a growing blend in society between work and personal life, or individuals could simply be taking a luxurious approach to their connectivity in personal lives.': 8.1, 'Hibernation in animals is an extremely fascinating phenomenon, one that biologists are not yet close to understanding fully. However, it is quite easy to understand why animals hibernate during the cold winter months. Usually, it is because their food is quite scarce during this time. Animals that are herbivores will find the winters extremely tough, because all of the vegetation will have died off by the time winter arrives. Hibernation is essentially a way of dealing with this food shortage. Animals like birds rely on seeds and small insects for sustenance. Obviously, these will also be quite scarce in the winter when the ground becomes covered and frozen. Many birds address their upcoming food shortage in quite a different way: they migrate to warmer areas where their sources of food will be plentiful.': 7.9, 'When online file-sharing programs emerged, the music industry changed forever. Perhaps the first widely-used music file sharing program was Napster. It allowed users to sign up to use the service at no charge. Then, they could download music files from other users all over the world by simply typing in what song or album they wanted. Obviously, this was bad news for music artists and record labels because they were not making any profits from downloaded music. Eventually, Napster was shut down. While it later reinvented itself as a paying service, other free music-sharing sites cropped up almost immediately. Even though several sites and individual users have been charged, there are still countless individuals who log onto these sites to obtain free music.': 7.6, ""At one time, the use of leeches to treat medical problems was quite common. If a person suffered from a snake bite or a bee sting, leeches were believed to be capable of removing the poison from the body if they were placed on top of the wound. They have also been used for blood letting and to stop hemorrhages, although neither of these leech treatments would be considered acceptable by present-day physicians. Today, leeches are still used on a limited basis. Most often, leeches are used to drain blood from clogged veins. This results in little pain for the patient and also ensures the patient's blood will not clot while it is being drained."": 7.3, 'The pencil is a modern-day version of a centuries-old writing implement. Around 1560, an Italian couple designed the modern, wood-encased pencil. Their creation was flatter and more compact than the pencils we use today. Their plan involved hollowing out a stick of wood and inserting a stick of graphite into it. Shortly after, a better technique was discovered: two wooden halves were carved, a graphite stick was inserted, and then the halves were glued together, which is also how pencils are currently made. Although many people refer to the graphite inside pencils as \x93lead\x94, they have always been made with graphite; however, the paint on the wood that surrounded the graphite was, at one time, lead-based.': 7.1, ""The Amazon Rainforest is one of the most important ecosystems in the world. However, it is slowly being destroyed. Areas of the rainforest are being cleared for farms and roads, and much of the wood is also being harvested and sold. There are several compelling reasons to protect this area. First, a significant number of pharmaceuticals are made from plants that have been discovered in the rainforest, and it's quite possible there are still important plants that have not yet been discovered. Secondly, the rainforest provides a significant portion of the world's oxygen and also absorbs great amounts of carbon dioxide. Without rainforests, global warming could accelerate."": 6.6, 'Leonardo da Vinci is not only one of the most famous artists in history, but he was also a botanist, a writer, and an inventor. Even though most of his inventions were not actually built in his lifetime, many of today\x92s modern machines can be traced back to some of his original designs. The parachute, the military tank, the bicycle, and even the airplane were foretold in the imaginative drawings that can still be seen in the fragments of da Vinci\x92s notebooks. Over five hundred years ago, this man conceived ideas that were far ahead of his time.': 5.9}"
 participant_id,categorical,658820,0.0,,,,,,,,562,
-ptb_pos,numeric,1658,99.7,0.0,0.0,1.0379975874547647,1.0,3.0,3.0,1.1302090299641046,4,"{0.0: 43.8, 1.0: 26.7, 3.0: 18.2, 2.0: 11.3}"
+ptb_pos,numeric,1645,99.8,0.0,0.0,1.0358662613981764,1.0,3.0,3.0,1.1320598677397333,4,"{0.0: 44.2, 1.0: 26.1, 3.0: 18.1, 2.0: 11.6}"
 refix,numeric,499328,24.2,0.0,0.0,0.23085627082799282,0.0,1.0,1.0,0.4213810729604874,2,"{0.0: 76.9, 1.0: 23.1}"
 reread,numeric,499328,24.2,0.0,0.0,0.2747172199436042,0.0,1.0,1.0,0.4463721183524989,2,"{0.0: 72.5, 1.0: 27.5}"
-right_dependents_count,numeric,1658,99.7,0.0,0.0,0.44933655006031364,0.0,1.0,4.0,0.7460393390137717,5,"{0.0: 66.4, 1.0: 25.6, 2.0: 5.3, 3.0: 1.9, 4.0: 0.7}"
+right_dependents_count,numeric,1645,99.8,0.0,0.0,0.4522796352583587,0.0,1.0,4.0,0.7470558398401574,5,"{0.0: 66.1, 1.0: 26.0, 2.0: 5.3, 3.0: 1.8, 4.0: 0.8}"
 sentnum,numeric,611481,7.2,1.0,1.0,4.6910190177617945,5.0,8.0,11.0,2.6065971577181224,11,"{5.0: 14.9, 3.0: 13.4, 2.0: 12.7, 1.0: 12.1, 6.0: 12.1, 4.0: 10.4, 7.0: 8.1, 8.0: 7.4, 10.0: 4.0, 9.0: 3.5, 11.0: 1.4}"
 singlefix,numeric,658820,0.0,0.0,0.0,0.5931817491879421,1.0,1.0,1.0,0.4912408043981802,2,"{1.0: 59.3, 0.0: 40.7}"
 singlefix.cland,numeric,372547,43.5,-8.0,-3.0,-0.6479075123407247,-0.5,1.5,6.5,1.661807572913216,30,
@@ -94,16 +95,16 @@ spelling,numeric,650925,1.2,19.0,29.0,35.10139570611054,35.0,41.0,44.0,4.3516792
 start_of_line,numeric,658820,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 subid_x,categorical,658820,0.0,,,,,,,,562,
 subid_y,categorical,0,100.0,,,,,,,,0,{}
-subtlex_frequency,numeric,1658,99.7,5.048944397885568,6.110319383132482,inf,10.970362623890832,18.42775805748415,inf,,612,
+subtlex_frequency,numeric,1645,99.8,3.3294912368873373,5.6890668660136745,inf,10.743394893497712,18.36372465672955,inf,,620,
 supplementary_id,numeric,0,100.0,,,,,,,,0,{}
 total_skip,numeric,658820,0.0,0.0,0.0,0.24208736832518746,0.0,1.0,1.0,0.4283472340549739,2,"{0.0: 75.8, 1.0: 24.2}"
 trial,numeric,0,100.0,,,,,,,,0,{}
 trialnum,numeric,658820,0.0,1.0,2.0,6.412605871102881,6.0,11.0,12.0,3.359808482533325,12,"{5.0: 11.5, 7.0: 10.6, 1.0: 9.9, 6.0: 8.8, 4.0: 8.7, 12.0: 8.1, 8.0: 7.9, 10.0: 7.6, 9.0: 7.3, 11.0: 7.1, 3.0: 6.6, 2.0: 5.9}"
-unique_paragraph_id,numeric,658820,0.0,1.0,2.0,6.411036398409277,6.0,11.0,12.0,3.3592205957187766,12,"{5: 11.5, 7: 10.6, 1: 9.9, 6: 8.8, 4: 8.7, 12: 8.1, 8: 7.9, 10: 7.6, 9: 7.3, 11: 7.1, 3: 6.6, 2: 5.9}"
+unique_paragraph_id,numeric,658820,0.0,1.0,2.0,6.412605871102881,6.0,11.0,12.0,3.359808482533325,12,"{5: 11.5, 7: 10.6, 1: 9.9, 6: 8.8, 4: 8.7, 12: 8.1, 8: 7.9, 10: 7.6, 9: 7.3, 11: 7.1, 3: 6.6, 2: 5.9}"
 unique_trial_id,categorical,658820,0.0,,,,,,,,4770,
-universal_pos,categorical,1658,99.7,,,,,,,,13,"{'NOUN': 24.7, 'VERB': 11.3, 'ADP': 11.1, 'ADJ': 10.3, 'DET': 8.6, 'AUX': 8.3, 'ADV': 7.8, 'PRON': 6.9, 'CCONJ': 3.6, 'SCONJ': 2.2, 'PART': 2.1, 'PROPN': 2.0, 'NUM': 1.0}"
+universal_pos,categorical,1645,99.8,,,,,,,,14,"{'NOUN': 24.1, 'VERB': 11.6, 'ADP': 11.2, 'ADJ': 10.2, 'DET': 8.7, 'AUX': 8.4, 'ADV': 7.9, 'PRON': 6.9, 'CCONJ': 3.6, 'SCONJ': 2.2, 'PART': 2.1, 'PROPN': 2.0, 'NUM': 0.9, 'X': 0.1}"
 vocab,numeric,643692,2.3,4.0,14.0,49.05337490601095,47.0,80.0,87.0,23.60458512668916,77,
 vocab.t2.5,numeric,643692,2.3,4.0,14.0,31.410663795728393,35.0,39.0,40.0,9.474363796837224,33,
 word_length,numeric,658820,0.0,1.0,2.0,5.021609847909899,4.0,9.0,15.0,2.6232759078159624,15,"{3: 17.0, 4: 16.7, 2: 14.5, 5: 13.3, 7: 9.6, 6: 9.2, 8: 6.6, 9: 3.7, 10: 2.9, 1: 2.4, 11: 2.1, 12: 1.2, 13: 0.5, 14: 0.2, 15: 0.1}"
-word_length_no_punctuation,numeric,1658,99.7,1.0,2.0,4.901085645355851,4.0,8.0,15.0,2.521336595782595,15,"{4.0: 17.7, 3.0: 17.5, 2.0: 14.7, 5.0: 13.7, 7.0: 9.9, 6.0: 8.8, 8.0: 5.7, 9.0: 3.6, 10.0: 2.8, 1.0: 2.4, 11.0: 1.7, 12.0: 1.0, 13.0: 0.5, 15.0: 0.1, 14.0: 0.1}"
-wordfreq_frequency,numeric,1658,99.7,4.218934101564037,5.316168825598678,10.813775266939668,10.46433151196421,16.539251146545414,24.415149927690305,4.229082583976667,321,
+word_length_no_punctuation,numeric,1645,99.8,1.0,2.0,4.942857142857143,4.0,9.0,15.0,2.579941880018867,15,"{3.0: 17.4, 4.0: 17.4, 2.0: 14.8, 5.0: 13.5, 7.0: 9.8, 6.0: 8.6, 8.0: 5.7, 9.0: 3.7, 10.0: 2.9, 1.0: 2.4, 11.0: 1.9, 12.0: 1.2, 13.0: 0.6, 15.0: 0.1, 14.0: 0.1}"
+wordfreq_frequency,numeric,1645,99.8,4.218934101564037,5.316168825598678,10.79714615974233,10.363612493908708,16.539251146545414,24.415149927690305,4.235859768896488,331,
