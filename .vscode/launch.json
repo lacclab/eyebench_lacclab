@@ -95,7 +95,7 @@
       "justMyCode": false,
       "args": [
         "--dataset",
-        "OneStopL2"
+        "MECOL1W1"
       ],
       "env": {
         "PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT": "20.0",
@@ -113,7 +113,7 @@
       },
       "args": [
         "--dataset",
-        "OneStopL2"
+        "MECOL1W1"
       ],
     },
     {
@@ -128,7 +128,7 @@
       },
       "args": [
         "--dataset",
-        "OneStopL2"
+        "MECOL1W1"
       ],
     },
     {

@@ -410,8 +410,11 @@ class MECOProcessor(DatasetProcessor):
     @staticmethod
     @lru_cache(maxsize=2)
     def _load_labels():
+        # labels_w1 = pyreadr.read_r(
+        #     'data/MECOL2W1/demographics/joint.ind.diff.l2.rda',
+        # )['joint_id']
         labels_w1 = pyreadr.read_r(
-            'data/MECOL2W1/demographics/joint.ind.diff.l2.rda',
+            'data/MECOL1W1/demographics/joint.ind.diff.l2.rda',
         )['joint_id']
         labels_w2 = pyreadr.read_r(
             'data/MECOL2W2/demographics/joint.ind.diff.l2.w2.rda',

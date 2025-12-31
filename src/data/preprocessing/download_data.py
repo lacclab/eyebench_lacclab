@@ -30,7 +30,8 @@ def main() -> int:
             DataSets.HALLUCINATION,
             # DataSets.MECO_L2W1,
             # DataSets.MECO_L2W2,
-            DataSets.MECO_L2,
+            DataSets.MECO_L2, 
+            DataSets.MECO_L1,
         ]
 
     for dataset_name in tqdm(

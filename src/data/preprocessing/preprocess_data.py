@@ -46,6 +46,7 @@ PROCESSOR_REGISTRY = {
     DataSets.MECO_L2W2: MECOProcessor,
     DataSets.MECO_L2: MECOProcessor,
     DataSets.ONESTOPL2: OneStopProcessor,
+    #DataSets.MECO_L1W1: MECOProcessor,
 }
 
 
