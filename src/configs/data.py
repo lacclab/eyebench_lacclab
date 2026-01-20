@@ -418,6 +418,41 @@ class OneStopL2(OneStop):
     """
     OneStop L2 English Learners data.
     """
+    tasks: dict[str, str] = field(
+    default_factory=lambda: {
+        PredMode.RC: Fields.IS_CORRECT,
+        PredMode.LEX: 'lextale',
+        }
+    )
+
+@register_data
+@dataclass
+class OneStopL2_LEX(OneStopL2):
+    """
+    OneStop L2 English Learners data.
+    """
+    task: PredMode = PredMode.LEX
+    #TODO: check target column
+    target_column: str = 'lextale'
+    class_names: list[str] = field(default_factory=lambda: ['lextale'])
+
+    # max_seq_len: int = 280
+    max_tokens_in_word: int = 10
+
+@register_data
+@dataclass
+class OneStopL2_RC(OneStopL2):
+    """
+    OneStop Is Correct
+    """
+
+    task: PredMode = PredMode.RC
+    target_column: str = Fields.IS_CORRECT
+    class_names: list[str] = field(default_factory=lambda: ['Incorrect', 'Correct'])
+
+    max_q_len: int = 30
+    # max_seq_len: int = 280
+    max_tokens_in_word: int = 10
 
 @register_data
 @dataclass
@@ -599,4 +634,5 @@ DATA_CONFIGS_MAPPING = {
     'PoTeC_RC': PoTeC_RC,
     'IITBHGC_CV': IITBHGC_CV,
     'OneStop_RC': OneStop_RC,
+    'OneStopL2_LEX': OneStopL2_LEX,
 }
