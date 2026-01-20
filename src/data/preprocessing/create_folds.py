@@ -671,14 +671,17 @@ def _get_data(
     """
     all_indices = []
 
+    skipped_participants = []
     for key_ in group_keys.itertuples(name=None, index=False):
         try:
             all_indices.append(groups[key_])
         except:  # noqa: E722
-            breakpoint()
+            # breakpoint()
+            pass
 
     # Concatenate all indices once, avoid repeated union
     combined_index = pd.Index(np.concatenate(all_indices))
+
 
     return raw_data.loc[combined_index].copy()
 

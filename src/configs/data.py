@@ -424,6 +424,7 @@ class OneStopL2(OneStop):
         PredMode.LEX: 'lextale',
         }
     )
+    max_scanpath_length: int = 890
 
 @register_data
 @dataclass
