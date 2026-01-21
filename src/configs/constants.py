@@ -341,6 +341,31 @@ class PredMode(StrEnum):
     CV = 'CV'  # Claim Verification
     LEX = 'LEX'  # Vocabulary Knowledge
     DE = 'DE'  # Domain Expertise
+    MICH = 'MICH'  # Michigan Test of English Language Proficiency
+    MICH_R = 'MICH_R'  # Michigan Test - Reading Subscore
+    MICH_G = 'MICH_G'  # Michigan Test - Grammar Subscore
+    MICH_V = 'MICH_V'  # Michigan Test - Vocabulary Subscore
+    MICH_L = 'MICH_L'  # Michigan Test - Listening Subscore
+    MICH_GV = 'MICH_GV'  # Michigan Test - Grammar and Vocabulary Combined
+    MICH_LG = 'MICH_LG'  # Michigan Test - Listening and Grammar Combined
+    MICH_VR = 'MICH_VR'  # Michigan Test - Vocabulary and Reading Combined
+    MICH_GVR = 'MICH_GVR'  # Michigan Test - Grammar, Vocabulary, and Reading Combined
+    LOG_MICH = 'LOG_MICH'  # Log-Transformed Michigan Test Score
+    LOG_MICH_R = 'LOG_MICH_R'  # Log-Transformed Michigan Reading Subscore
+    LOG_MICH_G = 'LOG_MICH_G'  # Log-Transformed Michigan Grammar Subscore
+    LOG_MICH_V = 'LOG_MICH_V'  # Log-Transformed Michigan Vocabulary Subscore
+    LOG_MICH_L = 'LOG_MICH_L'  # Log-Transformed Michigan Listening Subscore
+    LOG_MICH_GV = 'LOG_MICH_GV'  # Log-Transformed Michigan Grammar and Vocabulary Combined
+    LOG_MICH_LG = 'LOG_MICH_LG'  # Log-Transformed Michigan Listening and Grammar Combined
+    LOG_MICH_VR = 'LOG_MICH_VR'  # Log-Transformed Michigan Vocabulary and Reading Combined
+    LOG_MICH_GVR = 'LOG_MICH_GVR'  # Log-Transformed Michigan Grammar, Vocabulary, and Reading Combined
+    TOE = 'TOE'  # TOEFL iBT Total Score
+    TOE_R = 'TOE_R'  # TOEFL iBT Reading Subscore
+    TOE_L = 'TOE_L'  # TOEFL iBT Listening Subscore
+    TOE_S = 'TOE_S'  # TOEFL iBT Speaking Subscore
+    TOE_W = 'TOE_W'  # TOEFL iBT Writing Subscore
+    TOE_LR = 'TOE_LR'  # TOEFL iBT Listening and Reading Combined
+
 
 
 BINARY_PARAGRAPH_ONLY_TASKS = [
@@ -350,7 +375,12 @@ BINARY_PARAGRAPH_ONLY_TASKS = [
     PredMode.DE,
 ]
 BINARY_P_AND_Q_TASKS = [PredMode.RC]
-REGRESSION_PARAGRAPH_ONLY_TASKS = [PredMode.RCS, PredMode.LEX, PredMode.STD]
+REGRESSION_PARAGRAPH_ONLY_TASKS = [PredMode.RCS, PredMode.LEX, PredMode.STD, PredMode.MICH, PredMode.MICH_R,
+                                  PredMode.MICH_G, PredMode.MICH_V, PredMode.MICH_L, PredMode.MICH_GV,
+                                  PredMode.MICH_LG, PredMode.MICH_VR, PredMode.MICH_GVR, PredMode.LOG_MICH, PredMode.LOG_MICH_R,
+                                  PredMode.LOG_MICH_G, PredMode.LOG_MICH_V, PredMode.LOG_MICH_L, PredMode.LOG_MICH_GV,
+                                  PredMode.LOG_MICH_LG, PredMode.LOG_MICH_VR, PredMode.LOG_MICH_GVR, PredMode.TOE, PredMode.TOE_R,
+                                  PredMode.TOE_L, PredMode.TOE_S, PredMode.TOE_W, PredMode.TOE_LR]
 
 
 class Precision(StrEnum):
