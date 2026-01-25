@@ -524,6 +524,7 @@ class DataSets(StrEnum):
     SBSAT = 'SBSAT'
     HALLUCINATION = 'IITBHGC'
     MECO_L2 = 'MECOL2'
+    MECO_L1W1 = 'MECOL1W1'
     MECO_L2W1 = 'MECOL2W1'
     MECO_L2W2 = 'MECOL2W2'
     ONESTOPL2 = 'OneStopL2'

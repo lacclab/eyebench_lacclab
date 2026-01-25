@@ -361,6 +361,14 @@ class MECOL2W2(DataArgs):
 
 @register_data
 @dataclass
+class MECOL1W1(MECOL2W1):
+    """
+    MECOL2W data.
+    """
+
+
+@register_data
+@dataclass
 class OneStop(DataArgs):
     """
     OneStop data.

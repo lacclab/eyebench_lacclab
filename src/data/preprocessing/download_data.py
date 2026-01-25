@@ -123,6 +123,7 @@ def main() -> int:
             DataSets.SBSAT,
             DataSets.HALLUCINATION,
             DataSets.MECO_L2,
+            DataSets.MECO_L1,
         ]
 
     for dataset_name in tqdm(
