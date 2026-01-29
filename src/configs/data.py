@@ -419,9 +419,31 @@ class OneStopL2(OneStop):
     OneStop L2 English Learners data.
     """
     tasks: dict[str, str] = field(
-    default_factory=lambda: {
-        PredMode.RC: Fields.IS_CORRECT,
-        PredMode.LEX: 'lextale',
+        default_factory=lambda: {
+            PredMode.RC: Fields.IS_CORRECT,
+            PredMode.LEX: 'lextale',
+            PredMode.MICH: 'michtest_score',
+            PredMode.MICH_R: 'MPT_reading_score',
+            PredMode.MICH_G: 'MPT_grammar_score',
+            PredMode.MICH_V: 'MPT_vocabulary_score',
+            PredMode.MICH_L: 'MPT_listening_score',
+            PredMode.MICH_LG: 'MPT_listen_grammar',
+            PredMode.MICH_VR: 'MPT_vocab_read',
+            PredMode.MICH_GVR: 'MPT_grammar_vocab_read',
+            PredMode.LOG_MICH: 'log_michtest_score',
+            PredMode.LOG_MICH_R: 'log_MPT_reading_score',
+            PredMode.LOG_MICH_G: 'log_MPT_grammar_score',
+            PredMode.LOG_MICH_V: 'log_MPT_vocabulary_score',
+            PredMode.LOG_MICH_L: 'log_MPT_listening_score',
+            PredMode.LOG_MICH_LG: 'log_MPT_listen_grammar',
+            PredMode.LOG_MICH_VR: 'log_MPT_vocab_read',
+            PredMode.LOG_MICH_GVR: 'log_MPT_grammar_vocab_read',
+            PredMode.TOE: 'converted_toefl_score',
+            PredMode.TOE_R: 'reading',
+            PredMode.TOE_L: 'listening',
+            PredMode.TOE_S: 'speaking',
+            PredMode.TOE_W: 'writing',
+            PredMode.TOE_LR: 'toefl_lr',
         }
     )
     max_scanpath_length: int = 890
@@ -433,12 +455,273 @@ class OneStopL2_LEX(OneStopL2):
     OneStop L2 English Learners data.
     """
     task: PredMode = PredMode.LEX
-    #TODO: check target column
     target_column: str = 'lextale'
     class_names: list[str] = field(default_factory=lambda: ['lextale'])
-
-    # max_seq_len: int = 280
     max_tokens_in_word: int = 10
+    
+@register_data
+@dataclass
+class OneStopL2_MICH(OneStopL2):
+    """
+    OneStop L2 English Learners data.
+    """
+    task: PredMode = PredMode.MICH
+    target_column: str = 'michtest_score'
+    class_names: list[str] = field(default_factory=lambda: ['michtest_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_R(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Reading Subscore
+    """
+    task: PredMode = PredMode.MICH_R
+    target_column: str = 'MPT_reading_score'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_reading_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_G(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Grammar Subscore
+    """
+    task: PredMode = PredMode.MICH_G
+    target_column: str = 'MPT_grammar_score'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_grammar_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_V(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Vocabulary Subscore
+    """
+    task: PredMode = PredMode.MICH_V
+    target_column: str = 'MPT_vocabulary_score'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_vocabulary_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_L(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Listening Subscore
+    """
+    task: PredMode = PredMode.MICH_L
+    target_column: str = 'MPT_listening_score'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_listening_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_LG(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Listening and Grammar Combined
+    """
+    task: PredMode = PredMode.MICH_LG
+    target_column: str = 'MPT_listen_grammar'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_listen_grammar'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_VR(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Vocabulary and Reading Combined
+    """
+    task: PredMode = PredMode.MICH_VR
+    target_column: str = 'MPT_vocab_read'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_vocab_read'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_MICH_GVR(OneStopL2):
+    """
+    OneStop L2 Michigan Test - Grammar, Vocabulary, and Reading Combined
+    """
+    task: PredMode = PredMode.MICH_GVR
+    target_column: str = 'MPT_grammar_vocab_read'
+    class_names: list[str] = field(default_factory=lambda: ['MPT_grammar_vocab_read'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Test Score
+    """
+    task: PredMode = PredMode.LOG_MICH
+    target_column: str = 'log_michtest_score'
+    class_names: list[str] = field(default_factory=lambda: ['log_michtest_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_R(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Reading Subscore
+    """
+    task: PredMode = PredMode.LOG_MICH_R
+    target_column: str = 'log_MPT_reading_score'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_reading_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_G(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Grammar Subscore
+    """
+    task: PredMode = PredMode.LOG_MICH_G
+    target_column: str = 'log_MPT_grammar_score'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_grammar_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_V(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Vocabulary Subscore
+    """
+    task: PredMode = PredMode.LOG_MICH_V
+    target_column: str = 'log_MPT_vocabulary_score'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_vocabulary_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_L(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Listening Subscore
+    """
+    task: PredMode = PredMode.LOG_MICH_L
+    target_column: str = 'log_MPT_listening_score'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_listening_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_LG(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Listening and Grammar Combined
+    """
+    task: PredMode = PredMode.LOG_MICH_LG
+    target_column: str = 'log_MPT_listen_grammar'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_listen_grammar'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_VR(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Vocabulary and Reading Combined
+    """
+    task: PredMode = PredMode.LOG_MICH_VR
+    target_column: str = 'log_MPT_vocab_read'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_vocab_read'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_LOG_MICH_GVR(OneStopL2):
+    """
+    OneStop L2 Log-Transformed Michigan Grammar, Vocabulary, and Reading Combined
+    """
+    task: PredMode = PredMode.LOG_MICH_GVR
+    target_column: str = 'log_MPT_grammar_vocab_read'
+    class_names: list[str] = field(default_factory=lambda: ['log_MPT_grammar_vocab_read'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Total Score
+    """
+    task: PredMode = PredMode.TOE
+    target_column: str = 'converted_toefl_score'
+    class_names: list[str] = field(default_factory=lambda: ['converted_toefl_score'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE_R(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Reading Subscore
+    """
+    task: PredMode = PredMode.TOE_R
+    target_column: str = 'reading'
+    class_names: list[str] = field(default_factory=lambda: ['reading'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE_L(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Listening Subscore
+    """
+    task: PredMode = PredMode.TOE_L
+    target_column: str = 'listening'
+    class_names: list[str] = field(default_factory=lambda: ['listening'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE_S(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Speaking Subscore
+    """
+    task: PredMode = PredMode.TOE_S
+    target_column: str = 'speaking'
+    class_names: list[str] = field(default_factory=lambda: ['speaking'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE_W(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Writing Subscore
+    """
+    task: PredMode = PredMode.TOE_W
+    target_column: str = 'writing'
+    class_names: list[str] = field(default_factory=lambda: ['writing'])
+    max_tokens_in_word: int = 10
+
+
+@register_data
+@dataclass
+class OneStopL2_TOE_LR(OneStopL2):
+    """
+    OneStop L2 TOEFL iBT Listening and Reading Combined
+    """
+    task: PredMode = PredMode.TOE_LR
+    target_column: str = 'toefl_lr'
+    class_names: list[str] = field(default_factory=lambda: ['toefl_lr'])
+    max_tokens_in_word: int = 10
+
 
 @register_data
 @dataclass
@@ -450,7 +733,6 @@ class OneStopL2_RC(OneStopL2):
     task: PredMode = PredMode.RC
     target_column: str = Fields.IS_CORRECT
     class_names: list[str] = field(default_factory=lambda: ['Incorrect', 'Correct'])
-
     max_q_len: int = 30
     # max_seq_len: int = 280
     max_tokens_in_word: int = 10
@@ -636,4 +918,27 @@ DATA_CONFIGS_MAPPING = {
     'IITBHGC_CV': IITBHGC_CV,
     'OneStop_RC': OneStop_RC,
     'OneStopL2_LEX': OneStopL2_LEX,
+    'OneStopL2_MICH': OneStopL2_MICH,
+    'OneStopL2_MICH_R': OneStopL2_MICH_R,
+    'OneStopL2_MICH_G': OneStopL2_MICH_G,
+    'OneStopL2_MICH_V': OneStopL2_MICH_V,
+    'OneStopL2_MICH_L': OneStopL2_MICH_L,
+    'OneStopL2_MICH_LG': OneStopL2_MICH_LG,
+    'OneStopL2_MICH_VR': OneStopL2_MICH_VR,
+    'OneStopL2_MICH_GVR': OneStopL2_MICH_GVR,
+    'OneStopL2_LOG_MICH': OneStopL2_LOG_MICH,
+    'OneStopL2_LOG_MICH_R': OneStopL2_LOG_MICH_R,
+    'OneStopL2_LOG_MICH_G': OneStopL2_LOG_MICH_G,
+    'OneStopL2_LOG_MICH_V': OneStopL2_LOG_MICH_V,
+    'OneStopL2_LOG_MICH_L': OneStopL2_LOG_MICH_L,
+    'OneStopL2_LOG_MICH_LG': OneStopL2_LOG_MICH_LG,
+    'OneStopL2_LOG_MICH_VR': OneStopL2_LOG_MICH_VR,
+    'OneStopL2_LOG_MICH_GVR': OneStopL2_LOG_MICH_GVR,
+    'OneStopL2_TOE': OneStopL2_TOE,
+    'OneStopL2_TOE_R': OneStopL2_TOE_R,
+    'OneStopL2_TOE_L': OneStopL2_TOE_L,
+    'OneStopL2_TOE_S': OneStopL2_TOE_S,
+    'OneStopL2_TOE_W': OneStopL2_TOE_W,
+    'OneStopL2_TOE_LR': OneStopL2_TOE_LR,
+    'OneStopL2_RC': OneStopL2_RC,
 }

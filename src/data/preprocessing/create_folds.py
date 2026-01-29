@@ -11,6 +11,7 @@ from hydra.core.hydra_config import HydraConfig
 from loguru import logger
 from sklearn.model_selection import GroupKFold, StratifiedGroupKFold
 
+from src.configs import data
 from src.configs.constants import REGIMES, DataSets, DataType, Fields, SetNames
 from src.configs.data import DataArgs, get_data_args
 from src.data.utils import load_raw_data
@@ -512,6 +513,11 @@ def split_data_report(
     df = load_raw_data(data_path)
     if 'RCS_score' in df.columns:
         df['RCS_score'] = df['RCS_score'].fillna(-1)
+    # for col in data_config.tasks.values():
+    #     if col in df.columns:
+    #         df[col] = df[col].apply(lambda x: -1 if pd.isna(x) and isinstance(x, float) else x)
+    #         df[col] = df[col].apply(lambda x: round(x, 2) if isinstance(x, float) else x)
+
     grouped_data = df.groupby(data_config.groupby_columns)
     group_keys = pd.DataFrame(
         data=list(grouped_data.groups), columns=data_config.groupby_columns
@@ -676,9 +682,9 @@ def _get_data(
         try:
             all_indices.append(groups[key_])
         except:  # noqa: E722
-            # breakpoint()
-            pass
-
+            breakpoint()
+            skipped_participants.append(key_)
+    
     # Concatenate all indices once, avoid repeated union
     combined_index = pd.Index(np.concatenate(all_indices))
 
