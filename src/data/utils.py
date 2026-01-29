@@ -2,14 +2,22 @@ import warnings
 from collections import defaultdict
 from functools import partial
 from pathlib import Path
+from typing import Literal
 
 import numpy as np
 import pandas as pd
 from loguru import logger
 from scipy.stats import kurtosis, skew
+from torch import normal
+import statsmodels.api as sm
+
 
 from src.configs.constants import (
     DataType,
+    EYE_METRICS_NICKNAMES,
+    EYE_METRICS_NICKNAMES_INVERTED,
+    POS_COL,
+    WORD_PROPERTY_COLUMNS,
     SetNames,
     gsf_features,
     numerical_feature_aggregations,
@@ -529,11 +537,17 @@ def compute_fixation_trial_level_features(
     ).sum() / len(trial)
     LOGISTIC['regression_rate'] = regression_rate
 
+    
+    FIXATION_METRICS = {}
+
+    # FIXATION_METRICS['regression_rate_fixations'] = regression_rate  # TODO check if this makes sense
+
     features_dict = {
         'RF': RF,
         'BEYELSTM': BEYELSTM,
         'SVM': SVM,
         'LOGISTIC': LOGISTIC,
+        'FIXATION_METRICS': FIXATION_METRICS,
     }
     save_feature_names_if_do_not_exist(
         features_dict=features_dict,
@@ -541,7 +555,63 @@ def compute_fixation_trial_level_features(
         mode=DataType.FIXATIONS,
     )
 
-    return RF | BEYELSTM | SVM | LOGISTIC
+    return RF | BEYELSTM | SVM | LOGISTIC | FIXATION_METRICS
+
+def create_s_clusters_dict_inner(fix_met_trial_df:pd.DataFrame, fixation_metrics:list[str], criterion:str=POS_COL, normalize_RS:bool=True) -> dict:
+    """
+    Create syntactic clusters dictionary inner function
+    """
+
+    # Group by the criterion and calculate the average fixation times
+    cluster_means = fix_met_trial_df.groupby(criterion)[fixation_metrics].mean().reset_index()
+    total_means = fix_met_trial_df[fixation_metrics].mean().to_frame().T
+
+    if normalize_RS:
+        cluster_means[fixation_metrics] = cluster_means[fixation_metrics].div(total_means.iloc[0])
+    
+    # Rename the columns to include the criterion name
+    cluster_means = cluster_means.rename(columns={col: f"{criterion}_{col}" for col in fixation_metrics})
+    cluster_means = cluster_means[[criterion] + [ f"{criterion}_{col}" for col in fixation_metrics]]
+    
+    cluster_means = flip_group_to_features(cluster_means, criterion, fixation_metrics)
+
+    cluster_means_dict = cluster_means.to_dict(orient='records')[0]
+
+    return cluster_means_dict
+
+def create_s_clusters_dict(ia_trial_df:pd.DataFrame, fixation_metrics:list[str], criterion:str=POS_COL, normalize_RS:bool=True) -> dict:
+    """
+    Create syntactic clusters dictionary
+    """
+    fix_met_trial_df = ia_trial_df.rename(columns=EYE_METRICS_NICKNAMES_INVERTED)
+    return create_s_clusters_dict_inner(fix_met_trial_df, fixation_metrics, criterion, normalize_RS)
+
+
+def flip_group_to_features(df: pd.DataFrame, criterion:str, fixation_metrics:list) -> pd.DataFrame:
+    """
+
+    """
+    df_long = df.melt(id_vars=[criterion], 
+                  value_vars=[f"{criterion}_{col}" for col in fixation_metrics],
+                  var_name="measure", value_name="value")
+
+    # # Clean up measure column (remove pos prefix) #TODO decide if we want this - this removes the name of pos col from the name of the feature 
+    # df_long["measure"] = df_long["measure"].str.replace(f"{criterion}_", "")
+
+    # Pivot: make wide format with POS+measure as columns
+    df_pivot = df_long.pivot_table(
+        columns=[criterion, "measure"],
+        values="value"
+    )
+
+    # Optional: flatten multi-level column names
+    df_pivot.columns = [f"{c}_{measure}" for c, measure in df_pivot.columns]
+    df_pivot = df_pivot.reset_index(drop=True)
+    return df_pivot
+
+def find_normalizing_factor(fixation_trial_df:pd.DataFrame, fixation_metrics:list):
+    norm_df = fixation_trial_df[fixation_metrics].mean()
+    return norm_df.to_dict()
 
 
 def calc_reading_speed(trial: pd.DataFrame) -> float:
@@ -549,6 +619,46 @@ def calc_reading_speed(trial: pd.DataFrame) -> float:
     return (
         num_of_words / (trial[~trial['PARAGRAPH_RT'].isna()]['PARAGRAPH_RT'].values[0])
     )
+
+
+def find_wp_coefs(ia_trial_df: pd.DataFrame, fixation_metrics:list[str], normalize_RS:bool=True) -> dict:
+    fix_met_trial_df = ia_trial_df.rename(columns=EYE_METRICS_NICKNAMES_INVERTED)
+    find_wp_coefs_inner(fix_met_trial_df, fixation_metrics, normalize_RS)
+
+
+def find_wp_coefs_inner(subject_df: pd.DataFrame, fixation_metrics:list[str], normalize_RS:bool=True) -> dict:
+    
+    # Initialize a dictionary to hold coefficients
+    coefs = {}
+    
+    total_means = subject_df[fixation_metrics].mean().to_frame().T
+
+    subject_df = subject_df.copy()
+    if normalize_RS:
+        subject_df[fixation_metrics] = subject_df[fixation_metrics].div(total_means.iloc[0])
+    
+    # Iterate over each fixation measure
+    for eye_metric in fixation_metrics:
+    
+        # Prepare the regression model
+        X = subject_df[WORD_PROPERTY_COLUMNS]
+        if eye_metric == "SKIP": # TODO: check if this is even a thing or that skip is irrelevant
+            y = subject_df[eye_metric].astype(int)  # Convert SKIP to binary (0/1) for logistic regression
+        else:
+            y = subject_df[eye_metric]
+        
+        # Fit the model
+        if eye_metric == "SKIP":
+            model = sm.Logit(y, sm.add_constant(X)).fit()
+        else:
+            model = sm.OLS(y, sm.add_constant(X)).fit()
+        
+        # Store the coefficients in the dictionary
+        coefs[f"{eye_metric}_intercept"] = model.params['const']
+        for wp in WORD_PROPERTY_COLUMNS:
+            coefs[f"{eye_metric}_{wp}_coef"] = model.params[wp]
+    
+    return coefs
 
 
 def compute_ia_trial_level_features(
@@ -606,19 +716,66 @@ def compute_ia_trial_level_features(
 
     READING_SPEED = {'reading_speed': calc_reading_speed(trial)}
 
+
+    # IA_REGRESSION_OUT_FULL_COUNT is Number of times word was exited to a lower IA_ID (to the left in English).
+    # IA_REGRESSION_OUT_FULL_COUNT is Number of times word was exited to a lower IA_ID (to the left in English).
+
+    first_fix_prog = trial.loc[(trial["FirstFixProg"]==1)].reset_index(drop=True)
+    first_pass_regressions = first_fix_prog['IA_REGRESSION_OUT_COUNT'].mean() # might have a problem that "IA_REGRESSION_OUT_COUNT" isnt in the data
+    total_regression_words = trial['IA_REGRESSION_OUT_FULL_COUNT'].mean()
+
+    FIXATION_METRICS = {}
+    FIXATION_METRICS.update(
+        {
+            'skip_rate': trial['total_skip'].mean(),
+            #'first_pass_skip_rate': trial['IA_SKIP'].mean(), # TODO: add to features?
+            'mean_FF': trial['IA_FIRST_FIXATION_DURATION'].mean(), # first fixation duration
+            'mean_FP': trial['IA_FIRST_PASS_DWELL_TIME'].mean(), # first pass duration
+            'mean_TF': trial['IA_DWELL_TIME'].mean(),  # total fixation duration
+            'first_pass_regression_rate': first_pass_regressions, 
+            # 'total_regression_rate': total_regression_words, # TODO: add to features?
+        }
+    )
+     
+    fixation_metrics_clusters = [
+        "FF", "FP", "TF", "RP", "SKIP" #TODO: think about changing or adding more
+    ]
+    S_CLUSTERS = create_s_clusters_dict(trial, fixation_metrics_clusters, POS_COL, normalize_RS=True)
+    S_CLUSTERS_NO_NORM = create_s_clusters_dict(trial, fixation_metrics_clusters, POS_COL, normalize_RS=False)
+
+    fixation_metrics_wp_coefs = [
+        "FF", "FP", "TF", "RP" #TODO: think about changing or adding more
+    ]
+    WP_COEFS = find_wp_coefs(trial, fixation_metrics_wp_coefs, normalize_RS=True)
+    WP_COEFS_NO_NORM = find_wp_coefs(trial, fixation_metrics_wp_coefs, normalize_RS=False)
+    WP_COEFS_NO_INTERCEPT = {key:value for key, value in WP_COEFS.items() if 'intercept' not in key}
+    WP_COEFS_NO_NORM_NO_INTERCEPT = {key:value for key, value in WP_COEFS_NO_NORM.items() if 'intercept' not in key}
+
+
     features_dict = {
         'RF': RF,
         'SVM': SVM,
         'LOGISTIC': LOGISTIC,
         'READING_SPEED': READING_SPEED,
+        'FIXATION_METRICS': FIXATION_METRICS,
+        'S_CLUSTERS': S_CLUSTERS,
+        'S_CLUSTERS_NO_NORM': S_CLUSTERS_NO_NORM,
+        'WP_COEFS': WP_COEFS, 
+        'WP_COEFS_NO_NORM': WP_COEFS_NO_NORM,
+        'WP_COEFS_NO_INTERCEPT': WP_COEFS_NO_INTERCEPT,
+        'WP_COEFS_NO_NORM_NO_INTERCEPT': WP_COEFS_NO_NORM_NO_INTERCEPT
     }
+    
     save_feature_names_if_do_not_exist(
         features_dict=features_dict,
         csv_path=processed_data_path / 'ia_trial_level_feature_keys.csv',
         mode=DataType.IA,
     )
 
-    return RF | SVM | LOGISTIC | READING_SPEED
+
+    return RF | SVM | LOGISTIC | READING_SPEED | FIXATION_METRICS | \
+        S_CLUSTERS | S_CLUSTERS_NO_NORM \
+            | WP_COEFS | WP_COEFS_NO_NORM | WP_COEFS_NO_INTERCEPT | WP_COEFS_NO_NORM_NO_INTERCEPT
 
 
 def save_feature_names_if_do_not_exist(
