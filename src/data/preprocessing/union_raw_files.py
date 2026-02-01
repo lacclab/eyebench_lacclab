@@ -124,7 +124,7 @@ def combine_stimulus_files(
 
 def combine_dataset(dataset_name: str) -> None:
     logger.info(f'Processing {dataset_name}...')
-    if dataset_name == 'MECOL2':
+    if dataset_name == 'MECOL2' or dataset_name == 'MECOL1':
         lookup = {}
         for part in ('W1', 'W2'):
             lookup[f'data_args_{part}'] = get_data_args(f'{dataset_name}{part}')
@@ -169,7 +169,7 @@ def combine_dataset(dataset_name: str) -> None:
             ],
             ignore_index=True,
         )
-        base = Path('data/MECOL2')
+        base = Path('data/' + dataset_name)
         base.mkdir(parents=True, exist_ok=True)
         Path(base / 'precomputed_events').mkdir(parents=True, exist_ok=True)
         Path(base / 'precomputed_reading_measures').mkdir(parents=True, exist_ok=True)

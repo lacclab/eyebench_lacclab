@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from turtle import st
 
 import numpy as np
 import pandas as pd
@@ -11,6 +12,7 @@ from text_metrics.ling_metrics_funcs import get_metrics
 from text_metrics.surprisal_extractors.extractor_switch import get_surp_extractor
 from text_metrics.surprisal_extractors.extractors_constants import SurpExtractorType
 from tqdm import tqdm
+import os
 
 from src.configs.constants import DataType, Fields
 from src.data.preprocessing.dataset_preprocessing.base import DatasetProcessor
@@ -31,6 +33,16 @@ class MECOProcessor(DatasetProcessor):
         super().__init__(*args, **kwargs)
         self._nlp = None
         self._surp_extractor = None
+        # Infer type from dataset_name in data_args
+        dataset_name = getattr(self, 'data_args', None)
+        if dataset_name is not None:
+            name = self.data_args.dataset_name.lower()
+            if 'l2' in name:
+                self.type = 'L2'
+            else:
+                self.type = 'L1'
+        else:
+            self.type = 'L1'  # fallback default
 
     def dataset_specific_processing(
         self, data_dict: dict[str, pd.DataFrame]
@@ -38,7 +50,7 @@ class MECOProcessor(DatasetProcessor):
         """MECO-specific processing steps"""
 
         # add unique trial IDs and merge labels
-        labels = self._load_labels().rename(columns={'uniform_id': Fields.SUBJECT_ID})
+        labels = self._load_labels(type=self.type).rename(columns={'uniform_id': Fields.SUBJECT_ID})
 
         for data_type in [DataType.IA, DataType.FIXATIONS]:
             df = data_dict[data_type]
@@ -296,13 +308,24 @@ class MECOProcessor(DatasetProcessor):
 
         # load stimuli because ia_df seems to contain different number of aois
         # in this way we can be sure to that all paragraphs are what MECO authors provide
-        stimuli_df = pd.read_csv(
-            'data/MECOL2/stimuli/stimuli.csv', engine='python', encoding='latin1'
-        )
-        stimuli_df = stimuli_df.rename(
-            columns={'trialid': 'unique_paragraph_id', 'text': 'paragraph'},
-        )
-        stimuli_df = stimuli_df.drop(columns=['question1', 'question2'])
+        if self.type == 'L2':    
+            stimuli_df = pd.read_csv(
+                'data/MECOL2/stimuli/stimuli.csv', engine='python', encoding='latin1'
+            )
+            stimuli_df = stimuli_df.rename(
+                columns={'trialid': 'unique_paragraph_id', 'text': 'paragraph'},
+            )
+            stimuli_df = stimuli_df.drop(columns=['question1', 'question2'])
+
+        else:
+            stimuli_df = pd.read_excel(
+                'data/MECOL1/stimuli/texts_meco_l1.xlsx', engine="openpyxl"
+            )
+            stimuli_df = stimuli_df[stimuli_df['lang'] == "en"]
+            stimuli_df = stimuli_df.rename(
+                columns={'text_num': 'unique_paragraph_id', 'back_trans': 'paragraph'},
+            )
+            stimuli_df = stimuli_df.drop(columns=['different_topic', 'lang'])
         ia_df = ia_df.merge(
             stimuli_df,
             on='unique_paragraph_id',
@@ -409,15 +432,60 @@ class MECOProcessor(DatasetProcessor):
 
     @staticmethod
     @lru_cache(maxsize=2)
-    def _load_labels():
-        # labels_w1 = pyreadr.read_r(
-        #     'data/MECOL2W1/demographics/joint.ind.diff.l2.rda',
-        # )['joint_id']
-        labels_w1 = pyreadr.read_r(
-            'data/MECOL1W1/demographics/joint.ind.diff.l2.rda',
-        )['joint_id']
-        labels_w2 = pyreadr.read_r(
-            'data/MECOL2W2/demographics/joint.ind.diff.l2.w2.rda',
-        )['joint_id_w2']
+    def _load_labels(type: str) -> pd.DataFrame:
+        if type == 'L2':
+            labels_w1 = pyreadr.read_r(
+                'data/MECOL2W1/demographics/joint.ind.diff.l2.rda',
+            )['joint_id']
+            labels_w2 = pyreadr.read_r(
+                'data/MECOL2W2/demographics/joint.ind.diff.l2.w2.rda',
+            )['joint_id_w2']
+        else:
+            labels_w1_lst = []
+            diff_w1 = "data/MECOL1W1/demographics/diff"
+            for lang in os.listdir(diff_w1):
+                lang_path = os.path.join(diff_w1, lang)
+                lang_diff = pd.read_excel(lang_path, sheet_name=0, engine="openpyxl")
+                if 'uniform_id' not in lang_diff.columns:
+                    if 'subject' in lang_diff.columns:
+                        lang_diff = lang_diff.rename(columns={'subject': 'uniform_id'})
+                elif 'subject_id' in lang_diff.columns:
+                    lang_diff = lang_diff.rename(columns={'subject_id': 'uniform_id'})
+                labels_w1_lst.append(lang_diff)
+            labels_w1 = pd.concat(labels_w1_lst, axis=0).reset_index(drop=True)
+            for col in ['old_id', 'old-id']:
+                if col in labels_w1.columns:
+                    labels_w1.drop(columns=[col], inplace=True)
+            labels_w1.dropna(subset=['uniform_id'], inplace=True)
 
-        return pd.concat([labels_w1, labels_w2], axis=0).reset_index(drop=True)
+            labels_w2_lst = []
+            diff_w2 = "data/MECOL1W2/demographics/diff"
+            for lang in os.listdir(diff_w2):
+                if lang == 'ch_s.xlsx':
+                    continue  # skip chinese simplified for L1W2
+                try:
+                    lang_path = os.path.join(diff_w2, lang)
+                    lang_diff = pd.read_excel(lang_path, sheet_name=0, engine="openpyxl")
+                    if 'uniform_id' not in lang_diff.columns:
+                        if 'subject' in lang_diff.columns:
+                            lang_diff = lang_diff.rename(columns={'subject': 'uniform_id'})
+                    elif 'subject_id' in lang_diff.columns:
+                        lang_diff = lang_diff.rename(columns={'subject_id': 'uniform_id'})
+                    if 'uniform_id' in lang_diff.columns:
+                        labels_w2_lst.append(lang_diff)
+                except Exception as e:
+                    logger.warning(f'Error loading {lang_path}: {e}')
+                    continue
+            labels_w2 = pd.concat(labels_w2_lst, axis=0).reset_index(drop=True)
+            for col in ['old_id', 'old-id']:
+                if col in labels_w2.columns:
+                    labels_w2.drop(columns=[col], inplace=True)
+            labels_w2.dropna(subset=['uniform_id'], inplace=True)
+            
+        labels = pd.concat([labels_w1, labels_w2], axis=0)
+        
+        str_cols = labels.select_dtypes(include=['object']).columns
+        labels[str_cols] = labels[str_cols].fillna('').astype(str)
+        num_cols = labels.select_dtypes(include=['number']).columns
+        labels[num_cols] = labels[num_cols].fillna(-1)
+        return labels.reset_index(drop=True)

@@ -19,6 +19,73 @@ AUXILIARY_FILES: dict[str, dict[str, str]] = {
         'MECOL2W2/demographics/joint.ind.diff.l2.w2.rda': 'keuvm',
         'MECOL2/stimuli/texts.meco.l2.rda': 'zwfdb',
     },
+    DataSets.MECO_L1: {  # Hosted on MECO L1: The Multilingual Eye-movement COrpus, L1 (English) - https://osf.io/3y5nv
+        'MECOL1W1/demographics/diff/du.xlsx': '2vfcu',
+        'MECOL1W1/demographics/diff/ee.xlsx': 'x5uch',
+        'MECOL1W1/demographics/diff/en.xlsx': 'yrz2w',
+        'MECOL1W1/demographics/diff/fi.xlsx': 'wygj7',
+        'MECOL1W1/demographics/diff/ge.xlsx': 'gp4bf',
+        'MECOL1W1/demographics/diff/gr.xlsx': 'zuqry',
+        'MECOL1W1/demographics/diff/he.xlsx': '3vejq',
+        'MECOL1W1/demographics/diff/it.xlsx': 'p6fk5',
+        'MECOL1W1/demographics/diff/ko.xlsx': '5df6b',
+        'MECOL1W1/demographics/diff/no.xlsx': '6b2yq',
+        'MECOL1W1/demographics/diff/ru.xlsx': '384x6',
+        'MECOL1W1/demographics/diff/sp.xlsx': 'nk56u',
+        'MECOL1W1/demographics/diff/tr.xlsx': '6z754',
+
+        'MECOL1W1/demographics/leap/du.xlsx': 'htvwd',
+        'MECOL1W1/demographics/leap/ee.xlsx': 'qrzc9',
+        'MECOL1W1/demographics/leap/en.xlsx': 'mkwjy',
+        'MECOL1W1/demographics/leap/fi.xlsx': 'mnrz2',
+        'MECOL1W1/demographics/leap/ge.xlsx': 'h8mc3',
+        'MECOL1W1/demographics/leap/gr.xlsx': 'yjaef',
+        'MECOL1W1/demographics/leap/he.xlsx': 'u9pqr',
+        'MECOL1W1/demographics/leap/it.xlsx': 'hfa7c',
+        'MECOL1W1/demographics/leap/ko.xlsx': 'bn35h',
+        'MECOL1W1/demographics/leap/no.xlsx': '8cpgb',
+        'MECOL1W1/demographics/leap/ru.xlsx': 'urvy8',
+        'MECOL1W1/demographics/leap/sp.xlsx': 'y5kw3',
+        'MECOL1W1/demographics/leap/tr.xlsx': 'mzekb',
+
+        'MECOL1W2/demographics/diff/ba.xlsx': 'mz4ar',
+        # 'MECOL1W2/demographics/diff/bp.xlsx': 'knhdp',
+        'MECOL1W2/demographics/diff/ch_s.xlsx': '3a2fq',
+        'MECOL1W2/demographics/diff/ch_t.xlsx': '3afb2',
+        'MECOL1W2/demographics/diff/da.xlsx': 'kesba',
+        'MECOL1W2/demographics/diff/en_uk.xlsx': 'knhdp',
+        'MECOL1W2/demographics/diff/ge_po.xlsx': 'xuj7q',
+        'MECOL1W2/demographics/diff/ge_zu.xlsx': '5md82',
+        'MECOL1W2/demographics/diff/hi_iiith.xlsx': '3gevb',
+        'MECOL1W2/demographics/diff/hi_iitk.xlsx': 'wp9ad',
+        'MECOL1W2/demographics/diff/ic.xlsx': 'p56j7',
+        'MECOL1W2/demographics/diff/no.xlsx': 'gnzdk',
+        'MECOL1W2/demographics/diff/ru_mo.xlsx': 'p2fsr',
+        'MECOL1W2/demographics/diff/se.xlsx': 'fzbnm',
+        'MECOL1W2/demographics/diff/sp_ch.xlsx': 'j2m7f',
+        'MECOL1W2/demographics/diff/tr.xlsx': 'nsmvh',
+
+        'MECOL1W2/demographics/leap/ba.xlsx': 'cuynm',
+        'MECOL1W2/demographics/leap/bp.xlsx': 'dx48r',
+        'MECOL1W2/demographics/leap/ch_s.xlsx': '5arng',
+        'MECOL1W2/demographics/leap/ch_t.xlsx': '5rxha',
+        'MECOL1W2/demographics/leap/da.xlsx': 'vyt4j',
+        'MECOL1W2/demographics/leap/en_uk.xlsx': 'jvpnf',
+        'MECOL1W2/demographics/leap/ge_po.xlsx': 'gm7a9',
+        'MECOL1W2/demographics/leap/ge_zu.xlsx': 'gx268',
+        'MECOL1W2/demographics/leap/hi_iiith.xlsx': 'zhq6j',
+        'MECOL1W2/demographics/leap/hi_iitk.xlsx': '548dk',
+        'MECOL1W2/demographics/leap/ic.xlsx': 'hvu4w',
+        'MECOL1W2/demographics/leap/no.xlsx': '3sgxr',
+        'MECOL1W2/demographics/leap/ru_mo.xlsx': '25zkd',
+        'MECOL1W2/demographics/leap/se.xlsx': 'ypa2e',
+        'MECOL1W2/demographics/leap/sp_ch.xlsx': 'auzrs',
+        'MECOL1W2/demographics/leap/tr.xlsx': 'v3bk6',
+
+        'MECOL1/stimuli/texts_meco_l1.xlsx': 'uzx4s',
+        'MECOL1/stimuli/questions_meco_l1.xlsx': 'uzx4s',
+
+    },
 }
 
 
@@ -84,11 +151,15 @@ def load_or_download_dataset(
     dataset_name: str, data_path: Path, download: bool = False
 ) -> None:
     """Load or download a dataset based on the flag."""
-    if dataset_name == DataSets.MECO_L2:
+    if dataset_name == DataSets.MECO_L2 or dataset_name == DataSets.MECO_L1:
         dataset_def_w1 = prepare_dataset_definition(f'{dataset_name}W1')
         dataset_def_w2 = prepare_dataset_definition(f'{dataset_name}W2')
-        dataset_w1 = pm.Dataset(dataset_def_w1, data_path / DataSets.MECO_L2W1)
-        dataset_w2 = pm.Dataset(dataset_def_w2, data_path / DataSets.MECO_L2W2)
+        if dataset_name == DataSets.MECO_L2:
+            dataset_w1 = pm.Dataset(dataset_def_w1, data_path / DataSets.MECO_L2W1)
+            dataset_w2 = pm.Dataset(dataset_def_w2, data_path / DataSets.MECO_L2W2)
+        else:
+            dataset_w1 = pm.Dataset(dataset_def_w1, data_path / DataSets.MECO_L1W1)
+            dataset_w2 = pm.Dataset(dataset_def_w2, data_path / DataSets.MECO_L1W2)
         if download:
             dataset_w1.download()
             dataset_w2.download()

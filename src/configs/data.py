@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass, field
 from pathlib import Path
+import re
 
 from loguru import logger
 from omegaconf import MISSING
@@ -278,12 +279,32 @@ class MECOL2(DataArgs):
             self.base_path / 'precomputed_events' / 'combined_fixations.csv'
         )
 
+@register_data
+@dataclass
+class MECOL1(MECOL2):
+    """
+    MECOL1 data.
+    """
+
 
 @register_data
 @dataclass
 class MECOL2_LEX(MECOL2):
     """
     MECOL2 Text Reading Comprehension
+    """
+
+    task: PredMode = PredMode.LEX
+    target_column: str = 'lextale'
+    stratify: str = 'lextale'
+    class_names: list[str] = field(default_factory=lambda: ['lextale'])
+    max_tokens_in_word: int = 6
+
+@register_data
+@dataclass
+class MECOL1_LEX(MECOL1):
+    """
+    MECOL1 Text Reading Comprehension
     """
 
     task: PredMode = PredMode.LEX
@@ -363,7 +384,14 @@ class MECOL2W2(DataArgs):
 @dataclass
 class MECOL1W1(MECOL2W1):
     """
-    MECOL2W data.
+    MECOL1W1 data.
+    """
+
+@register_data
+@dataclass
+class MECOL1W2(MECOL2W2):
+    """
+    MECOL1W2 data.
     """
 
 
@@ -919,6 +947,7 @@ DATA_CONFIGS_MAPPING = {
     'CopCo_TYP': CopCo_TYP,
     'CopCo_RCS': CopCo_RCS,
     'MECOL2_LEX': MECOL2_LEX,
+    'MECOL1_LEX': MECOL1_LEX,
     'SBSAT_STD': SBSAT_STD,
     'SBSAT_RC': SBSAT_RC,
     'PoTeC_DE': PoTeC_DE,

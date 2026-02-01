@@ -1,0 +1,248 @@
+column,type,count,percent_null,min,quantile_10,mean,median,quantile_90,max,std,nunique,distribution
+ART,numeric,388898,0.0,-1.0,-1.0,-0.838536068583536,-1.0,-1.0,32.0,1.615426105422471,24,
+ART-Score,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+ART-misses,categorical,388898,0.0,,,,,,,,1,{'': 100.0}
+AbsDistance2Head,numeric,1992,99.5,0.0,1.0,2.1315261044176705,1.0,4.0,32.0,2.5241714615640656,25,
+Age,numeric,388898,0.0,-1.0,-1.0,3.642258381375065,-1.0,23.0,30.0,9.703770634799183,14,"{-1.0: 81.2, 24.0: 4.2, 23.0: 4.2, 22.0: 3.1, 25.0: 2.3, 26.0: 1.3, 29.0: 1.1, 20.0: 0.8, 28.0: 0.7, 19.0: 0.4, 18.0: 0.4, 21.0: 0.2, 27.0: 0.1, 30.0: 0.0}"
+Age ,numeric,388898,0.0,-1.0,-1.0,-0.8219764565515894,-1.0,-1.0,30.0,2.0680084876886644,13,"{-1.0: 99.2, 20.0: 0.2, 21.0: 0.1, 19.0: 0.1, 26.0: 0.1, 18.0: 0.1, 29.0: 0.1, 27.0: 0.0, 30.0: 0.0, 24.0: 0.0, 23.0: 0.0, 22.0: 0.0, 25.0: 0.0}"
+BNT,numeric,388898,0.0,-1.0,-1.0,0.37404255100309053,-1.0,-1.0,168.2,14.510509980552543,40,
+CFT (non-verbal),numeric,388898,0.0,-1.0,-1.0,-0.9019382974456027,-1.0,-1.0,12.0,1.0031594956774443,8,"{-1.0: 99.0, 9.0: 0.2, 10.0: 0.2, 8.0: 0.1, 11.0: 0.1, 7.0: 0.1, 12.0: 0.1, 6.0: 0.0}"
+CFT-Score,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+CFT-Time,categorical,388898,0.0,,,,,,,,1,{'': 100.0}
+CFT-WS_SCORE,numeric,388898,0.0,-1.0,-1.0,4.207100576500779,-1.0,28.0,30.0,11.179449777734492,8,"{-1.0: 82.1, 29.0: 5.8, 28.0: 4.9, 27.0: 3.2, 30.0: 2.7, 23.0: 0.5, 21.0: 0.5, 26.0: 0.2}"
+CFT-ZF_SCORE,numeric,388898,0.0,-1.0,-1.0,2.5909107272343905,-1.0,20.0,21.0,7.767892752121712,10,"{-1.0: 82.1, 21.0: 7.6, 20.0: 3.4, 19.0: 2.0, 16.0: 1.9, 18.0: 0.9, 17.0: 0.9, 14.0: 0.6, 13.0: 0.4, 10.0: 0.4}"
+CFT20,numeric,388898,0.0,-1.0,-1.0,-0.6736419318175975,-1.0,-1.0,12.0,1.7778834095157006,11,"{-1.0: 96.6, 9.0: 0.6, 8.0: 0.6, 10.0: 0.5, 11.0: 0.5, 7.0: 0.5, 6.0: 0.2, 5.0: 0.2, 12.0: 0.2, 4.0: 0.1, 1.0: 0.0}"
+CFT20Total,numeric,388898,0.0,-1.0,-1.0,-0.9079887271212503,-1.0,-1.0,12.0,0.9310715427974552,12,"{-1.0: 99.0, 7.0: 0.2, 10.0: 0.2, 8.0: 0.1, 9.0: 0.1, 12.0: 0.1, 6.0: 0.1, 5.0: 0.1, 11.0: 0.0, 4.0: 0.0, 3.0: 0.0, 2.0: 0.0}"
+CFT_Total,numeric,388898,0.0,-1.0,-1.0,-0.9077573039717355,-1.0,-1.0,12.0,0.9462036088489527,10,"{-1.0: 99.0, 9.0: 0.3, 10.0: 0.2, 7.0: 0.1, 8.0: 0.1, 11.0: 0.1, 6.0: 0.1, 5.0: 0.0, 4.0: 0.0, 12.0: 0.0}"
+CTF-total,numeric,388898,0.0,-1.0,-1.0,-0.8914496860359271,-1.0,-1.0,12.0,1.068251927432969,9,"{-1.0: 98.9, 10.0: 0.3, 9.0: 0.2, 11.0: 0.2, 7.0: 0.1, 12.0: 0.1, 8.0: 0.1, 4.0: 0.0, 6.0: 0.0}"
+CURRENT_FIX_INTEREST_AREA_INDEX,numeric,346702,10.9,1.0,18.0,89.06126010233572,87.0,161.0,243.0,53.047046778574035,243,
+CURRENT_FIX_NEAREST_INTEREST_AREA_DISTANCE,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+Code,categorical,388898,0.0,,,,,,,,1,{'': 100.0}
+DU_SPELLING,numeric,388898,0.0,-1.0,-1.0,-0.7513152548997424,-1.0,-1.0,30.0,2.629719525740603,10,"{-1.0: 99.1, 28.0: 0.2, 29.0: 0.2, 25.0: 0.2, 27.0: 0.1, 26.0: 0.1, 24.0: 0.1, 30.0: 0.1, 18.0: 0.0, 22.0: 0.0}"
+ENpseudoflu,numeric,388898,0.0,-1.0,-1.0,1.8993309299610694,-1.0,-1.0,62.0,12.507995093510162,14,"{-1.0: 94.8, 61.0: 1.2, 59.0: 0.7, 56.0: 0.5, 49.0: 0.5, 51.0: 0.4, 36.0: 0.3, 57.0: 0.3, 50.0: 0.2, 60.0: 0.2, 62.0: 0.2, 46.0: 0.2, 54.0: 0.2, 58.0: 0.2}"
+ENwordflu,numeric,388898,0.0,-1.0,-1.0,3.4790999182304874,-1.0,-1.0,99.0,19.295449002064917,17,
+IA_BOTTOM,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_DWELL_TIME,numeric,246273,36.7,2.0,145.0,364.46765175232366,277.0,677.0,13112.0,297.54455959578786,2638,
+IA_DWELL_TIME_%,numeric,246273,36.7,3.055814450946538e-05,0.0030152536360411493,0.008072342481717443,0.006571690097871242,0.014716364768042832,0.18506687443189196,0.005886803159401764,213830,
+IA_FIRST_FIXATION_DURATION,numeric,246273,36.7,1.0,121.0,214.93549028923186,198.0,325.0,4482.0,96.35293437059202,1027,
+IA_FIRST_FIXATION_VISITED_IA_COUNT,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_FIRST_FIX_PROGRESSIVE,numeric,388898,0.0,0.0,0.0,0.4922601813328945,0.0,1.0,1.0,0.4999407343842844,2,"{0: 50.8, 1: 49.2}"
+IA_FIRST_RUN_DWELL_TIME,numeric,246273,36.7,1.0,130.0,265.4512228299489,222.0,441.0,5473.0,172.78563534305096,1785,
+IA_FIRST_RUN_FIXATION_COUNT,numeric,246273,36.7,1.0,1.0,1.2485818583441952,1.0,2.0,22.0,0.6025498433543858,18,
+IA_FIRST_RUN_LANDING_POSITION,numeric,246273,36.7,0.0,0.0,2.6380398988114817,2.0,6.0,22.0,2.194573426643911,23,
+IA_FIRST_RUN_LAUNCH_SITE,numeric,244232,37.2,-110.0,-9.0,-1.5392045268433292,5.0,12.0,103.0,24.074281878585033,211,
+IA_FIXATION_%,numeric,246273,36.7,0.001639344262295082,0.0036231884057971015,0.008072342481717443,0.006622516556291391,0.014354066985645933,0.17557251908396945,0.005153834341651271,2071,
+IA_FIXATION_COUNT,numeric,246273,36.7,1.0,1.0,1.7173502576409108,1.0,3.0,32.0,1.1985616252331004,25,
+IA_ID,numeric,346702,10.9,1.0,18.0,89.06126010233572,87.0,161.0,243.0,53.047046778574035,243,
+IA_LABEL,categorical,346629,10.9,,,,,,,,6376,
+IA_LAST_FIXATION_DURATION,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_LAST_RUN_DWELL_TIME,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_LAST_RUN_FIXATION_COUNT,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_LEFT,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_REGRESSION_IN,numeric,288337,25.9,0.0,0.0,0.3517377235665211,0.0,1.0,1.0,0.4775134429462202,2,"{0.0: 64.8, 1.0: 35.2}"
+IA_REGRESSION_IN_COUNT,numeric,288337,25.9,0.0,0.0,0.3517377235665211,0.0,1.0,1.0,0.4775134429462202,2,"{0.0: 64.8, 1.0: 35.2}"
+IA_REGRESSION_OUT,numeric,288337,25.9,0.0,0.0,0.35455387272531796,0.0,1.0,1.0,0.47837873880118076,2,"{0.0: 64.5, 1.0: 35.5}"
+IA_REGRESSION_OUT_COUNT,numeric,288337,25.9,0.0,0.0,0.35455387272531796,0.0,1.0,1.0,0.47837873880118076,2,"{0.0: 64.5, 1.0: 35.5}"
+IA_REGRESSION_OUT_FULL_COUNT,numeric,288337,25.9,0.0,0.0,0.35455387272531796,0.0,1.0,1.0,0.47837873880118076,2,"{0.0: 64.5, 1.0: 35.5}"
+IA_REGRESSION_PATH_DURATION,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_RIGHT,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+IA_RUN_COUNT,numeric,288337,25.9,1.0,1.0,1.4728945643465805,1.0,2.0,19.0,0.9045400433442492,19,
+IA_SELECTIVE_REGRESSION_PATH_DURATION,numeric,244610,37.1,0.0,0.0,219.50799640243653,195.0,460.0,5797.0,225.22228352401766,1917,
+IA_SKIP,numeric,388898,0.0,0.0,0.0,0.25857937042617857,0.0,1.0,1.0,0.43785451075682946,2,"{0.0: 74.1, 1.0: 25.9}"
+IA_TOP,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+Korean proficiency (out of 60),numeric,388898,0.0,-1.0,-1.0,-0.8069596655164079,-1.0,-1.0,45.0,2.70275175602458,15,"{-1.0: 99.5, 36.0: 0.1, 38.0: 0.1, 37.0: 0.1, 34.0: 0.1, 39.0: 0.0, 41.0: 0.0, 35.0: 0.0, 40.0: 0.0, 22.0: 0.0, 45.0: 0.0, 44.0: 0.0, 31.0: 0.0, 30.0: 0.0, 24.0: 0.0}"
+LengthCategory,categorical,346629,10.9,,,,,,,,4,"{1: 45.5, 2: 36.7, 3: 8.9, 0: 8.8}"
+LexITA_ies,numeric,388898,0.0,-1.0,-1.0,44328136.27641438,-1.0,-1.0,9987168539.0,601880861.1965128,55,
+LexITA_index,numeric,388898,0.0,-1.0,-1.0,-0.4465746802503484,-1.0,-1.0,60.0,5.606139594528736,14,"{-1.0: 99.0, 58.0: 0.2, 57.0: 0.2, 60.0: 0.1, 56.0: 0.1, 59.0: 0.1, 55.0: 0.1, 38.0: 0.0, 54.0: 0.0, 52.0: 0.0, 49.0: 0.0, 53.0: 0.0, 48.0: 0.0, 39.0: 0.0}"
+LexITA_n_acc,numeric,388898,0.0,-1.0,-1.0,-0.13912902611995948,-1.0,-1.0,90.0,8.68876961859679,10,"{-1.0: 99.0, 88.0: 0.4, 89.0: 0.2, 90.0: 0.1, 87.0: 0.1, 86.0: 0.1, 79.0: 0.1, 82.0: 0.0, 83.0: 0.0, 85.0: 0.0}"
+LexITA_prop_acc,categorical,388898,0.0,,,,,,,,10,"{'': 99.0, '0,977777778': 0.4, '0,988888889': 0.2, '1': 0.1, '0,966666667': 0.1, '0,955555556': 0.1, '0,877777778': 0.1, '0,911111111': 0.0, '0,922222222': 0.0, '0,944444444': 0.0}"
+LexITA_total_time,numeric,388898,0.0,-1.0,-1.0,959.0244202850105,-1.0,-1.0,163642.0,9906.456535602829,55,
+LexTALE_Dutch,numeric,388898,0.0,-1.0,-1.0,-0.16459457235573338,-1.0,-1.0,98.75,8.818482315262981,15,"{-1.0: 99.1, 95.0: 0.2, 93.75: 0.2, 96.25: 0.1, 86.25: 0.1, 92.5: 0.1, 98.75: 0.1, 90.0: 0.1, 97.5: 0.0, 91.25: 0.0, 87.5: 0.0, 88.75: 0.0, 68.75: 0.0, 82.5: 0.0, 83.75: 0.0}"
+LexizeErrors,numeric,388898,0.0,-1.0,-1.0,-0.9146717134055716,-1.0,-1.0,12.0,0.8341584981883833,14,"{-1.0: 98.7, 5.0: 0.2, 3.0: 0.2, 10.0: 0.2, 6.0: 0.2, 8.0: 0.1, 4.0: 0.1, 0.0: 0.1, 9.0: 0.1, 7.0: 0.1, 1.0: 0.1, 2.0: 0.0, 11.0: 0.0, 12.0: 0.0}"
+LexizeRT,numeric,388898,0.0,-1.0,-1.0,6.108061216845477,-1.0,-1.0,868.1666929133864,64.1016363499119,50,
+LexizeScore,numeric,388898,0.0,-1.0,-1.0,0.03286208723109916,-1.0,-1.0,88.0,9.15904605715223,16,
+Lextale (ESP)_score,numeric,388898,0.0,-1.0,-1.0,12.312223256483705,-1.0,76.0,89.0,29.26504207569917,18,
+NEXT_FIX_INTEREST_AREA_INDEX,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_AMPLITUDE,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_AVG_VELOCITY,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_DURATION,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_END_X,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_END_Y,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_START_X,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NEXT_SAC_START_Y,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+NObpvs,numeric,388898,0.0,-1.0,-1.0,7.047752881218211,-1.0,-1.0,142.0,31.885577210925852,22,
+NOpseudoflu,numeric,388898,0.0,-1.0,-1.0,2.574883388446328,-1.0,-1.0,63.0,14.18544930699559,18,
+NOspel,numeric,388898,0.0,-1.0,-1.0,0.004098761114739597,-1.0,-1.0,29.0,4.1762820095657585,23,
+NOwordflu,numeric,388898,0.0,-1.0,-1.0,4.207015721345957,-1.0,-1.0,104.0,20.746277741305267,30,
+PARAGRAPH_RT,numeric,388898,0.0,5941131.0,6150643.0,7582250.026431095,7739948.0,8424447.0,8643353.0,892512.9385289138,12,"{8404836.0: 9.7, 8424447.0: 9.6, 8643353.0: 9.1, 8402319.0: 9.1, 7600518.0: 9.0, 7961091.0: 8.6, 7369741.0: 8.2, 7739948.0: 8.2, 6608120.0: 7.7, 6150643.0: 7.0, 6512395.0: 6.9, 5941131.0: 6.9}"
+PROLEC_pseudowords,numeric,388898,0.0,-1.0,-1.0,5.563155377502584,-1.0,37.0,40.0,14.328289491928054,13,"{-1.0: 82.5, 38.0: 3.3, 40.0: 3.1, 39.0: 2.7, 34.0: 2.5, 36.0: 1.8, 37.0: 1.0, 35.0: 1.0, 31.0: 0.7, 29.0: 0.4, 30.0: 0.3, 28.0: 0.3, 32.0: 0.3}"
+PROLEC_words,numeric,388898,0.0,-1.0,-1.0,6.061046855473672,-1.0,40.0,40.0,15.356702228885448,4,"{-1.0: 82.5, 40.0: 10.8, 39.0: 3.5, 38.0: 3.1}"
+Participant,categorical,388898,0.0,,,,,,,,41,
+Print Exposure (authors recognized minus false positives),numeric,388898,0.0,-1.0,-1.0,-0.7875844051653647,-1.0,-1.0,42.0,2.357422882214751,28,
+RAN_meanRT_letters,numeric,388898,0.0,-1.0,-1.0,-0.8123924711621042,-1.0,-1.0,27.43,1.9677245562638537,49,
+RAN_meanRT_numbers,numeric,388898,0.0,-1.0,-1.0,-0.8075978576001933,-1.0,-1.0,29.280125,2.025968855112247,49,
+Reading (ART),numeric,388898,0.0,-3.0,-1.0,2.3352755735437056,-1.0,13.0,61.0,10.487457893832948,31,
+Relationship,categorical,1992,99.5,,,,,,,,35,
+SLRT2-fake_SCORE,numeric,388898,0.0,-1.0,-1.0,14.00247365633148,-1.0,74.0,148.0,33.39474344578426,32,
+SLRT2-real_SCORE,numeric,388898,0.0,-1.0,-1.0,20.136465088532212,-1.0,113.0,156.0,45.87535670214562,29,
+SPEL_Correct,numeric,388898,0.0,-1.0,-1.0,-0.8170497148352525,-1.0,-1.0,45.0,2.305896062520213,29,
+SPEL_Wrong,numeric,388898,0.0,-1.0,-1.0,-0.9654510951457709,-1.0,-1.0,10.0,0.4577169787969797,10,"{-1.0: 99.2, 3.0: 0.1, 0.0: 0.1, 5.0: 0.1, 2.0: 0.1, 4.0: 0.1, 6.0: 0.1, 1.0: 0.0, 10.0: 0.0, 7.0: 0.0}"
+Sex,categorical,388898,0.0,,,,,,,,5,"{'': 80.5, 'f': 11.0, 'm': 6.9, 'female': 1.3, 'male': 0.3}"
+Spelling,numeric,388898,0.0,-1.0,-1.0,3.7319348518120434,-1.0,33.0,44.0,12.58172309335507,17,
+Spelling Rus (N of correct answers),numeric,388898,0.0,-1.0,-1.0,-0.7120504605320676,-1.0,-1.0,43.0,3.004468527368775,21,
+Syntax_comp,numeric,388898,0.0,-1.0,-1.0,-0.9871894429901928,-1.0,-1.0,2.0,0.13870646885978372,4,"{-1.0: 99.0, 0.0: 0.7, 1.0: 0.3, 2.0: 0.0}"
+Syntax_contr,numeric,388898,0.0,-1.0,-1.0,-0.9895628159568833,-1.0,-1.0,1.0,0.10836296418569318,3,"{-1.0: 99.0, 0.0: 0.9, 1.0: 0.1}"
+Syntax_distr,numeric,388898,0.0,-1.0,-1.0,-0.9893211073340568,-1.0,-1.0,1.0,0.11163581768059468,3,"{-1.0: 99.0, 0.0: 0.9, 1.0: 0.1}"
+Syntax_equiv,numeric,388898,0.0,-1.0,-1.0,-0.8004052476484836,-1.0,-1.0,20.0,2.014812232584924,4,"{-1.0: 99.0, 20.0: 0.6, 19.0: 0.2, 18.0: 0.1}"
+Syntax_ies,numeric,388898,0.0,-1.0,-1.0,11808610.7993407,-1.0,-1.0,5734473684.0,216654529.11639687,55,
+Syntax_n_acc,numeric,388898,0.0,-1.0,-1.0,-0.8004052476484836,-1.0,-1.0,20.0,2.014812232584924,4,"{-1.0: 99.0, 20.0: 0.6, 19.0: 0.2, 18.0: 0.1}"
+Syntax_prop_acc,categorical,388898,0.0,,,,,,,,4,"{'': 99.0, '1': 0.6, '0,95': 0.2, '0,9': 0.1}"
+Syntax_time,categorical,388898,0.0,,,,,,,,55,
+Syntax_total_time,numeric,388898,0.0,-1.0,-1.0,3482.418099347387,-1.0,-1.0,682297.0,36019.360311445045,55,
+TAG,categorical,1992,99.5,,,,,,,,28,
+TOWRE_NonWord_FinalScore,numeric,388898,0.0,-1.0,-1.0,4.766195763413543,-1.0,34.0,56.0,14.458625613981317,27,
+TOWRE_NonWord_Gr_Sum,numeric,388898,0.0,-1.0,-1.0,-0.5542892995078401,-1.0,-1.0,82.0,5.148669105929787,19,
+TOWRE_NonWord_Gr_Time,numeric,388898,0.0,-1.0,-1.0,-0.6550920806998236,-1.0,-1.0,45.0,3.9601048425138865,4,"{-1.0: 99.2, 45.0: 0.7, 42.0: 0.0, 40.0: 0.0}"
+TOWRE_NonWord_Gr_TotalCorrect,numeric,388898,0.0,-1.0,-1.0,-0.5671358556742385,-1.0,-1.0,82.0,5.00805339901306,20,
+TOWRE_NonWord_Gr_Wrong,numeric,388898,0.0,-1.0,-1.0,-0.9796219060010594,-1.0,-1.0,6.0,0.2803211403830451,8,"{-1.0: 99.2, 0.0: 0.3, 1.0: 0.2, 3.0: 0.1, 2.0: 0.1, 4.0: 0.1, 6.0: 0.0, 5.0: 0.0}"
+TOWRE_NonWords_FinalScore,numeric,388898,0.0,-1.0,-1.0,11.707630278376335,-1.0,57.0,63.0,23.67039719504308,24,
+TOWRE_RealWord_FinalScore,numeric,388898,0.0,-1.0,-1.0,9.814457775560687,-1.0,69.0,91.0,26.6316159626147,24,
+TOWRE_RealWords_FinalScore,numeric,388898,0.0,-1.0,-1.0,19.445368708504542,-1.0,93.0,104.0,38.05157951996525,37,
+TOWRE_Word_Gr_Sum,numeric,388898,0.0,-1.0,-1.0,-0.3837252955787893,-1.0,-1.0,88.0,7.112308915169237,22,
+TOWRE_Word_Gr_Time,numeric,388898,0.0,-1.0,-1.0,-0.6678357821331043,-1.0,-1.0,45.0,3.8241822893250643,9,"{-1.0: 99.2, 45.0: 0.5, 39.0: 0.1, 35.0: 0.0, 38.0: 0.0, 44.0: 0.0, 42.0: 0.0, 40.0: 0.0, 33.0: 0.0}"
+TOWRE_Word_Gr_TotalCorrect,numeric,388898,0.0,-1.0,-1.0,-0.38657951442280497,-1.0,-1.0,88.0,7.080154908210248,20,
+TOWRE_Word_Gr_Wrong,numeric,388898,0.0,-1.0,-1.0,-0.9896142433234422,-1.0,-1.0,2.0,0.13040182516319318,4,"{-1.0: 99.2, 0.0: 0.5, 1.0: 0.2, 2.0: 0.1}"
+TRIAL_IA_COUNT,numeric,388898,0.0,5.0,11.0,159.80759993623008,174.0,210.0,376.0,58.71021062286468,63,
+Token,categorical,1992,99.5,,,,,,,,948,
+Token_idx,numeric,1992,99.5,0.0,16.0,83.12399598393574,82.5,151.0,183.0,48.95058637108767,184,
+VOC_Correct,numeric,388898,0.0,-1.0,-1.0,-0.8891045981208441,-1.0,-1.0,15.0,1.2802104830836112,6,"{-1.0: 99.2, 14.0: 0.3, 15.0: 0.3, 13.0: 0.1, 12.0: 0.1, 8.0: 0.0}"
+VOC_Time,categorical,388898,0.0,,,,,,,,43,
+VOC_Wrong,numeric,388898,0.0,-1.0,-1.0,-0.9837335239574387,-1.0,-1.0,6.0,0.21621845545142396,6,"{-1.0: 99.2, 1.0: 0.3, 0.0: 0.3, 2.0: 0.1, 3.0: 0.1, 6.0: 0.0}"
+VerbalFluency (semantic),numeric,388898,0.0,-1.0,-1.0,-0.3423648360238417,-1.0,-1.0,78.0,5.9260585282000005,28,
+VerbalFluency(Phonemic),numeric,388898,0.0,-1.0,-1.0,-0.45777298931853594,-1.0,-1.0,69.0,4.9472383275947625,30,
+VerbalFluencyTotal,numeric,388898,0.0,-1.0,-1.0,0.18727532669234606,-1.0,-1.0,139.0,10.699592179454052,39,
+Vocabulary,numeric,388898,0.0,-1.0,-1.0,10880.523769728823,-1.0,73000.0,116000.0,29237.05230100472,31,
+Vocabulary Rus (thousands of words),numeric,388898,0.0,-1.0,-1.0,-0.22667126084474593,-1.0,-1.0,105.0,8.115820775624522,29,
+Word,categorical,1992,99.5,,,,,,,,948,
+Word_idx,numeric,1992,99.5,1.0,17.0,84.12399598393574,83.5,152.0,184.0,48.95058637108767,184,
+age,numeric,388898,0.0,-1.0,-1.0,0.5787250127282733,-1.0,-1.0,31.0,6.288794415984736,13,"{-1.0: 94.0, 26.0: 1.4, 22.0: 1.2, 28.0: 0.9, 23.0: 0.7, 31.0: 0.6, 25.0: 0.4, 19.0: 0.3, 27.0: 0.2, 24.0: 0.1, 29.0: 0.1, 30.0: 0.1, 21.0: 0.0}"
+agr.big5,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+blink,numeric,346702,10.9,0.0,0.0,0.09110706024193688,0.0,0.0,1.0,0.2877617115904102,2,"{0.0: 90.9, 1.0: 9.1}"
+cft.raw,numeric,388898,0.0,-1.0,-1.0,-0.8887163215033248,-1.0,-1.0,12.0,1.0830366248879035,10,"{-1.0: 98.9, 10.0: 0.2, 11.0: 0.2, 12.0: 0.2, 8.0: 0.2, 9.0: 0.1, 7.0: 0.1, 6.0: 0.1, 5.0: 0.0, 3.0: 0.0}"
+cft20,numeric,388898,0.0,-1.0,-1.0,-0.8629743531722971,-1.0,-1.0,12.0,1.1757876924436481,9,"{-1.0: 98.6, 9.0: 0.4, 8.0: 0.3, 11.0: 0.3, 10.0: 0.2, 6.0: 0.1, 5.0: 0.0, 4.0: 0.0, 12.0: 0.0}"
+cft_total,numeric,388898,0.0,-1.0,-1.0,-0.9478115084160885,-1.0,-1.0,12.0,0.7334711541388342,8,"{-1.0: 99.5, 8.0: 0.2, 10.0: 0.2, 9.0: 0.1, 12.0: 0.0, 11.0: 0.0, 5.0: 0.0, 7.0: 0.0}"
+cond,numeric,388898,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1,{1.0: 100.0}
+consc.big5,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+distance_to_head,numeric,1992,99.5,-27.0,-3.0,-0.3473895582329317,0.0,2.0,32.0,3.285785591627223,40,
+end_of_line,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+entity_type,categorical,145,100.0,,,,,,,,9,"{'DATE': 44.8, 'ORG': 15.9, 'GPE': 12.4, 'CARDINAL': 11.7, 'NORP': 5.5, 'WORK_OF_ART': 4.1, 'LOC': 2.8, 'PERSON': 1.4, 'ORDINAL': 1.4}"
+extr.big5,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+firstfix.cland,numeric,246273,36.7,-15.5,-3.5,-0.8469746988098573,-0.5,1.5,10.0,2.026851435094203,50,
+firstfix.sac.in,numeric,244232,37.2,-112.0,-12.0,0.040641684955288415,7.0,14.0,106.0,25.638814949408314,217,
+firstfix.sac.out,numeric,245571,36.9,-112.0,-10.0,-0.6741634802154978,5.0,13.0,104.0,21.775671066798054,213,
+firstpass.dur,numeric,42064,89.2,0.0,1714.0,4704.819418029669,4138.0,8352.700000000004,36680.0,2972.095616924123,10798,
+firstpass.forward.dur,numeric,42064,89.2,0.0,892.0,2810.501117344998,2654.0,4862.0,13873.0,1598.8975858241497,6909,
+firstpass.forward.nfix,numeric,42064,89.2,0.0,5.0,13.136553822746292,13.0,22.0,57.0,7.015016844460104,58,
+firstpass.nfix,numeric,42064,89.2,0.0,9.0,22.27267972613161,20.0,39.0,188.0,13.374840029088409,125,
+firstpass.reread.dur,numeric,42064,89.2,0.0,0.0,1196.223278813237,540.0,3289.0,26684.0,1774.0362897537161,5970,
+firstpass.reread.nfix,numeric,42064,89.2,0.0,0.0,5.713294028147585,3.0,15.0,123.0,8.148166009822134,88,
+firstrun.gopast,numeric,244610,37.1,0.0,0.0,346.2427251543273,214.0,635.0,81582.0,1083.2218198984767,4709,
+firstrun.gopast.sel,numeric,244610,37.1,0.0,0.0,219.50799640243653,195.0,460.0,5797.0,225.22228352401766,1917,
+firstrun.refix,numeric,246273,36.7,0.0,0.0,0.1910075404124691,0.0,1.0,1.0,0.3930957737870504,2,"{0.0: 80.9, 1.0: 19.1}"
+firstrun.reg.in,numeric,288337,25.9,0.0,0.0,0.22534048699958728,0.0,1.0,1.0,0.41780708147498513,2,"{0.0: 77.5, 1.0: 22.5}"
+firstrun.reg.out,numeric,288337,25.9,0.0,0.0,0.2868102255347042,0.0,1.0,1.0,0.4522729590405079,2,"{0.0: 71.3, 1.0: 28.7}"
+firstrun.skip,numeric,388766,0.0,0.0,0.0,0.44110338867082,0.0,1.0,1.0,0.49651971090108976,2,"{0.0: 55.9, 1.0: 44.1}"
+gopast,numeric,42064,89.2,0.0,1417.3000000000002,5401.347684480791,4335.0,9831.0,123591.0,5186.437867140749,12059,
+gopast.sel,numeric,42064,89.2,0.0,1311.3000000000002,4560.738303537467,4078.0,8319.700000000004,36680.0,3074.145826419312,10522,
+gpt2_surprisal,numeric,1992,99.5,5.1616290875244886e-05,0.43776848912239075,3.6880686283111572,2.8334476947784424,7.744247913360596,41.85435104370117,3.5280704498291016,1987,
+head_direction,categorical,1992,99.5,,,,,,,,3,"{'LEFT': 48.0, 'RIGHT': 47.1, 'SELF': 4.9}"
+head_word_index,numeric,1992,99.5,1.0,17.0,83.77660642570281,84.0,151.0,186.0,49.00270900300378,183,
+id-num,numeric,388898,0.0,-1.0,-1.0,-0.32111504816172876,-1.0,-1.0,102.0,7.340773581990808,47,
+included,numeric,388898,0.0,-1.0,-1.0,-0.9598352267175455,-1.0,-1.0,1.0,0.2805646805307037,2,"{-1.0: 98.0, 1.0: 2.0}"
+included?,numeric,388898,0.0,-1.0,-1.0,-0.8231618573507706,-1.0,-1.0,1.0,0.5678075251578011,2,"{-1.0: 91.2, 1.0: 8.8}"
+is_content_word,numeric,1992,99.5,0.0,0.0,0.5687751004016064,1.0,1.0,1.0,0.4953717542508687,2,"{np.int64(1): 56.9, np.int64(0): 43.1}"
+itemid,numeric,388898,0.0,1.0,2.0,6.38306188255018,6.0,11.0,13.0,3.4370741778077405,13,"{3: 9.7, 7: 9.3, 4: 8.7, 5: 8.7, 2: 8.5, 10: 8.5, 9: 8.4, 1: 8.0, 6: 7.8, 11: 7.2, 8: 7.2, 12: 6.9, 13: 1.0}"
+lang,categorical,388898,0.0,,,,,,,,17,
+left_dependents_count,numeric,1992,99.5,0.0,0.0,0.46536144578313254,0.0,2.0,4.0,0.8128828162829218,5,"{0.0: 69.1, 1.0: 19.5, 2.0: 8.1, 3.0: 2.6, 4.0: 0.8}"
+lex,numeric,388898,0.0,-1.0,-1.0,-0.7802688622723696,-1.0,-1.0,39.0,2.2571492083753903,26,
+lex.acc,numeric,388898,0.0,-1.0,-1.0,-0.49516325617514106,-1.0,-1.0,59.0,4.793007334966637,22,
+lex.non.acc,numeric,388898,0.0,-1.0,-1.0,-0.8265020648087673,-1.0,-1.0,20.0,1.6762042203525227,14,"{-1.0: 98.9, 17.0: 0.2, 14.0: 0.2, 15.0: 0.1, 10.0: 0.1, 20.0: 0.1, 16.0: 0.1, 18.0: 0.1, 12.0: 0.1, 8.0: 0.1, 13.0: 0.1, 11.0: 0.0, 19.0: 0.0, 3.0: 0.0}"
+lex.non.rt,numeric,388898,0.0,-1.0,-1.0,18.15585834846155,-1.0,-1.0,4494.0,196.02626976711585,46,
+lex.rt,numeric,388898,0.0,-1.0,-1.0,15.041705022910891,-1.0,-1.0,2870.0,159.0845043114523,46,
+lex.word.acc,numeric,388898,0.0,-1.0,-1.0,-0.6574757391398258,-1.0,-1.0,39.0,3.275336414806987,21,
+lex.word.rt,numeric,388898,0.0,-1.0,-1.0,13.82078848438408,-1.0,-1.0,2329.0,146.4291782611949,46,
+lextale,numeric,388898,0.0,-1.0,-1.0,-0.04105703809225041,-1.0,-1.0,100.0,9.374825460527308,18,
+lextale_esp_acc_nonwords,numeric,388898,0.0,-1.0,-1.0,-0.15164387577205335,-1.0,-1.0,100.0,8.818715186559473,12,"{-1.0: 99.1, 100.0: 0.2, 93.3333333333333: 0.2, 96.6666666666667: 0.1, 90.0: 0.1, 86.6666666666667: 0.1, 83.3333333333333: 0.1, 73.3333333333333: 0.0, 76.6666666666667: 0.0, 70.0: 0.0, 66.6666666666667: 0.0, 56.6666666666667: 0.0}"
+lextale_esp_acc_words,numeric,388898,0.0,-1.0,-1.0,-0.1131719199721606,-1.0,-1.0,100.0,9.174488663943917,10,"{-1.0: 99.1, 96.6666666666667: 0.2, 95.0: 0.2, 98.3333333333333: 0.2, 93.3333333333333: 0.1, 91.6666666666667: 0.1, 88.3333333333333: 0.1, 90.0: 0.0, 86.6666666666667: 0.0, 100.0: 0.0}"
+lextale_esp_meanRT_Nonwords,numeric,388898,0.0,-1.0,-1.0,-0.9736614608917705,-1.0,-1.0,5.47346573423333,0.28590830692395014,49,
+lextale_esp_meanRT_words,numeric,388898,0.0,-1.0,-1.0,-0.9809508166447121,-1.0,-1.0,1.69736045055,0.19856127876879964,49,
+lookback.dur,numeric,42064,89.2,0.0,0.0,696.5282664511221,0.0,2434.0,39445.0,1870.7545335996767,5221,
+lookback.nfix,numeric,42064,89.2,0.0,0.0,3.43217478128566,0.0,12.0,149.0,8.89791655756972,106,
+lookfrom.dur,numeric,42064,89.2,0.0,0.0,422.8148773297832,0.0,1312.0,28995.0,1336.5486238757856,4036,
+lookfrom.nfix,numeric,42064,89.2,0.0,0.0,2.0628328261696462,0.0,7.0,141.0,6.296603691679988,87,
+morph_heb,numeric,388898,0.0,-1.0,-1.0,-0.46821017336165266,-1.0,-1.0,67.0,5.211850573840679,25,
+motiv,numeric,388898,0.0,-1.0,-1.0,-0.9510488611409675,-1.0,-1.0,4.4,0.478510384886893,15,"{-1.0: 99.0, 3.9: 0.2, 3.6: 0.1, 3.8: 0.1, 3.7: 0.1, 3.3: 0.1, 4.0: 0.1, 3.5: 0.1, 3.0: 0.0, 3.4: 0.0, 3.2: 0.0, 4.1: 0.0, 4.4: 0.0, 4.3: 0.0, 4.2: 0.0}"
+neur.big5,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+normalized_ID,numeric,346702,10.9,0.0,0.07024793388429752,0.36388950455510627,0.35537190082644626,0.6611570247933884,1.0,0.2192026726387357,243,
+nrun,numeric,288337,25.9,1.0,1.0,1.4728945643465805,1.0,2.0,19.0,0.9045400433442492,19,
+old_id.1,categorical,388898,0.0,,,,,,,,40,
+open.big5,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+paragraph,categorical,388898,0.0,,,,,,,,12,"{'In competitive sports, doping is the use of banned performance-enhancing drugs by athletic competitors. The term doping is widely used by organizations which regulate sporting competitions. The use of drugs to enhance performance is largely considered unethical, and is therefore prohibited by most international sports organizations, including the International Olympic Committee. Furthermore, athletes who take explicit measures to evade detection exacerbate the ethical violation with overt deception and cheating. Despite its prevalence in the headlines recently, doping is not a new phenomenon; in fact, it is as old as sport itself. From the use of substances in ancient chariot races to more recent controversies in baseball and cycling, popular views among athletes have varied widely over the years. In recent decades, authorities and sporting organizations have tried to strictly regulate the use of drugs in sport. The primary reasons for this ban are the health risks of performance-enhancing drugs, the equality of opportunity for athletes, and the positive example to the public set by drug-free sport. Anti-doping authorities have repeatedly emphasized that using performance-enhancing drugs goes against the spirit of sport"".""': 9.7, ""Wine tasting is the sensory examination and evaluation of wine. While the practice of wine tasting is as ancient as its production, a more formalized methodology has slowly become established from the late middle ages onwards. Modern, professional wine tasters use a constantly evolving specialized terminology which is used to describe the range of perceived flavors, aromas and general characteristics of a wine. In recent years, results challenging the reliability of wine tasting in both experts and consumers have surfaced. For example, studies showed that people expect more expensive wine to have more desirable characteristics than less expensive wine: When tasters are given wine that they are falsely told is expensive they virtually always report it as tasting better than the very same wine when they are told that it is inexpensive. Other studies show that tasters' judgment can be prejudiced by knowing details of a wine, such as geographic origin, reputation, or other considerations. Objective wine tasting therefore requires the wine to be served blind ג€“ that is, without the taster having seen the label or bottle shape. Blind tasting may also involve serving the wine from a black wine glass to mask the color of the wine."": 9.6, 'In ancient Roman religion and myth, Janus is the god of beginnings and gates. He has a double nature and is usually depicted as having two faces, since he looks to the future and to the past. Janus presided over the beginning and ending of conflict, and hence war and peace. The doors of his temple were open in times of war and closed during peacetime. As the god of gates, he was also associated with entering and exiting the\\ndoors of homes. Janus frequently symbolized change and transitions, such as the progress from one condition to another, from one vision to another, and the growth of young people into adulthood. Hence, Janus was worshipped at the beginning of the harvest and planting times, as well as at marriages, deaths, and other beginnings. \\nJanus had no specialized priest assigned to him, but the high priest himself carried out his ceremonies. \\nJanus represented the middle ground between barbarism and civilization, rural and urban space, youth \\nand adulthood. The ancient Greeks had no equivalent to Janus, whom the Romans claimed as distinctively their own.': 9.1, 'The thylacine was the largest known carnivorous marsupial of modern times. It is commonly known as the Tasmanian tiger because of its striped lower back, or the Tasmanian wolf because of its canine-like appearance, traits and attributes. Native to continental Australia, Tasmania, and New Guinea, it is believed to have become extinct in the twentieth century. The thylacine was one of only two marsupials to have a pouch in both sexes. The male had a pouch that protected the external reproductive organs while running through thick brush. The thylacine has been described as a formidable predator because of its ability to survive and hunt prey in extremely sparsely populated areas. The thylacine had become extremely rare or extinct on the Australian mainland before British settlement of the continent, but it survived on the island of Tasmania. Intensive hunting encouraged by bounties is generally blamed for its extinction, but other contributing factors may have included disease, the introduction of dogs, and human encroachment into its habitat. Despite its official classification as extinct, sightings are still reported, though none have been conclusively proven.': 9.1, ""A national flag is a flag which represents and symbolizes a country. The national flag is usually flown by the government of a country, but it can also be flown by its citizens. A national flag is designed with specific meanings for its colours and symbols. Historically, flags originated as military standards, which were used as signs on the battlefield. The practice of flying national flags outside of the context of warfare only became common in the early seventeenth century. A country's constitution will often describe the national flag. \\nAll national flags are rectangular, except for the flag of Nepal, which uses a unique triangular shape. \\nThe ratios of height to width vary among standard rectangular flags, but none is taller than it is wide. \\nThe flags of Switzerland and the Vatican City are the only national flags which are exact squares. The most popular colours used for national flags are red, white, green, and blue. Although the national flag is meant to be a unique symbol for the country it represents, many flags have very similar colours and designs."": 9.0, 'The shaka sign, sometimes known as hang loose"", is a gesture of friendly intent often associated with Hawaii and surf culture. The gesture is made by extending the thumb and smallest finger while holding the three middle fingers curled and gesturing in salutation while presenting the front or back of the hand; the hand may be rotated back and forth for emphasis. The shaka sign was adopted from local Hawaiian culture and customs by visiting surfers in the 1960s, and its use has spread around the world. It is primarily used as a greeting gesture or to express thanks, acknowledgement, or even praise from one individual to another. Residents of Hawaii use the shaka to convey the ""Aloha Spirit"": a concept of friendship, understanding, compassion, and solidarity among the various ethnic cultures that reside in Hawaii. While the exact origin of the sign is unclear, some have suggested its origin was derived from Spanish immigrants, who folded their middle fingers and took their thumbs to their lips as a friendly gesture to represent sharing a drink with the natives they met in Hawaii.""': 8.6, 'Beekeeping is the maintenance of bee colonies by humans, typically with the use of man-made hives. The species most commonly used in bee colonies are honey bees. A beekeeper maintains these colonies in order to collect the honey and other products that the hive produces (such as beeswax), but also to pollinate crops, or to produce bees for sale to other beekeepers. The domestication of bees is depicted in Egyptian art from over four thousand years ago. Back then, simple hives and smoke were used for beekeeping, and honey was stored in jars ג€“ some of which were found in the tombs of pharaohs. This process was largely unchanged until the eighteenth century, when an improved understanding of the biology of bees led to the invention of the moveable comb hive in Europe, allowing honey to be harvested without destroying the entire colony. Today, some beekeepers believe that the more stings a beekeeper receives, the less irritation each one causes, and it is considered important for the safety of the beekeeper to be stung a few times a season. Indeed, recent studies found that beekeepers have high levels of antibodies that react to the major antigen of bee venom.': 8.2, 'World Environment Day (WED) is celebrated on the fifth of June every year and is the United Nation\'s principal vehicle for encouraging awareness and action for the protection of the environment. First held in 1974, it has been a flagship campaign for raising awareness on emerging environmental issues from marine pollution, human overpopulation, and global warming. WED has grown to become a global platform for public outreach, with participation from over one hundred countries annually. Each year, WED chooses a new theme that major corporations, non-governmental organizations, communities, governments and celebrities worldwide adopt to advocate environmental causes. For example, the theme for 2018 is Beat Plastic Pollution"". The goal is to encourage people to change their everyday habits in ways which can reduce plastic pollution. Specifically, the campaign hopes to reduce the prevalence of single-use or disposable plastic items, as they have severe environmental consequences. In response to this campaign, the Indian government has pledged to eliminate all single-use plastic in India by 2022.""': 8.2, ""A monocle is a type of corrective lens used to correct or enhance the vision in only one eye. It consists of a circular lens, generally with a wire ring around the circumference that can be attached to a string or wire. \\nThe other end of the string is then connected to the wearer's clothing to avoid losing the monocle. During the late nineteenth century, the monocle was generally associated with wealthy, upper-class men. Combined with a long coat and a top hat, the monocle completed the costume of the stereotypical late nineteenth century capitalist. Monocles were also accessories of military officers from this period. Despite their prevalence in the late nineteenth century, monocles are rarely worn today. This is due in large part to advances in optometry, which allow for better measurement of refractive error, so that glasses and contact lenses can be prescribed with different strengths in each eye."": 7.7, 'Orange juice is a liquid extract of the orange tree fruit, produced by squeezing oranges. Commercial orange juice with a long shelf life is made by pasteurizing the juice and removing the oxygen from it. This removes much of the taste, necessitating the later addition of a flavor pack, generally made from orange products. Additionally, some juice is further processed by drying and later rehydrating the juice, or by concentrating the juice and later adding water to the concentrate. The health value of orange juice is debatable: it has a high concentration of vitamin C, but also a very high concentration of simple sugars, comparable to soft drinks. As a result, some government nutritional advice has been adjusted to encourage substitution of orange juice with raw fruit, which is digested more slowly, and limit daily consumption.': 7.0, 'The International Union for Conservation of Nature is an international organization working in the field of nature conservation and the sustainable use of natural resources. It is involved in data gathering and analysis, research, field projects, advocacy, and education. Its mission is to influence, encourage and assist societies throughout the world to conserve nature and to ensure that any use of natural resources is equitable and ecologically sustainable"". Over the past decades, the organization has widened its focus beyond conservation ecology and now incorporates issues related to sustainable development in its projects. Unlike many other international environmental organizations, it does not aim to mobilize the public in support of \\nnature conservation. Instead, the organization tries to influence the actions of governments, business and other stakeholders by providing information and advice, and through building partnerships. The organization is best known to the wider public for compiling and publishing the ""Red List of Threatened Species"", which assesses the conservation status of species worldwide. Today, the organization employs approximately one thousand full-time staff in more than fifty countries.""': 6.9, ""A vehicle registration plate is a metal or plastic plate attached to a vehicle for official\\nidentification purposes. All countries require registration plates for road vehicles such as cars, trucks,\\nand motorcycles. Whether they are required for other vehicles, such as bicycles, boats, or tractors, may vary \\nby jurisdiction. The registration identifier is a series of letters and digits that uniquely identifies the vehicle owner within the issuing region's vehicle register. In some countries, the identifier is unique within the entire country, while in others it is unique within a state or province. France was the first country to introduce the registration plate, in the late nineteenth century. Early twentieth century plates varied in size and shape from one jurisdiction to the next, such that if a person moved, new holes would need to be drilled into the automobile to support the new plate. Standardization of plates came in the late fifties, when automobile manufacturers came to an agreement with governments and international organizations."": 6.9}"
+participant_id,categorical,388898,0.0,,,,,,,,763,
+prolec_NW,numeric,388898,0.0,-1.0,-1.0,-0.6395121600008228,-1.0,-1.0,40.0,3.731011887310948,9,"{-1.0: 99.1, 39.0: 0.3, 37.0: 0.2, 38.0: 0.2, 40.0: 0.1, 35.0: 0.0, 36.0: 0.0, 33.0: 0.0, 31.0: 0.0}"
+prolec_W,numeric,388898,0.0,-1.0,-1.0,-0.6210137362496079,-1.0,-1.0,40.0,3.9186821097634246,3,"{-1.0: 99.1, 40.0: 0.8, 39.0: 0.1}"
+pse-word-reading-hebrew,numeric,388898,0.0,-1.0,-1.0,-0.6307875072641155,-1.0,-1.0,50.0,3.6997290662006703,28,
+pseudowords,numeric,388898,0.0,-1.0,-1.0,-0.760734177084994,-1.0,-1.0,60.0,3.3568603628671765,20,
+ptb_pos,numeric,1992,99.5,0.0,0.0,0.9839357429718876,1.0,3.0,3.0,1.0728103846598445,4,"{0.0: 43.1, 1.0: 30.6, 3.0: 15.2, 2.0: 11.1}"
+rate,numeric,42064,89.2,20.0,122.30000000000018,265.80460726511984,229.0,401.0,240000.0,1194.1850205582286,1077,
+real words,numeric,388898,0.0,-1.0,-1.0,-0.5913967158483715,-1.0,-1.0,98.0,5.741530771452312,24,
+refix,numeric,246273,36.7,0.0,0.0,0.2320879674182716,0.0,1.0,1.0,0.4221656860547481,2,"{0.0: 76.8, 1.0: 23.2}"
+reread,numeric,288337,25.9,0.0,0.0,0.31152783028192704,0.0,1.0,1.0,0.4631187591644872,2,"{0.0: 68.8, 1.0: 31.2}"
+right_dependents_count,numeric,1992,99.5,0.0,0.0,0.48343373493975905,0.0,1.0,5.0,0.7342702802282174,6,"{0.0: 62.9, 1.0: 28.5, 2.0: 6.4, 3.0: 1.7, 4.0: 0.4, 5.0: 0.1}"
+sent,categorical,42196,89.1,,,,,,,,1170,
+sent.nwords,numeric,42064,89.2,2.0,10.0,18.721448269303917,17.0,29.0,64.0,7.922083910427608,49,
+sentnum,numeric,388898,0.0,1.0,1.0,4.858554171016565,5.0,8.0,16.0,2.65562396810087,16,
+sex,categorical,388898,0.0,,,,,,,,3,"{'': 94.0, 'F': 5.0, 'M': 1.0}"
+singlefix,numeric,346702,10.9,0.0,0.0,0.5720936135355434,1.0,1.0,1.0,0.4947759260296994,2,"{1.0: 57.2, 0.0: 42.8}"
+singlefix.cland,numeric,198346,49.0,-14.5,-3.0,-0.6941657507587751,-0.5,1.0,10.0,1.777792156725853,44,
+singlefix.dur,numeric,198346,49.0,1.0,122.0,216.2093916691035,200.0,326.0,2496.0,94.89278151466634,974,
+singlefix.land,numeric,198346,49.0,0.0,0.0,2.491625744910409,2.0,5.0,21.0,2.017854447660762,22,
+singlefix.launch,numeric,196692,49.4,-110.0,-7.0,-0.5537490086022817,5.0,12.0,103.0,22.102287671482866,210,
+singlefix.sac.in,numeric,196692,49.4,-112.0,-9.0,1.0330364224269417,7.0,14.0,106.0,23.538732478055135,214,
+singlefix.sac.out,numeric,197650,49.2,-112.0,-13.0,-1.029592714394131,6.0,13.0,104.0,24.136591710184106,213,
+slrt.nw.perc,numeric,388898,0.0,-1.0,-1.0,-0.43533780065724176,-1.0,-1.0,98.0,5.8919286140325475,29,
+slrt.nw.raw,numeric,388898,0.0,-1.0,-1.0,-0.16442614773025319,-1.0,-1.0,111.0,7.990977545459538,32,
+slrt.w.perc,numeric,388898,0.0,-1.0,-1.0,-0.4067210425355749,-1.0,-1.0,98.0,6.115658406782557,26,
+slrt.w.raw,numeric,388898,0.0,-1.0,-1.0,0.30688252446656966,-1.0,-1.0,150.0,12.400537082052542,31,
+spell_heb,numeric,388898,0.0,-1.0,-1.0,-0.8155248934167828,-1.0,-1.0,19.0,1.7944193988538144,8,"{-1.0: 98.9, 18.0: 0.3, 17.0: 0.3, 16.0: 0.2, 15.0: 0.2, 14.0: 0.1, 19.0: 0.0, 13.0: 0.0}"
+spelling,numeric,388898,0.0,-1.0,-1.0,-0.5789924350343792,-1.0,-1.0,64.0,4.165774764261967,14,"{-1.0: 99.0, 36.0: 0.2, 37.0: 0.1, 39.0: 0.1, 40.0: 0.1, 43.0: 0.1, 42.0: 0.1, 44.0: 0.1, 41.0: 0.1, 38.0: 0.1, 30.0: 0.0, 64.0: 0.0, 32.0: 0.0, 54.0: 0.0}"
+start_of_line,numeric,388898,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
+subid_x,categorical,388898,0.0,,,,,,,,763,
+subid_y,categorical,388898,0.0,,,,,,,,20,
+subject,categorical,388898,0.0,,,,,,,,46,
+subtlex_frequency,numeric,1992,99.5,4.9145657393380295,5.425888254570233,inf,12.454816780354882,19.608532730534762,inf,,656,
+supplementary_id,categorical,42196,89.1,,,,,,,,525,
+tmp,categorical,42196,89.1,,,,,,,,4756,
+total.dur,numeric,42064,89.2,3.0,2163.3,5401.347684480791,4603.0,9524.400000000009,45030.0,3424.723745077558,11562,
+total.nfix,numeric,42064,89.2,1.0,11.0,25.70485450741727,22.0,45.0,196.0,15.569450458305512,148,
+total_skip,numeric,388898,0.0,0.0,0.0,0.25857937042617857,0.0,1.0,1.0,0.43785451075682946,2,"{0.0: 74.1, 1.0: 25.9}"
+trial,numeric,0,100.0,,,,,,,,0,{}
+trialnum,numeric,346702,10.9,1.0,3.0,7.176217616281417,7.0,12.0,13.0,3.424700844723612,13,"{4.0: 9.9, 8.0: 9.8, 2.0: 9.3, 5.0: 9.1, 3.0: 8.7, 11.0: 8.6, 6.0: 8.0, 7.0: 7.9, 10.0: 7.8, 12.0: 7.0, 9.0: 6.9, 13.0: 6.6, 1.0: 0.3}"
+unique_paragraph_id,numeric,388898,0.0,1.0,2.0,6.246079948984052,6.0,11.0,12.0,3.4160177939473635,12,"{3.0: 9.7, 7.0: 9.6, 1.0: 9.1, 4.0: 9.1, 10.0: 9.0, 2.0: 8.6, 9.0: 8.2, 5.0: 8.2, 6.0: 7.7, 8.0: 7.0, 11.0: 6.9, 12.0: 6.9}"
+unique_trial_id,categorical,388898,0.0,,,,,,,,6743,
+universal_pos,categorical,1992,99.5,,,,,,,,13,"{'NOUN': 27.4, 'ADP': 13.3, 'VERB': 11.1, 'DET': 10.9, 'ADJ': 10.7, 'AUX': 6.0, 'ADV': 4.5, 'CCONJ': 4.4, 'PRON': 3.7, 'PROPN': 3.2, 'SCONJ': 1.9, 'PART': 1.9, 'NUM': 1.1}"
+vocab,numeric,388898,0.0,-1.0,-1.0,-0.12575791081466092,-1.0,-1.0,227.0,9.063588538293319,29,
+vocab-fluency-animals,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+vocab-fluency-clothes,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+vocab-fluency-words-start-k,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+vocab-fluency-words-start-p,numeric,388898,0.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,0.0,1,{-1.0: 100.0}
+vocab_heb,numeric,388898,0.0,-1.0,-1.0,-0.6754496037521407,-1.0,-1.0,38.0,3.1901549481519256,19,
+word-reading-hebrew,numeric,388898,0.0,-1.0,-1.0,-0.12591219291433745,-1.0,-1.0,103.0,8.540448776306098,29,
+word_length,numeric,346629,10.9,1.0,2.0,5.078617195906863,4.0,10.0,30.0,3.51293014435108,26,
+word_length_no_punctuation,numeric,1992,99.5,1.0,2.0,5.220883534136546,4.0,10.0,23.0,3.007842690687732,17,
+wordfreq_frequency,numeric,1992,99.5,4.218934101564037,5.216250016992825,11.293272763108734,11.627787821147072,17.408006613267162,36.541209043760986,5.060023131159256,350,
+ws.norm,numeric,388898,0.0,-1.0,-1.0,-0.390567706699443,-1.0,-1.0,64.0,5.836594083111182,7,"{-1.0: 98.9, 53.0: 0.4, 58.0: 0.3, 64.0: 0.2, 49.0: 0.1, 46.0: 0.1, 44.0: 0.0}"
+ws.perc,numeric,388898,0.0,-1.0,-1.0,-0.2609347438145735,-1.0,-1.0,92.0,7.2725047798292195,7,"{-1.0: 98.9, 62.0: 0.4, 79.0: 0.3, 92.0: 0.2, 46.0: 0.1, 34.0: 0.1, 27.0: 0.0}"
+ws.raw,numeric,388898,0.0,-1.0,-1.0,-0.6812943239615529,-1.0,-1.0,30.0,3.040606339308815,7,"{-1.0: 98.9, 28.0: 0.4, 29.0: 0.3, 30.0: 0.2, 27.0: 0.1, 26.0: 0.1, 25.0: 0.0}"
+ws.rt,numeric,388898,0.0,-1.0,-1.0,52.839163482455554,-1.0,-1.0,9676.0,528.0633092528784,45,
+yr.educ,numeric,388898,0.0,-1.0,-1.0,-0.46441740507793816,-1.0,-1.0,19.0,2.3181343908366285,17,

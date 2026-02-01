@@ -87,3 +87,9 @@ class MECOL2Dataset(ETDataset):
                 dtype=torch.float32,
             )
         }
+
+
+class MECOL1Dataset(MECOL2Dataset):
+    """
+    A PyTorch dataset for eye movement features for MECOL1.
+    """

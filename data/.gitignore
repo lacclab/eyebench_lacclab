@@ -26,4 +26,8 @@ OneStopL2/*
 !OneStopL2/folds_metadata
 !OneStopL2/additional_raw
 
+MECOL1/*
+!MECOL1/folds_metadata
+!MECOL1/additional_raw
+
 cache
