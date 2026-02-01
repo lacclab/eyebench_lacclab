@@ -127,6 +127,30 @@ gsf_features = [
     'universal_pos_normalized_IA_FIRST_FIXATION_DURATION',
 ]
 
+POS_COL = 'universal_pos'
+
+EYE_METRICS_NICKNAMES = {
+    "GD": "IA_FIRST_RUN_DWELL_TIME",
+    "FirstFixProg": "IA_FIRST_FIX_PROGRESSIVE",
+    "RegPD": "IA_REGRESSION_PATH_DURATION",
+    'NF': "IA_FIXATION_COUNT",
+    "FirstPassFF": "FirstPassFFD",
+    # relevant to us, fixation metrics:
+    "FF": "IA_FIRST_FIXATION_DURATION",
+    "FP":"IA_FIRST_RUN_DWELL_TIME",
+    "TF": "IA_DWELL_TIME",
+    "RP":"IA_REGRESSION_PATH_DURATION",
+    "SKIP": "IA_SKIP",
+}
+
+EYE_METRICS_NICKNAMES_INVERTED = {value: key for key, value in EYE_METRICS_NICKNAMES.items()}
+
+WORD_PROPERTY_COLUMNS = [
+    "word_length",
+    "wordfreq_frequency",
+    "gpt2_surprisal",
+]
+
 
 #### Dataset Language Constants
 class DatasetLanguage(StrEnum):
@@ -541,3 +565,15 @@ class RegrSupportedMetrics(StrEnum):
     RMSE = 'rmse'
     MAE = 'mae'
     R2 = 'r2'
+
+class PosColTypes(StrEnum):
+    """
+    Enum for POS column types.
+
+    Attributes:
+        UNIVERSAL (str): Represents the universal POS tags.
+        DETAILED (str): Represents the detailed POS tags.
+    """
+
+    UNIVERSAL = 'universal_pos'
+    DETAILED = 'ptb_pos'
