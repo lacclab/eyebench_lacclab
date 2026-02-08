@@ -26,8 +26,32 @@ ALL_REGIMES = REGIMES + ['all']
 # Regression tasks (tasks where the target is continuous)
 REG_TASKS = [
     'MECOL2_LEX',  # Vocabulary Knowledge
+    'MECOL1_LEX',  # Vocabulary Knowledge
     'CopCo_RCS',  # Reading Comprehension Skill
     'SBSAT_STD',  # Subjective Text Difficulty
+    'OneStopL2_LEX',  # Vocabulary Knowledge (OneStopL2)
+    'OneStopL2_MICH',  # Michigan Test
+    'OneStopL2_MICH_R',  # Michigan Reading
+    'OneStopL2_MICH_G',  # Michigan Grammar
+    'OneStopL2_MICH_V',  # Michigan Vocabulary
+    'OneStopL2_MICH_L',  # Michigan Listening
+    'OneStopL2_MICH_LG',  # Michigan Listening+Grammar
+    'OneStopL2_MICH_VR',  # Michigan Vocab+Reading
+    'OneStopL2_MICH_GVR',  # Michigan Grammar+Vocab+Reading
+    'OneStopL2_LOG_MICH',  # Log Michigan
+    'OneStopL2_LOG_MICH_R',  # Log Michigan Reading
+    'OneStopL2_LOG_MICH_G',  # Log Michigan Grammar
+    'OneStopL2_LOG_MICH_V',  # Log Michigan Vocabulary
+    'OneStopL2_LOG_MICH_L',  # Log Michigan Listening
+    'OneStopL2_LOG_MICH_LG',  # Log Michigan Listening+Grammar
+    'OneStopL2_LOG_MICH_VR',  # Log Michigan Vocab+Reading
+    'OneStopL2_LOG_MICH_GVR',  # Log Michigan Grammar+Vocab+Reading
+    'OneStopL2_TOE',  # TOEFL Total
+    'OneStopL2_TOE_R',  # TOEFL Reading
+    'OneStopL2_TOE_L',  # TOEFL Listening
+    'OneStopL2_TOE_S',  # TOEFL Speaking
+    'OneStopL2_TOE_W',  # TOEFL Writing
+    'OneStopL2_TOE_LR',  # TOEFL Listening+Reading
 ]
 
 
@@ -549,7 +573,32 @@ if __name__ == '__main__':
         'CopCo_RCS',  # Reading Comprehension Skill (Regression)
         'CopCo_TYP',  # Dyslexia Detection
         'MECOL2_LEX',  # Vocabulary Knowledge (Regression)
+        'MECOL1_LEX',  # Vocabulary Knowledge (Regression)
         'OneStop_RC',  # Reading Comprehension
+        'OneStopL2_LEX',  # Vocabulary Knowledge (Regression)
+        'OneStopL2_MICH',  # Michigan Test (Regression)
+        'OneStopL2_MICH_R',  # Michigan Reading (Regression)
+        'OneStopL2_MICH_G',  # Michigan Grammar (Regression)
+        'OneStopL2_MICH_V',  # Michigan Vocabulary (Regression)
+        'OneStopL2_MICH_L',  # Michigan Listening (Regression)
+        'OneStopL2_MICH_LG',  # Michigan Listening+Grammar (Regression)
+        'OneStopL2_MICH_VR',  # Michigan Vocab+Reading (Regression)
+        'OneStopL2_MICH_GVR',  # Michigan Grammar+Vocab+Reading (Regression)
+        'OneStopL2_LOG_MICH',  # Log Michigan (Regression)
+        'OneStopL2_LOG_MICH_R',  # Log Michigan Reading (Regression)
+        'OneStopL2_LOG_MICH_G',  # Log Michigan Grammar (Regression)
+        'OneStopL2_LOG_MICH_V',  # Log Michigan Vocabulary (Regression)
+        'OneStopL2_LOG_MICH_L',  # Log Michigan Listening (Regression)
+        'OneStopL2_LOG_MICH_LG',  # Log Michigan Listening+Grammar (Regression)
+        'OneStopL2_LOG_MICH_VR',  # Log Michigan Vocab+Reading (Regression)
+        'OneStopL2_LOG_MICH_GVR',  # Log Michigan Grammar+Vocab+Reading (Regression)
+        'OneStopL2_TOE',  # TOEFL Total (Regression)
+        'OneStopL2_TOE_R',  # TOEFL Reading (Regression)
+        'OneStopL2_TOE_L',  # TOEFL Listening (Regression)
+        'OneStopL2_TOE_S',  # TOEFL Speaking (Regression)
+        'OneStopL2_TOE_W',  # TOEFL Writing (Regression)
+        'OneStopL2_TOE_LR',  # TOEFL Listening+Reading (Regression)
+        'OneStopL2_RC',  # Reading Comprehension
         'SBSAT_RC',  # Reading Comprehension
         'PoTeC_RC',  # Reading Comprehension
         'SBSAT_STD',  # Subjective Text Difficulty (Regression)
@@ -590,6 +639,12 @@ if __name__ == '__main__':
         # 'XGBoostMLArgs',
         'LogisticRegressionMLArgs',
         'LogisticMeziereArgs',
+        'LogisticFixationMetricsArgs',
+        'LogisticSClustersNoNormArgs',
+        'LogisticWpCoefsArgs',
+        'LogisticWpCoefsNoNormArgs',
+        'LogisticWpCoefsNoInterceptArgs',
+        'LogisticWpCoefsNoNormNoInterceptArgs',
         'DummyClassifierMLArgs',
         'RandomForestMLArgs',
     ]
@@ -604,6 +659,13 @@ if __name__ == '__main__':
         'RandomForestRegressorMLArgs',
         'LinearRegressionArgs',
         'LinearMeziereArgs',
+        'LinearSClustersArgs',
+        'LinearFixationMetricsArgs',
+        'LinearSClustersNoNormArgs',
+        'LinearWpCoefsArgs',
+        'LinearWpCoefsNoNormArgs',
+        'LinearWpCoefsNoInterceptArgs',
+        'LinearWpCoefsNoNormNoInterceptArgs',
         'DummyRegressorMLArgs',
     ]
     ml_regression_models = _build_entries(ml_regression_names, TrainerML, True, False)

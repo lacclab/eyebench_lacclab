@@ -1,54 +1,54 @@
 column,type,count,percent_null,min,quantile_10,mean,median,quantile_90,max,std,nunique,distribution
-AbsDistance2Head,numeric,2009,99.8,0.0,1.0,2.217023394723743,1.0,4.0,19.0,2.412552024489163,19,
-CURENT_FIX_START,numeric,1208284,0.0,1.0,4503.300000000003,27743.994566674723,23873.0,55061.0,203796.0,21276.223497015235,99622,
-CURRENT_FIX_BLINK_AROUND,numeric,1208284,0.0,0.0,0.0,0.10856967401703572,0.0,1.0,1.0,0.3110986660207712,2,"{0.0: 89.1, 1.0: 10.9}"
+AbsDistance2Head,numeric,2009,99.8,0.0,1.0,2.217023394723743,1.0,4.0,19.0,2.4125520244891625,19,
+CURENT_FIX_START,numeric,1208284,0.0,1.0,4503.300000000003,27743.994566674723,23873.0,55061.0,203796.0,21276.223497015242,99622,
+CURRENT_FIX_BLINK_AROUND,numeric,1208284,0.0,0.0,0.0,0.10856967401703572,0.0,1.0,1.0,0.31109866602077113,2,"{0.0: 89.1, 1.0: 10.9}"
 CURRENT_FIX_DURATION,numeric,1208284,0.0,1.0,121.0,222.54368923200175,205.0,340.0,5939.0,105.24048845309167,1526,
-CURRENT_FIX_END,numeric,1208284,0.0,1.0,4721.0,27965.538255906726,24093.0,55290.0,203997.0,21282.3537665206,99874,
+CURRENT_FIX_END,numeric,1208284,0.0,1.0,4721.0,27965.538255906726,24093.0,55290.0,203997.0,21282.353766520602,99874,
 CURRENT_FIX_INDEX,numeric,1208284,0.0,1.0,19.0,106.64939947893045,94.0,208.0,655.0,76.91873920447402,655,
 CURRENT_FIX_INTEREST_AREA_FIX_COUNT,numeric,1208284,0.0,1.0,1.0,1.9149231472071135,1.0,4.0,77.0,1.7072421948339744,77,
-CURRENT_FIX_INTEREST_AREA_ID,numeric,1208284,0.0,1.0,3.0,14.531185549092763,12.0,30.0,113.0,11.601492097608663,113,
-CURRENT_FIX_INTEREST_AREA_INDEX,numeric,1208284,0.0,1.0,12.0,69.08372783219839,66.0,129.0,187.0,43.622813477693434,187,
+CURRENT_FIX_INTEREST_AREA_ID,numeric,1208284,0.0,1.0,3.0,14.531185549092763,12.0,30.0,113.0,11.601492097608665,113,
+CURRENT_FIX_INTEREST_AREA_INDEX,numeric,1208284,0.0,1.0,12.0,69.08372783219839,66.0,129.0,187.0,43.62281347769343,187,
 CURRENT_FIX_INTEREST_AREA_LABEL,categorical,1208284,0.0,,,,,,,,793,
 CURRENT_FIX_LABEL,categorical,1208284,0.0,,,,,,,,793,
 CURRENT_FIX_NEAREST_INTEREST_AREA_DISTANCE,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 CURRENT_FIX_PUPIL,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 CURRENT_FIX_PUPIL_SIZE,numeric,1208284,0.0,139.0,530.0,910.3335747224991,863.0,1358.0,7743.0,323.51870826836614,2433,
-CURRENT_FIX_X,numeric,1208284,0.0,-218.0,228.9,868.8713312433173,848.6,1547.4,2122.2,479.0799096862587,18131,
-CURRENT_FIX_Y,numeric,1208284,0.0,-24.2,110.0,271.40625333117066,261.7,446.3,854.0,126.27430385969717,7259,
+CURRENT_FIX_X,numeric,1208284,0.0,-218.0,228.9,868.871331243317,848.6,1547.4,2122.2,479.07990968625865,18131,
+CURRENT_FIX_Y,numeric,1208284,0.0,-24.2,110.0,271.4062533311705,261.7,446.3,854.0,126.27430385969716,7259,
 IA_BOTTOM,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
-IA_DWELL_TIME,numeric,879366,27.2,1.0,178.0,601.6028400006368,424.0,1167.0,15138.0,642.6453890766417,3409,
-IA_DWELL_TIME_%,numeric,879366,27.2,2.6378264310208388e-05,0.004280298779617742,0.012923045401534758,0.010054947108735468,0.024274051667205043,0.2429312260772935,0.010840251267609874,434276,
+IA_DWELL_TIME,numeric,879366,27.2,1.0,178.0,601.6028400006368,424.0,1167.0,15138.0,642.6453890766415,3409,
+IA_DWELL_TIME_%,numeric,879366,27.2,2.6378264310208388e-05,0.004280298779617742,0.012923045401534758,0.010054947108735468,0.024274051667205043,0.2429312260772935,0.01084025126760987,434276,
 IA_FIRST_FIXATION_DURATION,numeric,879366,27.2,1.0,119.0,221.49526135875163,205.0,338.0,4986.0,101.98692034857767,1183,
 IA_FIRST_FIXATION_VISITED_IA_COUNT,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
-IA_FIRST_FIX_PROGRESSIVE,numeric,879401,27.2,0.0,0.0,0.8073768394623159,1.0,1.0,1.0,0.39435980450524555,2,"{1.0: 80.7, 0.0: 19.3}"
-IA_FIRST_RUN_DWELL_TIME,numeric,879366,27.2,1.0,136.0,339.5350502521135,261.0,594.0,6932.0,307.63875446189627,2241,
+IA_FIRST_FIX_PROGRESSIVE,numeric,879401,27.2,0.0,0.0,0.8073768394623159,1.0,1.0,1.0,0.3943598045052456,2,"{1.0: 80.7, 0.0: 19.3}"
+IA_FIRST_RUN_DWELL_TIME,numeric,879366,27.2,1.0,136.0,339.5350502521135,261.0,594.0,6932.0,307.6387544618963,2241,
 IA_FIRST_RUN_FIXATION_COUNT,numeric,879366,27.2,1.0,1.0,1.5320787931305053,1.0,2.0,25.0,1.0995331071195062,24,
 IA_FIRST_RUN_LANDING_POSITION,numeric,879366,27.2,0.0,0.0,2.5224241100975022,2.0,5.0,15.0,2.076450537552317,16,
-IA_FIRST_RUN_LAUNCH_SITE,numeric,866636,28.3,-110.0,-10.0,-3.246431027559437,4.0,10.0,108.0,27.4205262618048,218,
-IA_FIXATION_%,numeric,879366,27.2,0.0015267175572519084,0.004830917874396135,0.012960245504895222,0.010471204188481676,0.023622047244094488,0.15789473684210525,0.009645656597410143,2661,
-IA_FIXATION_COUNT,numeric,879366,27.2,1.0,1.0,2.6858498054280013,2.0,5.0,53.0,2.399207551775139,38,
+IA_FIRST_RUN_LAUNCH_SITE,numeric,866636,28.3,-110.0,-10.0,-3.246431027559437,4.0,10.0,108.0,27.420526261804802,218,
+IA_FIXATION_%,numeric,879366,27.2,0.0015267175572519084,0.004830917874396135,0.012960245504895222,0.010471204188481676,0.023622047244094488,0.15789473684210525,0.009645656597410141,2661,
+IA_FIXATION_COUNT,numeric,879366,27.2,1.0,1.0,2.6858498054280013,2.0,5.0,53.0,2.3992075517751394,38,
 IA_ID,numeric,879401,27.2,1.0,12.0,68.7098991245177,66.0,129.0,187.0,43.433888496262796,187,
 IA_LABEL,categorical,879401,27.2,,,,,,,,793,
 IA_LAST_FIXATION_DURATION,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 IA_LAST_RUN_DWELL_TIME,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 IA_LAST_RUN_FIXATION_COUNT,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 IA_LEFT,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
-IA_REGRESSION_IN,numeric,879366,27.2,0.0,0.0,0.3113834285155442,0.0,1.0,1.0,0.4630594268566378,2,"{0.0: 68.9, 1.0: 31.1}"
-IA_REGRESSION_IN_COUNT,numeric,879366,27.2,0.0,0.0,0.3113834285155442,0.0,1.0,1.0,0.4630594268566378,2,"{0.0: 68.9, 1.0: 31.1}"
-IA_REGRESSION_IN_COUNT_sum,numeric,1208284,0.0,0.0,0.0,52.71768143913186,41.0,126.0,503.0,56.53504290749758,250,
+IA_REGRESSION_IN,numeric,879366,27.2,0.0,0.0,0.3113834285155442,0.0,1.0,1.0,0.46305942685663787,2,"{0.0: 68.9, 1.0: 31.1}"
+IA_REGRESSION_IN_COUNT,numeric,879366,27.2,0.0,0.0,0.3113834285155442,0.0,1.0,1.0,0.46305942685663787,2,"{0.0: 68.9, 1.0: 31.1}"
+IA_REGRESSION_IN_COUNT_sum,numeric,1208284,0.0,0.0,0.0,52.71768143913186,41.0,126.0,503.0,56.53504290749759,250,
 IA_REGRESSION_OUT,numeric,879366,27.2,0.0,0.0,0.32710611963619246,0.0,1.0,1.0,0.4691566438150004,2,"{0.0: 67.3, 1.0: 32.7}"
 IA_REGRESSION_OUT_COUNT,numeric,879366,27.2,0.0,0.0,0.32710611963619246,0.0,1.0,1.0,0.4691566438150004,2,"{0.0: 67.3, 1.0: 32.7}"
 IA_REGRESSION_OUT_FULL_COUNT,numeric,879366,27.2,0.0,0.0,0.32710611963619246,0.0,1.0,1.0,0.4691566438150004,2,"{0.0: 67.3, 1.0: 32.7}"
 IA_REGRESSION_PATH_DURATION,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 IA_RIGHT,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 IA_RUN_COUNT,numeric,879366,27.2,1.0,1.0,1.7965864042958222,1.0,3.0,24.0,1.174339807299687,19,
-IA_SELECTIVE_REGRESSION_PATH_DURATION,numeric,869322,28.1,0.0,0.0,329.84355049107234,265.0,677.0,9823.0,346.2346290063045,2321,
+IA_SELECTIVE_REGRESSION_PATH_DURATION,numeric,869322,28.1,0.0,0.0,329.84355049107234,265.0,677.0,9823.0,346.23462900630443,2321,
 IA_SKIP,numeric,879401,27.2,0.0,0.0,3.9799818285401084e-05,0.0,0.0,1.0,0.006308587759236468,2,"{0.0: 100.0, 1.0: 0.0}"
 IA_TOP,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 LengthCategory,categorical,879401,27.2,,,,,,,,4,"{2: 59.2, 1: 31.8, 3: 8.3, 0: 0.8}"
 NEXT_FIX_ANGLE,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 NEXT_FIX_DISTANCE,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
-NEXT_FIX_INTEREST_AREA_INDEX,numeric,1208283,0.0,1.0,12.0,69.08372955673464,66.0,129.0,187.0,43.62283148808797,187,
+NEXT_FIX_INTEREST_AREA_INDEX,numeric,1208283,0.0,1.0,12.0,69.08372955673464,66.0,129.0,187.0,43.62283148808799,187,
 NEXT_SAC_AMPLITUDE,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 NEXT_SAC_ANGLE,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 NEXT_SAC_AVG_VELOCITY,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
@@ -58,7 +58,7 @@ NEXT_SAC_END_Y,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 NEXT_SAC_PEAK_VELOCITY,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 NEXT_SAC_START_X,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 NEXT_SAC_START_Y,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
-PARAGRAPH_RT,numeric,879401,27.2,11719239.0,13978240.0,16575483.551827893,16786773.0,19493135.0,19493135.0,2340052.0044764513,12,"{19493135.0: 10.1, 18379981.0: 9.6, 18738243.0: 9.6, 18527498.0: 9.5, 18617052.0: 9.4, 16786773.0: 8.5, 14982543.0: 7.8, 14560831.0: 7.5, 14747813.0: 7.5, 13978240.0: 7.2, 14107525.0: 7.2, 11719239.0: 6.0}"
+PARAGRAPH_RT,numeric,879401,27.2,11719239.0,13978240.0,16575483.551827893,16786773.0,19493135.0,19493135.0,2340052.004476452,12,"{19493135.0: 10.1, 18379981.0: 9.6, 18738243.0: 9.6, 18527498.0: 9.5, 18617052.0: 9.4, 16786773.0: 8.5, 14982543.0: 7.8, 14560831.0: 7.5, 14747813.0: 7.5, 13978240.0: 7.2, 14107525.0: 7.2, 11719239.0: 6.0}"
 PREVIOUS_FIX_ANGLE,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 PREVIOUS_FIX_DISTANCE,numeric,1208284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0: 100.0}
 Relationship,categorical,2009,99.8,,,,,,,,38,
@@ -70,88 +70,88 @@ Token,categorical,2009,99.8,,,,,,,,678,
 Token_idx,numeric,2009,99.8,0.0,11.0,67.45196615231458,66.0,126.0,183.0,43.55533879122027,180,
 Word,categorical,2009,99.8,,,,,,,,678,
 Word_idx,numeric,2009,99.8,1.0,12.0,68.45196615231458,67.0,127.0,184.0,43.55533879122027,180,
-blink,numeric,879401,27.2,0.0,0.0,0.20233545333698733,0.0,1.0,1.0,0.40174121171392807,2,"{0.0: 79.8, 1.0: 20.2}"
-cft20,numeric,1166041,3.5,1.0,6.0,8.678199994682863,9.0,11.0,12.0,1.9237061131508544,12,"{9.0: 24.1, 10.0: 21.0, 8.0: 15.8, 7.0: 11.5, 11.0: 9.5, 12.0: 5.5, 6.0: 5.3, 5.0: 4.0, 4.0: 2.7, 2.0: 0.3, 1.0: 0.2, 3.0: 0.2}"
+blink,numeric,879401,27.2,0.0,0.0,0.20233545333698733,0.0,1.0,1.0,0.401741211713928,2,"{0.0: 79.8, 1.0: 20.2}"
+cft20,numeric,1166041,3.5,1.0,6.0,8.678199994682863,9.0,11.0,12.0,1.923706113150855,12,"{9.0: 24.1, 10.0: 21.0, 8.0: 15.8, 7.0: 11.5, 11.0: 9.5, 12.0: 5.5, 6.0: 5.3, 5.0: 4.0, 4.0: 2.7, 2.0: 0.3, 1.0: 0.2, 3.0: 0.2}"
 cond,numeric,1208284,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1,{1.0: 100.0}
 distance_to_head,numeric,2009,99.8,-19.0,-3.0,-0.23195619711299154,0.0,2.0,18.0,3.268672106028038,33,
 end_of_line,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 entity_type,categorical,119,100.0,,,,,,,,9,"{'DATE': 26.1, 'PERSON': 21.8, 'FAC': 15.1, 'ORG': 13.4, 'GPE': 6.7, 'TIME': 5.9, 'ORDINAL': 5.0, 'CARDINAL': 4.2, 'NORP': 1.7}"
-firstfix.cland,numeric,879366,27.2,-8.0,-3.5,-1.052736289554065,-1.0,1.5,7.0,1.9916727276855113,31,
-firstfix.sac.in,numeric,866636,28.3,-112.0,-13.0,-1.7496907582883703,7.0,12.0,111.0,28.954438324943897,222,
-firstfix.sac.out,numeric,877609,27.4,-112.0,-8.0,-0.5087208540477594,4.0,10.0,107.0,18.512562371836168,220,
+firstfix.cland,numeric,879366,27.2,-8.0,-3.5,-1.052736289554065,-1.0,1.5,7.0,1.9916727276855115,31,
+firstfix.sac.in,numeric,866636,28.3,-112.0,-13.0,-1.7496907582883703,7.0,12.0,111.0,28.954438324943894,222,
+firstfix.sac.out,numeric,877609,27.4,-112.0,-8.0,-0.5087208540477594,4.0,10.0,107.0,18.512562371836175,220,
 firstrun.gopast,numeric,869322,28.1,0.0,0.0,510.54038664614495,290.0,982.0,73604.0,1279.6754673414025,5897,
-firstrun.gopast.sel,numeric,869322,28.1,0.0,0.0,329.84355049107234,265.0,677.0,9823.0,346.2346290063045,2321,
+firstrun.gopast.sel,numeric,869322,28.1,0.0,0.0,329.84355049107234,265.0,677.0,9823.0,346.23462900630443,2321,
 firstrun.refix,numeric,879366,27.2,0.0,0.0,0.3344773393558541,0.0,1.0,1.0,0.4718076959451246,2,"{0.0: 66.6, 1.0: 33.4}"
 firstrun.reg.in,numeric,879366,27.2,0.0,0.0,0.09399954057809831,0.0,0.0,1.0,0.2918282436570136,2,"{0.0: 90.6, 1.0: 9.4}"
-firstrun.reg.out,numeric,879366,27.2,0.0,0.0,0.25793583104190976,0.0,1.0,1.0,0.4374987494488457,2,"{0.0: 74.2, 1.0: 25.8}"
-firstrun.skip,numeric,879401,27.2,0.0,0.0,0.1976731889092689,0.0,1.0,1.0,0.3982444973182198,2,"{0.0: 80.2, 1.0: 19.8}"
+firstrun.reg.out,numeric,879366,27.2,0.0,0.0,0.25793583104190976,0.0,1.0,1.0,0.43749874944884587,2,"{0.0: 74.2, 1.0: 25.8}"
+firstrun.skip,numeric,879401,27.2,0.0,0.0,0.1976731889092689,0.0,1.0,1.0,0.39824449731822,2,"{0.0: 80.2, 1.0: 19.8}"
 gpt2_surprisal,numeric,2009,99.8,0.000739539333153516,0.5845621824264526,4.070333003997803,3.5305395126342773,8.026423454284668,45.73716735839844,3.396747589111328,1198,
 head_direction,categorical,2009,99.8,,,,,,,,3,"{'RIGHT': 49.0, 'LEFT': 45.8, 'SELF': 5.2}"
 head_word_index,numeric,2009,99.8,1.0,12.0,68.22000995520159,67.0,127.0,185.0,43.55870675380119,170,
-ia.cland,numeric,1208284,0.0,-7.0,-2.0,0.3834562073154987,0.5,3.0,8.0,2.01440819357576,31,
-ia.firstskip,numeric,1208284,0.0,0.0,0.0,0.12399320027410775,0.0,1.0,1.0,0.32957393169838184,2,"{0.0: 87.6, 1.0: 12.4}"
-ia.land,numeric,1208284,0.0,1.0,1.0,3.959971331243317,4.0,7.0,16.0,2.3373171086680284,16,
+ia.cland,numeric,1208284,0.0,-7.0,-2.0,0.3834562073154987,0.5,3.0,8.0,2.0144081935757594,31,
+ia.firstskip,numeric,1208284,0.0,0.0,0.0,0.12399320027410775,0.0,1.0,1.0,0.3295739316983819,2,"{0.0: 87.6, 1.0: 12.4}"
+ia.land,numeric,1208284,0.0,1.0,1.0,3.959971331243317,4.0,7.0,16.0,2.337317108668028,16,
 ia.launch,numeric,1200955,0.6,-111.0,-6.0,-1.7622641980756981,2.0,8.0,110.0,20.072950521832084,221,
 ia.refix,numeric,1208284,0.0,0.0,0.0,0.20995229598339463,0.0,1.0,1.0,0.4072744365585274,2,"{0.0: 79.0, 1.0: 21.0}"
-ia.reg.in,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112866,2,"{0.0: 84.8, 1.0: 15.2}"
-ia.reg.in.from,numeric,183638,84.8,2.0,14.0,71.73190733943954,70.0,132.0,187.0,44.2945780593229,186,
+ia.reg.in,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112865,2,"{0.0: 84.8, 1.0: 15.2}"
+ia.reg.in.from,numeric,183638,84.8,2.0,14.0,71.73190733943954,70.0,132.0,187.0,44.29457805932291,186,
 ia.reg.out,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112865,2,"{0.0: 84.8, 1.0: 15.2}"
-ia.reg.out.to,numeric,183638,84.8,1.0,9.0,67.15433080299285,65.0,127.0,186.0,44.13658907328415,186,
-ia.run,numeric,1208284,0.0,1.0,1.0,1.4250656302657323,1.0,2.0,24.0,0.8203949439333816,24,
+ia.reg.out.to,numeric,183638,84.8,1.0,9.0,67.15433080299285,65.0,127.0,186.0,44.136589073284156,186,
+ia.run,numeric,1208284,0.0,1.0,1.0,1.4250656302657323,1.0,2.0,24.0,0.8203949439333815,24,
 ia.run.fix,numeric,1208284,0.0,1.0,1.0,1.3180783656822403,1.0,2.0,41.0,0.8575560824374384,41,
 is_content_word,numeric,2009,99.8,0.0,0.0,0.679940268790443,1.0,1.0,1.0,0.46661534148428235,2,"{np.int64(1): 68.0, np.int64(0): 32.0}"
 is_progressive,boolean,1208284,0.0,,,,,,,,2,"{True: 59.6, False: 40.4}"
-is_progressive_sum,numeric,1208284,0.0,0.0,77.0,125.10814758781876,119.0,179.0,423.0,44.42606825323005,253,
+is_progressive_sum,numeric,1208284,0.0,0.0,77.0,125.10814758781876,119.0,179.0,423.0,44.426068253230056,253,
 is_reg,boolean,1208284,0.0,,,,,,,,2,"{False: 74.7, True: 25.3}"
-is_reg_sum,numeric,1208284,0.0,2.0,17.0,55.378395311036144,41.0,115.0,289.0,42.54424428252568,215,
-itemid,numeric,1208284,0.0,1.0,2.0,6.610483959069225,7.0,12.0,12.0,3.419779118839059,12,"{12: 10.0, 5: 10.0, 4: 9.9, 7: 9.8, 1: 9.0, 8: 8.3, 6: 8.3, 11: 7.7, 10: 7.7, 9: 7.1, 3: 6.5, 2: 5.5}"
+is_reg_sum,numeric,1208284,0.0,2.0,17.0,55.378395311036144,41.0,115.0,289.0,42.544244282525675,215,
+itemid,numeric,1208284,0.0,1.0,2.0,6.610483959069225,7.0,12.0,12.0,3.41977911883906,12,"{12: 10.0, 5: 10.0, 4: 9.9, 7: 9.8, 1: 9.0, 8: 8.3, 6: 8.3, 11: 7.7, 10: 7.7, 9: 7.1, 3: 6.5, 2: 5.5}"
 lang_x,categorical,1208284,0.0,,,,,,,,12,"{'it': 10.7, 'ee': 10.3, 'he': 10.3, 'sp': 8.6, 'ge': 8.6, 'gr': 8.5, 'fi': 8.5, 'ru': 8.0, 'du': 7.6, 'en': 6.9, 'no': 6.9, 'tr': 5.2}"
 lang_y,categorical,1208284,0.0,,,,,,,,12,"{'it': 10.7, 'ee': 10.3, 'he': 10.3, 'sp': 8.6, 'ge': 8.6, 'gr': 8.5, 'fi': 8.5, 'ru': 8.0, 'du': 7.6, 'en': 6.9, 'no': 6.9, 'tr': 5.2}"
 left_dependents_count,numeric,2009,99.8,0.0,0.0,0.5619711299153808,0.0,2.0,6.0,0.9229625440568215,7,"{0.0: 64.0, 1.0: 22.8, 2.0: 8.5, 3.0: 2.7, 4.0: 1.5, 5.0: 0.4, 6.0: 0.0}"
 letter,categorical,1208284,0.0,,,,,,,,64,
 letternum,numeric,1208284,0.0,1.0,69.0,408.25069271793717,391.0,777.0,1089.0,260.5214920419431,1089,
-lextale,numeric,1208284,0.0,46.25,60.0,74.94319048336318,73.75,91.25,100.0,11.871887055349738,47,
+lextale,numeric,1208284,0.0,46.25,60.0,74.94319048336318,73.75,91.25,100.0,11.871887055349736,47,
 line,numeric,1208284,0.0,1.0,1.0,4.329915814493943,4.0,8.0,13.0,2.429834591539525,13,"{1.0: 14.8, 2.0: 13.8, 5.0: 13.0, 3.0: 13.0, 4.0: 12.7, 6.0: 11.7, 7.0: 9.1, 8.0: 6.6, 9.0: 3.6, 10.0: 1.3, 11.0: 0.2, 12.0: 0.1, 13.0: 0.0}"
-line.change,numeric,1208284,0.0,-11.0,0.0,0.027945416805982698,0.0,0.0,9.0,0.3959961211654381,21,
-line.let,numeric,1208284,0.0,1.0,9.0,51.392402779479,50.0,96.0,113.0,31.724818156393322,113,
+line.change,numeric,1208284,0.0,-11.0,0.0,0.027945416805982698,0.0,0.0,9.0,0.39599612116543814,21,
+line.let,numeric,1208284,0.0,1.0,9.0,51.392402779479,50.0,96.0,113.0,31.72481815639332,113,
 line.word,numeric,1208284,0.0,1.0,2.0,9.113765472355837,9.0,17.0,22.0,5.435570646383765,22,
-motiv,numeric,1202473,0.5,2.2,3.1,3.6375699911765187,3.7,4.1,4.4,0.3511222593279493,21,
-normalized_ID,numeric,879401,27.2,0.0,0.05913978494623656,0.3640317157232133,0.34946236559139787,0.6881720430107527,1.0,0.23351552954979996,187,
-normalized_incoming_regression_count,numeric,1208284,0.0,0.0,0.0,0.003908849244051895,0.0,0.014925373134328358,1.0,0.010123252681070682,250,
-normalized_outgoing_progressive_count,numeric,1208284,0.0,0.0,0.0,0.013297193203408218,0.00980392156862745,0.03,0.3382352941176471,0.015972878495938033,1706,
-normalized_outgoing_regression_count,numeric,1208284,0.0,0.0,0.0,0.007410375889509525,0.0,0.029411764705882353,0.5,0.016167772301837344,111,
+motiv,numeric,1202473,0.5,2.2,3.1,3.6375699911765174,3.7,4.1,4.4,0.3511222593279495,21,
+normalized_ID,numeric,879401,27.2,0.0,0.05913978494623656,0.3640317157232135,0.34946236559139787,0.6881720430107527,1.0,0.23351552954979996,187,
+normalized_incoming_regression_count,numeric,1208284,0.0,0.0,0.0,0.003908849244051895,0.0,0.014925373134328358,1.0,0.010123252681070683,250,
+normalized_outgoing_progressive_count,numeric,1208284,0.0,0.0,0.0,0.013297193203408221,0.00980392156862745,0.03,0.3382352941176471,0.015972878495938033,1706,
+normalized_outgoing_regression_count,numeric,1208284,0.0,0.0,0.0,0.007410375889509526,0.0,0.029411764705882353,0.5,0.01616777230183734,111,
 nrun,numeric,879366,27.2,1.0,1.0,1.7965864042958222,1.0,3.0,24.0,1.174339807299687,19,
 num_of_words_in_trial,numeric,879428,27.2,98.0,107.0,143.58053189118382,142.0,187.0,374.0,31.047528124944844,24,
 paragraph,categorical,1208284,0.0,,,,,,,,12,"{'The Internet has made life a whole lot easier for many people, but being online also brings with it very real risks. Hackers can steal personal and financial information. There are several precautions that computer users can take to minimize the level of risk that is involved with being online. One of the most obvious safety precautions is to purchase a good anti-virus and anti-spyware program. Passwords are also a very important part of online security, and several tips can help users create more secure passwords. First, they should be something that can easily be remembered, but they should not be something others can guess easily. Your first or last name, phone number, or the name of your street are all bad choices, as people could learn this information quite easily. Longer passwords are more secure, and those that use a mixture of upper and lower case letters and a combination of letters and numbers are more secure than those that do not. Finally, passwords should be changed often. This can make remembering them more difficult, but the extra effort is worth the added security.': 10.0, 'Technology is rapidly expanding the scope of capabilities for both professional and personal use; such is the case with smart phones. Professionals now have mobile devices available to them capable of digital media, internet access, phone communication, multi-person scheduling and office tools for documents and presentations. Businesspeople that are often mobile may maximize the use of these critical features on smart phones. Individuals who simply enjoy the luxury of multi-function devices often use these devices for frivolous pursuits such as downloading catchy ring tones, instant messaging about the latest gossip and looking up the world record for most cans crushed on one\x92s head during the Superbowl. This fusion of capabilities and increased availability of such devices could be a sign of a growing blend in society between work and personal life, or individuals could simply be taking a luxurious approach to their connectivity in personal lives.': 10.0, 'Howard Gardner was a psychologist best known for developing the theory of multiple intelligences. Basically, the theory states that the idea of general intelligence or overall intelligence is somewhat inaccurate. This is because people often show intelligence in different areas. He argued that there are actually different types of intelligence. One type of intelligence that Gardner identified was interpersonal intelligence. People who possess this type of intelligence relate and interact well with others. Intrapersonal intelligence, on the other hand, implies that people are in touch with their own feelings. They enjoy thinking about theories and developing their own thoughts and ideas. People who have linguistic intelligence learn best by taking notes and reading textbooks. These people usually excel in traditional academic environments, as many academic subjects stress these types of activities. The other types of intelligence are kinesthetic, musical, spatial, and logical.': 9.9, ""A bird's feathers are extremely important, and when they clean and smooth them, it is known as preening. Birds in the wild preen their feathers on a regular basis. This is true of most captive birds as well, but not all. For example, some birds do not preen their feathers at all. This problem is most common in birds that are taken from their mothers at a very young age. Presumably, the absence of preening is due to the fact that they were never shown how to do it properly. A more common problem among captive birds is excessive preening. Some birds may pull out large numbers of their feathers or bite them down to the skin. It should be noted that wild birds never exhibit this kind of behavior. There are several suggestions about how the problem of excessive preening can be solved, such as giving birds baths or placing them in an area that has more activity to prevent boredom. However, these measures are often not sufficient to solve the problem."": 9.8, 'Samuel Morse, best known today as the inventor of Morse Code and one of the inventors of the telegraph, was originally a prominent painter. While he was always interested in technology and studied electrical engineering in college, Morse went to Paris to learn from famous artists of his day and later painted many pictures that now hang in museums, including a portrait of former President John Adams. In 1825, Morse was in Washington, D.C., painting a portrait of the Marquis de Lafayette when a messenger arrived on horseback to tell him that his wife was gravely ill back at his home in Connecticut. The message had taken several days to reach him because of the distance. Morse rushed to his home as fast as he could, but his wife had already passed away by the time he arrived. Grief-stricken, he gave up painting and devoted the rest of his life to finding ways to transmit messages over long distances faster.': 9.0, 'Hibernation in animals is an extremely fascinating phenomenon, one that biologists are not yet close to understanding fully. However, it is quite easy to understand why animals hibernate during the cold winter months. Usually, it is because their food is quite scarce during this time. Animals that are herbivores will find the winters extremely tough, because all of the vegetation will have died off by the time winter arrives. Hibernation is essentially a way of dealing with this food shortage. Animals like birds rely on seeds and small insects for sustenance. Obviously, these will also be quite scarce in the winter when the ground becomes covered and frozen. Many birds address their upcoming food shortage in quite a different way: they migrate to warmer areas where their sources of food will be plentiful.': 8.3, ""Many people fail to realize just how crucial getting a good night's sleep actually is. It is usually suggested that adults get about seven hours of sleep every night, and younger children should get even more. Sleep has several benefits. First, it is believed to improve memory. This is one reason why it is always preferable to sleep the night before a test rather than stay up for the entire night to review the information. On a related note, sleep also improves concentration and mental alertness. Those who get sufficient sleep are able to concentrate on work tasks better and also react faster when they are driving a car, for example. Finally, people who get enough sleep have better immunity against illness. The reason for this is not fully understood, but researchers believe that an increase in the production of growth hormone and melatonin plays a role."": 8.3, 'The pencil is a modern-day version of a centuries-old writing implement. Around 1560, an Italian couple designed the modern, wood-encased pencil. Their creation was flatter and more compact than the pencils we use today. Their plan involved hollowing out a stick of wood and inserting a stick of graphite into it. Shortly after, a better technique was discovered: two wooden halves were carved, a graphite stick was inserted, and then the halves were glued together, which is also how pencils are currently made. Although many people refer to the graphite inside pencils as \x93lead\x94, they have always been made with graphite; however, the paint on the wood that surrounded the graphite was, at one time, lead-based.': 7.8, 'When online file-sharing programs emerged, the music industry changed forever. Perhaps the first widely-used music file sharing program was Napster. It allowed users to sign up to use the service at no charge. Then, they could download music files from other users all over the world by simply typing in what song or album they wanted. Obviously, this was bad news for music artists and record labels because they were not making any profits from downloaded music. Eventually, Napster was shut down. While it later reinvented itself as a paying service, other free music-sharing sites cropped up almost immediately. Even though several sites and individual users have been charged, there are still countless individuals who log onto these sites to obtain free music.': 7.7, ""At one time, the use of leeches to treat medical problems was quite common. If a person suffered from a snake bite or a bee sting, leeches were believed to be capable of removing the poison from the body if they were placed on top of the wound. They have also been used for blood letting and to stop hemorrhages, although neither of these leech treatments would be considered acceptable by present-day physicians. Today, leeches are still used on a limited basis. Most often, leeches are used to drain blood from clogged veins. This results in little pain for the patient and also ensures the patient's blood will not clot while it is being drained."": 7.1, ""The Amazon Rainforest is one of the most important ecosystems in the world. However, it is slowly being destroyed. Areas of the rainforest are being cleared for farms and roads, and much of the wood is also being harvested and sold. There are several compelling reasons to protect this area. First, a significant number of pharmaceuticals are made from plants that have been discovered in the rainforest, and it's quite possible there are still important plants that have not yet been discovered. Secondly, the rainforest provides a significant portion of the world's oxygen and also absorbs great amounts of carbon dioxide. Without rainforests, global warming could accelerate."": 6.5, 'Leonardo da Vinci is not only one of the most famous artists in history, but he was also a botanist, a writer, and an inventor. Even though most of his inventions were not actually built in his lifetime, many of today\x92s modern machines can be traced back to some of his original designs. The parachute, the military tank, the bicycle, and even the airplane were foretold in the imaginative drawings that can still be seen in the fragments of da Vinci\x92s notebooks. Over five hundred years ago, this man conceived ideas that were far ahead of his time.': 5.5}"
 participant_id,categorical,1208284,0.0,,,,,,,,536,
 ptb_pos,numeric,2009,99.8,0.0,0.0,1.2598307615729218,1.0,3.0,3.0,1.1274306063527386,4,"{0.0: 32.0, 1.0: 31.9, 3.0: 21.9, 2.0: 14.2}"
 refix,numeric,879366,27.2,0.0,0.0,0.4357582622025414,0.0,1.0,1.0,0.4958561068774457,2,"{0.0: 56.4, 1.0: 43.6}"
-reread,numeric,879366,27.2,0.0,0.0,0.47628291291680597,0.0,1.0,1.0,0.4994374669932928,2,"{0.0: 52.4, 1.0: 47.6}"
+reread,numeric,879366,27.2,0.0,0.0,0.47628291291680597,0.0,1.0,1.0,0.4994374669932927,2,"{0.0: 52.4, 1.0: 47.6}"
 right_dependents_count,numeric,2009,99.8,0.0,0.0,0.44400199104031857,0.0,1.0,4.0,0.748155175967333,5,"{0.0: 67.3, 1.0: 24.2, 2.0: 5.8, 3.0: 2.1, 4.0: 0.6}"
 sac.in,numeric,1200955,0.6,-112.0,-8.0,0.11409003667914284,5.0,11.0,111.0,21.798001110656827,224,
 sac.out,numeric,1201256,0.6,-112.0,-8.0,0.060780549691323085,5.0,11.0,111.0,21.80536156582233,224,
 sent,categorical,1208284,0.0,,,,,,,,93,
-sent.firstskip,numeric,1208284,0.0,0.0,0.0,0.002138570071274634,0.0,0.0,1.0,0.04619522004996399,2,"{0.0: 99.8, 1.0: 0.2}"
-sent.fix,numeric,1208284,0.0,1.0,3.0,18.25121080805506,14.0,39.0,261.0,16.98982627598458,261,
-sent.nwords,numeric,1208284,0.0,4.0,11.0,21.342978968520647,20.0,36.0,44.0,9.48624889943682,29,
-sent.refix,numeric,1208284,0.0,0.0,1.0,0.923969861390203,1.0,1.0,1.0,0.26504643889846546,2,"{1.0: 92.4, 0.0: 7.6}"
-sent.reg.in,numeric,1208284,0.0,0.0,0.0,0.017936180566820382,0.0,0.0,1.0,0.13271958623955152,2,"{0.0: 98.2, 1.0: 1.8}"
+sent.firstskip,numeric,1208284,0.0,0.0,0.0,0.002138570071274634,0.0,0.0,1.0,0.04619522004996398,2,"{0.0: 99.8, 1.0: 0.2}"
+sent.fix,numeric,1208284,0.0,1.0,3.0,18.25121080805506,14.0,39.0,261.0,16.989826275984584,261,
+sent.nwords,numeric,1208284,0.0,4.0,11.0,21.342978968520647,20.0,36.0,44.0,9.486248899436818,29,
+sent.refix,numeric,1208284,0.0,0.0,1.0,0.923969861390203,1.0,1.0,1.0,0.2650464388984655,2,"{1.0: 92.4, 0.0: 7.6}"
+sent.reg.in,numeric,1208284,0.0,0.0,0.0,0.017936180566820382,0.0,0.0,1.0,0.13271958623955157,2,"{0.0: 98.2, 1.0: 1.8}"
 sent.reg.in.from,numeric,21672,98.2,2.0,2.0,5.435262089331856,5.0,9.0,11.0,2.5266533853444346,10,"{6.0: 15.0, 2.0: 14.7, 3.0: 13.1, 5.0: 12.9, 4.0: 12.0, 7.0: 11.1, 8.0: 8.4, 10.0: 4.3, 9.0: 4.3, 11.0: 4.1}"
-sent.reg.out,numeric,1208284,0.0,0.0,0.0,0.017936180566820382,0.0,0.0,1.0,0.13271958623955155,2,"{0.0: 98.2, 1.0: 1.8}"
+sent.reg.out,numeric,1208284,0.0,0.0,0.0,0.017936180566820382,0.0,0.0,1.0,0.13271958623955157,2,"{0.0: 98.2, 1.0: 1.8}"
 sent.reg.out.to,numeric,21672,98.2,1.0,1.0,3.764904023624954,3.0,7.0,10.0,2.458695622313669,10,"{1.0: 24.6, 2.0: 14.8, 5.0: 12.9, 4.0: 12.0, 3.0: 11.9, 6.0: 8.4, 7.0: 6.5, 8.0: 3.6, 9.0: 3.0, 10.0: 2.2}"
 sent.run,numeric,1208284,0.0,1.0,1.0,1.5007506513369373,1.0,3.0,21.0,0.940167032628322,21,
-sent.run.fix,numeric,1208284,0.0,1.0,2.0,13.659472441909353,10.0,30.0,217.0,12.862704521175756,217,
-sent.runid,numeric,1208284,0.0,1.0,1.0,2.6842505569882578,2.0,5.0,44.0,2.2471083044109648,44,
-sent.word,numeric,1208284,0.0,1.0,2.0,11.074604976975612,9.0,22.0,45.0,8.3329872719017,45,
-sentnum,numeric,1208284,0.0,1.0,1.0,4.556883977607914,4.0,8.0,11.0,2.6121545118466747,11,"{5.0: 14.2, 3.0: 14.0, 1.0: 13.9, 2.0: 12.8, 6.0: 11.9, 4.0: 10.1, 7.0: 8.1, 8.0: 6.6, 10.0: 3.7, 9.0: 3.4, 11.0: 1.3}"
-singlefix,numeric,879401,27.2,0.0,0.0,0.6599856038371573,1.0,1.0,1.0,0.47371390284018555,2,"{1.0: 66.0, 0.0: 34.0}"
-singlefix.cland,numeric,580392,52.0,-8.0,-3.0,-0.8194203228163035,-0.5,1.5,6.5,1.7452791003508252,30,
-singlefix.dur,numeric,580392,52.0,1.0,120.0,223.25008097975163,208.0,340.0,4986.0,100.86739996697904,1142,
-singlefix.land,numeric,580392,52.0,0.0,0.0,2.4088822726708843,2.0,5.0,14.0,1.8629566427451034,15,"{2.0: 20.3, 1.0: 19.2, 3.0: 17.8, 0.0: 16.8, 4.0: 12.7, 5.0: 7.2, 6.0: 3.5, 7.0: 1.5, 8.0: 0.6, 9.0: 0.2, 10.0: 0.1, 11.0: 0.0, 12.0: 0.0, 13.0: 0.0, 14.0: 0.0}"
-singlefix.launch,numeric,574047,52.5,-110.0,-7.0,-2.838793687624881,4.0,10.0,108.0,26.6639516898055,216,
-singlefix.sac.in,numeric,574047,52.5,-112.0,-10.0,-1.3480255101063154,7.0,12.0,111.0,28.141294893224913,221,
+sent.run.fix,numeric,1208284,0.0,1.0,2.0,13.659472441909353,10.0,30.0,217.0,12.862704521175754,217,
+sent.runid,numeric,1208284,0.0,1.0,1.0,2.6842505569882578,2.0,5.0,44.0,2.247108304410965,44,
+sent.word,numeric,1208284,0.0,1.0,2.0,11.074604976975612,9.0,22.0,45.0,8.332987271901699,45,
+sentnum,numeric,1208284,0.0,1.0,1.0,4.556883977607914,4.0,8.0,11.0,2.612154511846675,11,"{5.0: 14.2, 3.0: 14.0, 1.0: 13.9, 2.0: 12.8, 6.0: 11.9, 4.0: 10.1, 7.0: 8.1, 8.0: 6.6, 10.0: 3.7, 9.0: 3.4, 11.0: 1.3}"
+singlefix,numeric,879401,27.2,0.0,0.0,0.6599856038371573,1.0,1.0,1.0,0.4737139028401855,2,"{1.0: 66.0, 0.0: 34.0}"
+singlefix.cland,numeric,580392,52.0,-8.0,-3.0,-0.8194203228163035,-0.5,1.5,6.5,1.7452791003508248,30,
+singlefix.dur,numeric,580392,52.0,1.0,120.0,223.25008097975163,208.0,340.0,4986.0,100.86739996697902,1142,
+singlefix.land,numeric,580392,52.0,0.0,0.0,2.4088822726708843,2.0,5.0,14.0,1.8629566427451036,15,"{2.0: 20.3, 1.0: 19.2, 3.0: 17.8, 0.0: 16.8, 4.0: 12.7, 5.0: 7.2, 6.0: 3.5, 7.0: 1.5, 8.0: 0.6, 9.0: 0.2, 10.0: 0.1, 11.0: 0.0, 12.0: 0.0, 13.0: 0.0, 14.0: 0.0}"
+singlefix.launch,numeric,574047,52.5,-110.0,-7.0,-2.838793687624881,4.0,10.0,108.0,26.663951689805504,216,
+singlefix.sac.in,numeric,574047,52.5,-112.0,-10.0,-1.3480255101063154,7.0,12.0,111.0,28.141294893224906,221,
 singlefix.sac.out,numeric,578665,52.1,-112.0,-11.0,-1.2976074239845161,6.0,11.0,107.0,22.545392536774134,220,
-spelling,numeric,1201133,0.6,21.0,28.0,34.57175100509269,35.0,40.0,76.0,5.516180048932072,28,
+spelling,numeric,1201133,0.6,21.0,28.0,34.57175100509269,35.0,40.0,76.0,5.516180048932074,28,
 start_of_line,numeric,879401,27.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1,{0.0: 100.0}
 subid_x,categorical,1208284,0.0,,,,,,,,536,
 subid_y,categorical,1208284,0.0,,,,,,,,536,
@@ -159,30 +159,30 @@ subtlex_frequency,numeric,2009,99.8,0.0,6.18624813590211,12.725406007763665,13.2
 total_skip,numeric,879401,27.2,0.0,0.0,3.9799818285401084e-05,0.0,0.0,1.0,0.006308587759236468,2,"{0.0: 100.0, 1.0: 0.0}"
 trial,categorical,1208284,0.0,,,,,,,,12,"{'Technology is rapidly expanding the': 10.0, 'The Internet has made life': 10.0, 'Howard Gardner was a psychologist': 9.9, ""A bird's feathers are extremely"": 9.8, 'Samuel Morse, best known today': 9.0, 'Hibernation in animals is an': 8.3, 'Many people fail to realize': 8.3, 'The pencil is a modern-': 7.7, 'When online file- sharing programs': 7.7, 'At one time, the use': 7.1, 'The Amazon Rainforest is one': 6.5, 'Leonardo da Vinci is not': 5.5}"
 trial.nwords,numeric,1208284,0.0,98.0,107.0,142.0134322725452,142.0,187.0,187.0,25.1993027802651,12,"{148: 10.0, 187: 10.0, 142: 9.9, 173: 9.8, 161: 9.0, 133: 8.3, 147: 8.3, 120: 7.7, 126: 7.7, 116: 7.1, 107: 6.5, 98: 5.5}"
-trialnum,numeric,1208284,0.0,1.0,2.0,6.610483959069225,7.0,12.0,12.0,3.419779118839059,12,"{12.0: 10.0, 5.0: 10.0, 4.0: 9.9, 7.0: 9.8, 1.0: 9.0, 8.0: 8.3, 6.0: 8.3, 11.0: 7.7, 10.0: 7.7, 9.0: 7.1, 3.0: 6.5, 2.0: 5.5}"
+trialnum,numeric,1208284,0.0,1.0,2.0,6.610483959069225,7.0,12.0,12.0,3.41977911883906,12,"{12.0: 10.0, 5.0: 10.0, 4.0: 9.9, 7.0: 9.8, 1.0: 9.0, 8.0: 8.3, 6.0: 8.3, 11.0: 7.7, 10.0: 7.7, 9.0: 7.1, 3.0: 6.5, 2.0: 5.5}"
 type,categorical,1208284,0.0,,,,,,,,1,{'in': 100.0}
-unique_paragraph_id,numeric,1208284,0.0,1.0,2.0,6.610351539869765,7.0,12.0,12.0,3.4195984939946356,12,"{5: 10.0, 12: 10.0, 4: 9.9, 7: 9.8, 1: 9.0, 8: 8.3, 6: 8.3, 11: 7.8, 10: 7.7, 9: 7.1, 3: 6.5, 2: 5.5}"
+unique_paragraph_id,numeric,1208284,0.0,1.0,2.0,6.610351539869765,7.0,12.0,12.0,3.419598493994637,12,"{5: 10.0, 12: 10.0, 4: 9.9, 7: 9.8, 1: 9.0, 8: 8.3, 6: 8.3, 11: 7.8, 10: 7.7, 9: 7.1, 3: 6.5, 2: 5.5}"
 unique_trial_id,categorical,1208284,0.0,,,,,,,,6427,
 universal_pos,categorical,2009,99.8,,,,,,,,14,"{'NOUN': 28.1, 'VERB': 14.2, 'ADJ': 14.1, 'ADV': 7.8, 'ADP': 7.7, 'AUX': 6.2, 'PRON': 5.9, 'DET': 5.8, 'PROPN': 3.8, 'SCONJ': 2.2, 'CCONJ': 2.1, 'PART': 1.1, 'NUM': 1.0, 'X': 0.0}"
-vocab,numeric,1193348,1.2,3.0,13.0,43.46004853571632,42.0,74.0,88.0,23.156631188312573,77,
-vocab.t2.5,numeric,1193348,1.2,3.0,13.0,29.253034320248577,34.0,39.0,40.0,10.097088340600774,31,
-word.cland,numeric,1208284,0.0,-8.0,-3.0,-0.5404623416349137,-0.5,2.0,7.0,2.018411089657151,31,
-word.firstskip,numeric,1208284,0.0,0.0,0.0,0.12399320027410775,0.0,1.0,1.0,0.32957393169838184,2,"{0.0: 87.6, 1.0: 12.4}"
+vocab,numeric,1193348,1.2,3.0,13.0,43.46004853571632,42.0,74.0,88.0,23.156631188312566,77,
+vocab.t2.5,numeric,1193348,1.2,3.0,13.0,29.253034320248577,34.0,39.0,40.0,10.097088340600772,31,
+word.cland,numeric,1208284,0.0,-8.0,-3.0,-0.5404623416349137,-0.5,2.0,7.0,2.0184110896571514,31,
+word.firstskip,numeric,1208284,0.0,0.0,0.0,0.12399320027410775,0.0,1.0,1.0,0.3295739316983819,2,"{0.0: 87.6, 1.0: 12.4}"
 word.fix,numeric,1208284,0.0,1.0,1.0,1.9149231472071135,1.0,4.0,77.0,1.7072421948339744,77,
-word.land,numeric,1208284,0.0,0.0,0.0,3.0360527822929044,3.0,6.0,15.0,2.362441703384042,16,
-word.launch,numeric,1200955,0.6,-111.0,-6.0,-1.300063699305969,3.0,9.0,111.0,20.48535585143217,222,
+word.land,numeric,1208284,0.0,0.0,0.0,3.0360527822929044,3.0,6.0,15.0,2.362441703384043,16,
+word.launch,numeric,1200955,0.6,-111.0,-6.0,-1.300063699305969,3.0,9.0,111.0,20.48535585143218,222,
 word.refix,numeric,1208284,0.0,0.0,0.0,0.20995229598339463,0.0,1.0,1.0,0.4072744365585274,2,"{0.0: 79.0, 1.0: 21.0}"
-word.reg.in,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112866,2,"{0.0: 84.8, 1.0: 15.2}"
-word.reg.in.from,numeric,183638,84.8,2.0,14.0,71.73190733943954,70.0,132.0,187.0,44.2945780593229,186,
+word.reg.in,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112865,2,"{0.0: 84.8, 1.0: 15.2}"
+word.reg.in.from,numeric,183638,84.8,2.0,14.0,71.73190733943954,70.0,132.0,187.0,44.29457805932291,186,
 word.reg.out,numeric,1208284,0.0,0.0,0.0,0.15198248093991149,0.0,1.0,1.0,0.3590040572112865,2,"{0.0: 84.8, 1.0: 15.2}"
-word.reg.out.to,numeric,183638,84.8,1.0,9.0,67.15433080299285,65.0,127.0,186.0,44.13658907328415,186,
-word.run,numeric,1208284,0.0,1.0,1.0,1.4250656302657323,1.0,2.0,24.0,0.8203949439333816,24,
+word.reg.out.to,numeric,183638,84.8,1.0,9.0,67.15433080299285,65.0,127.0,186.0,44.136589073284156,186,
+word.run,numeric,1208284,0.0,1.0,1.0,1.4250656302657323,1.0,2.0,24.0,0.8203949439333815,24,
 word.run.fix,numeric,1208284,0.0,1.0,1.0,1.3180783656822403,1.0,2.0,41.0,0.8575560824374384,41,
-word.runid,numeric,1208284,0.0,1.0,3.0,14.531185549092763,12.0,30.0,113.0,11.601492097608663,113,
+word.runid,numeric,1208284,0.0,1.0,3.0,14.531185549092763,12.0,30.0,113.0,11.601492097608665,113,
 word_length,numeric,879401,27.2,1.0,3.0,6.1502079256221,6.0,10.0,15.0,2.7904568651254116,15,"{4.0: 14.5, 5.0: 14.1, 7.0: 13.1, 6.0: 11.2, 3.0: 10.7, 8.0: 9.5, 2.0: 6.5, 9.0: 6.1, 10.0: 5.2, 11.0: 3.8, 12.0: 2.3, 13.0: 1.3, 1.0: 0.8, 14.0: 0.5, 15.0: 0.3}"
-word_length_no_punctuation,numeric,2009,99.8,1.0,3.0,5.870084619213539,5.0,10.0,15.0,2.7461574100412505,15,"{4.0: 14.7, 5.0: 14.1, 7.0: 12.9, 3.0: 12.5, 6.0: 9.6, 2.0: 8.6, 8.0: 8.5, 9.0: 6.0, 10.0: 5.7, 11.0: 3.2, 12.0: 1.7, 13.0: 1.2, 1.0: 1.0, 14.0: 0.1, 15.0: 0.1}"
-wordfreq_frequency,numeric,2009,99.8,4.218934101564037,5.748553568441418,12.204694489410565,12.627787821147072,17.758966023128348,24.415149927690305,4.309993257458968,310,
-wordnum,numeric,1208284,0.0,1.0,12.0,69.08372783219839,66.0,129.0,187.0,43.622813477693434,187,
-xs,numeric,1208284,0.0,-218.0,228.9,868.8713312433173,848.6,1547.4,2122.2,479.0799096862587,18131,
+word_length_no_punctuation,numeric,2009,99.8,1.0,3.0,5.870084619213539,5.0,10.0,15.0,2.746157410041251,15,"{4.0: 14.7, 5.0: 14.1, 7.0: 12.9, 3.0: 12.5, 6.0: 9.6, 2.0: 8.6, 8.0: 8.5, 9.0: 6.0, 10.0: 5.7, 11.0: 3.2, 12.0: 1.7, 13.0: 1.2, 1.0: 1.0, 14.0: 0.1, 15.0: 0.1}"
+wordfreq_frequency,numeric,2009,99.8,4.218934101564037,5.748553568441418,12.204694489410564,12.627787821147072,17.758966023128348,24.415149927690305,4.309993257458968,310,
+wordnum,numeric,1208284,0.0,1.0,12.0,69.08372783219839,66.0,129.0,187.0,43.62281347769343,187,
+xs,numeric,1208284,0.0,-218.0,228.9,868.871331243317,848.6,1547.4,2122.2,479.07990968625865,18131,
 ym,numeric,1208284,0.0,101.0,101.0,269.62338862386656,248.0,444.0,704.0,124.35749107549907,33,
-ys,numeric,1208284,0.0,-24.2,110.0,271.40625333117066,261.7,446.3,854.0,126.27430385969717,7259,
+ys,numeric,1208284,0.0,-24.2,110.0,271.4062533311705,261.7,446.3,854.0,126.27430385969716,7259,

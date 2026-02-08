@@ -33,12 +33,7 @@ from src.configs.models.ml.DummyClassifier import (
     DummyClassifierMLArgs,
     DummyRegressorMLArgs,
 )  # noqa: F401
-from src.configs.models.ml.LogisticRegression import (
-    LinearMeziereArgs,
-    LinearRegressionArgs,
-    LogisticMeziereArgs,
-    LogisticRegressionMLArgs,
-)  # noqa: F401
+from src.configs.models.ml.LogisticRegression import *  # noqa: F401, F403
 from src.configs.models.ml.RandomForest import (
     RandomForestMLArgs,
     RandomForestRegressorMLArgs,
@@ -63,6 +58,34 @@ CLASSIFICATION_MODEL_CONFIGS = [
     RandomForestMLArgs,
     LogisticRegressionMLArgs,
     LogisticMeziereArgs,
+    LogisticFixationMetricsArgs,
+    LogisticSClustersArgs,
+    LogisticSClustersNoNormArgs,
+    LogisticWpCoefsArgs,
+    LogisticWpCoefsNoNormArgs,
+    LogisticWpCoefsNoInterceptArgs,
+    LogisticWpCoefsNoNormNoInterceptArgs,
+    LogisticReadingSpeedFixationMetricsArgs,
+    LogisticReadingSpeedSClustersArgs,
+    LogisticReadingSpeedSClustersNoNormArgs,
+    LogisticReadingSpeedWpCoefsArgs,
+    LogisticReadingSpeedWpCoefsNoNormArgs,
+    LogisticReadingSpeedWpCoefsNoInterceptArgs,
+    LogisticReadingSpeedWpCoefsNoNormNoInterceptArgs,
+    LogisticReadingSpeedFixationMetricsSClustersArgs,
+    LogisticReadingSpeedFixationMetricsSClustersNoNormArgs,
+    LogisticReadingSpeedFixationMetricsWpCoefsArgs,
+    LogisticReadingSpeedFixationMetricsWpCoefsNoNormArgs,
+    LogisticReadingSpeedFixationMetricsWpCoefsNoInterceptArgs,
+    LogisticReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs,
+    LogisticReadingSpeedSClustersWpCoefsArgs,
+    LogisticReadingSpeedSClustersNoNormWpCoefsNoNormArgs,
+    LogisticReadingSpeedSClustersWpCoefsNoInterceptArgs,
+    LogisticReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs,
+    LogisticReadingSpeedFixationMetricsSClustersWpCoefsArgs,
+    LogisticReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs,
+    LogisticReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs,
+    LogisticReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs,
     DummyClassifierMLArgs,
 ]  # noqa: F401
 REGRESSION_MODEL_CONFIGS = [
@@ -71,8 +94,42 @@ REGRESSION_MODEL_CONFIGS = [
     RandomForestRegressorMLArgs,
     LinearRegressionArgs,
     LinearMeziereArgs,
+    LinearFixationMetricsArgs,
+    LinearSClustersArgs,
+    LinearSClustersNoNormArgs,
+    LinearWpCoefsArgs,
+    LinearWpCoefsNoNormArgs,
+    LinearWpCoefsNoInterceptArgs,
+    LinearWpCoefsNoNormNoInterceptArgs,
+    LinearReadingSpeedFixationMetricsArgs,
+    LinearReadingSpeedSClustersArgs,
+    LinearReadingSpeedSClustersNoNormArgs,
+    LinearReadingSpeedWpCoefsArgs,
+    LinearReadingSpeedWpCoefsNoNormArgs,
+    LinearReadingSpeedWpCoefsNoInterceptArgs,
+    LinearReadingSpeedWpCoefsNoNormNoInterceptArgs,
+    LinearReadingSpeedFixationMetricsSClustersArgs,
+    LinearReadingSpeedFixationMetricsSClustersNoNormArgs,
+    LinearReadingSpeedFixationMetricsWpCoefsArgs,
+    LinearReadingSpeedFixationMetricsWpCoefsNoNormArgs,
+    LinearReadingSpeedFixationMetricsWpCoefsNoInterceptArgs,
+    LinearReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs,
+    LinearReadingSpeedSClustersWpCoefsArgs,
+    LinearReadingSpeedSClustersNoNormWpCoefsNoNormArgs,
+    LinearReadingSpeedSClustersWpCoefsNoInterceptArgs,
+    LinearReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs,
+    LinearReadingSpeedFixationMetricsSClustersWpCoefsArgs,
+    LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs,
+    LinearReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs,
+    LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs,
     DummyRegressorMLArgs,
 ]  # noqa: F401
+
+# Create a mapping from model names to model config classes
+MODEL_NAME_TO_CONFIG = {
+    config.__name__: config
+    for config in CLASSIFICATION_MODEL_CONFIGS + REGRESSION_MODEL_CONFIGS
+}
 
 
 def main() -> None:
@@ -80,23 +137,6 @@ def main() -> None:
 
     # Get the data config and determine if it's regression using the is_regression property
     data_config = DATA_CONFIGS_MAPPING[args.data_task]
-    data_instance = data_config()
-
-    model_configs = (
-        REGRESSION_MODEL_CONFIGS
-        if data_instance.is_regression
-        else CLASSIFICATION_MODEL_CONFIGS
-    )
-
-    experiments = [
-        Experiment(
-            model_args=model,
-            data_args=data_config,
-            wandb_project=args.wandb_project,
-        )
-        for model in model_configs
-    ]  # type: ignore
-    checks(experiments)
 
     lf.seed_everything(42, workers=True, verbose=False)
     torch.set_float32_matmul_precision('high')
@@ -110,14 +150,22 @@ def main() -> None:
             project=args.wandb_project,
             run_id=args.wandb_run_id,
         )
-        trainer_args = TrainerML(**cfg_of_run['trainer'])
-        data_args = DATA_CONFIGS_MAPPING['OneStop_RC'](
-            **cfg_of_run['data']
-        )  # TODO use datafactory to generalize
+        cfg_of_run["model"] = {k:v for k,v in cfg_of_run["model"].items() if k.startswith('sklearn_pipeline_param')}
+        cfg_of_run["data"] = {k:v for k,v in cfg_of_run["data"].items() if k not in ['groupby_columns', 'tasks']}
 
-        model_args = XGBoostMLArgs(
-            **cfg_of_run['model']
-        )  # TODO make use of modelfactory
+        trainer_args = TrainerML(**cfg_of_run['trainer'])
+        data_args = data_config(
+            **cfg_of_run['data']
+        )
+
+        # Dynamically get the model config class from the mapping
+        if args.model_name not in MODEL_NAME_TO_CONFIG:
+            raise ValueError(
+                f"Unknown model name: {args.model_name}. "
+                f"Available models: {list(MODEL_NAME_TO_CONFIG.keys())}"
+            )
+        model_config_class = MODEL_NAME_TO_CONFIG[args.model_name]
+        model_args = model_config_class(**cfg_of_run['model'])
 
         process_single_run(
             data_args=data_args,
@@ -127,6 +175,23 @@ def main() -> None:
         )
 
     else:  # Process all experiments and sweeps
+        data_instance = data_config()
+
+        model_configs = (
+            REGRESSION_MODEL_CONFIGS
+            if data_instance.is_regression
+            else CLASSIFICATION_MODEL_CONFIGS
+        )
+
+        experiments = [
+            Experiment(
+                model_args=model,
+                data_args=data_config,
+                wandb_project=args.wandb_project,
+            )
+            for model in model_configs
+        ]  # type: ignore
+
         checks(experiments)
         # For each experiment
         for exp in experiments:
@@ -162,6 +227,7 @@ class HyperArgs(Tap):
     wandb_run_id: str | None = None  # Provide if you want a single run.
     data_task: str = 'CopCo_TYP'  # Name of the data task (e.g., CopCo_TYP).
     wandb_project: str = 'CopCo_TYP_20250714'  # Name of the wandb project.
+    model_name: str = 'LinearWpCoefsNoNormNoInterceptArgs'  # Name of the model config class.
 
 
 @dataclass

@@ -54,6 +54,9 @@ class DataArgs:
     split_item_columns: list[str | None] = field(
         default_factory=lambda: [Fields.UNIQUE_PARAGRAPH_ID]
     )
+    split_subject_columns: list[str | None] = field(
+        default_factory=lambda: [Fields.SUBJECT_ID]
+        )
 
     additional_groupby_columns: list[str] = field(default_factory=list)
 
@@ -97,6 +100,8 @@ class DataArgs:
         # Just so they don't get dropped in filtering in preprocess
         if self.split_item_columns[0] not in self.groupby_columns:
             self.groupby_columns += self.split_item_columns
+        if self.split_subject_columns[0] not in self.groupby_columns:
+            self.groupby_columns += self.split_subject_columns
 
         self.datamodule_name = self.dataset_name + 'DataModule'
         self.base_path = Path('data') / self.dataset_name
@@ -262,6 +267,12 @@ class MECOL2(DataArgs):
             Fields.UNIQUE_PARAGRAPH_ID,
         ]
     )
+    split_subject_columns: list[str] = field(
+        default_factory=lambda: [
+            Fields.L1_GROUP,
+        ]
+    )
+
     tasks: dict[str, str] = field(
         default_factory=lambda: {
             PredMode.LEX: 'lextale',
@@ -328,6 +339,11 @@ class MECOL2W1(DataArgs):
             Fields.UNIQUE_PARAGRAPH_ID,
         ]
     )
+    split_subject_columns: list[str] = field(
+        default_factory=lambda: [
+            Fields.L1_GROUP,
+        ]
+    )
     tasks: dict[str, str] = field(
         default_factory=lambda: {
             PredMode.LEX: 'lextale',
@@ -358,6 +374,11 @@ class MECOL2W2(DataArgs):
     split_item_columns: list[str] = field(
         default_factory=lambda: [
             Fields.UNIQUE_PARAGRAPH_ID,
+        ]
+    )
+    split_subject_columns: list[str] = field(
+        default_factory=lambda: [
+            Fields.L1_GROUP,
         ]
     )
     tasks: dict[str, str] = field(
@@ -409,6 +430,7 @@ class OneStop(DataArgs):
             Fields.ARTICLE_ID,
         ]
     )
+
     ia_query: str = 'practice_trial==False & question_preview==False & repeated_reading_trial==False'
     fixation_query: str = 'practice_trial==False & question_preview==False & repeated_reading_trial==False'
     stratify: str = Fields.IS_CORRECT
@@ -417,7 +439,7 @@ class OneStop(DataArgs):
             PredMode.RC: Fields.IS_CORRECT,
         }
     )
-    higher_level_split: str | None = Fields.BATCH
+    # higher_level_split: str | None = Fields.BATCH
     text_source: str = 'Guardian Articles'
     text_language: str = DatasetLanguage.ENGLISH
     text_domain: str = 'News'
@@ -483,6 +505,15 @@ class OneStopL2(OneStop):
         }
     )
     max_scanpath_length: int = 890
+    n_folds: int = 10
+    
+    split_subject_columns: list[str] = field(
+        default_factory=lambda: [
+            Fields.L1,
+        ]
+    )
+
+
 
 @register_data
 @dataclass

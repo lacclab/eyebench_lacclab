@@ -9,6 +9,10 @@ from src.configs.models.base_model import MLModelArgs
 from src.configs.utils import register_model_config
 
 
+# =============================================================================
+# BASE LOGISTIC REGRESSION MODEL
+# =============================================================================
+
 @register_model_config
 @dataclass
 class LogisticRegressionMLArgs(MLModelArgs):
@@ -55,6 +59,10 @@ class LogisticRegressionMLArgs(MLModelArgs):
     )
 
 
+# =============================================================================
+# LOGISTIC REGRESSION - SINGLE FEATURE MODELS
+# =============================================================================
+
 @register_model_config
 @dataclass
 class LogisticMeziereArgs(LogisticRegressionMLArgs):
@@ -62,6 +70,327 @@ class LogisticMeziereArgs(LogisticRegressionMLArgs):
         default_factory=lambda: [ItemLevelFeaturesModes.LOGISTIC],
     )
 
+
+@register_model_config
+@dataclass
+class LogisticFixationMetricsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.FIXATION_METRICS],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticSClustersArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.S_CLUSTERS],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticSClustersNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticWpCoefsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticWpCoefsNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_NORM],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticWpCoefsNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticWpCoefsNoNormNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT],
+    )
+
+
+# =============================================================================
+# LOGISTIC REGRESSION - TWO FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedWpCoefsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedWpCoefsNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedWpCoefsNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedWpCoefsNoNormNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+# =============================================================================
+# LOGISTIC REGRESSION - THREE FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsWpCoefsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsWpCoefsNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsWpCoefsNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersWpCoefsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersNoNormWpCoefsNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersWpCoefsNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+# =============================================================================
+# LOGISTIC REGRESSION - FOUR FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersWpCoefsArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LogisticReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs(LogisticRegressionMLArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+# =============================================================================
+# BASE LINEAR REGRESSION MODEL
+# =============================================================================
 
 @register_model_config
 @dataclass
@@ -97,9 +426,331 @@ class LinearRegressionArgs(MLModelArgs):
     )
 
 
+# =============================================================================
+# LINEAR REGRESSION - SINGLE FEATURE MODELS
+# =============================================================================
+
 @register_model_config
 @dataclass
 class LinearMeziereArgs(LinearRegressionArgs):
     item_level_features_modes: list[ItemLevelFeaturesModes] = field(
         default_factory=lambda: [ItemLevelFeaturesModes.LOGISTIC],
     )
+
+
+@register_model_config
+@dataclass
+class LinearFixationMetricsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.FIXATION_METRICS],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearSClustersArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.S_CLUSTERS],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearSClustersNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearWpCoefsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearWpCoefsNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_NORM],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearWpCoefsNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearWpCoefsNoNormNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT],
+    )
+
+
+# =============================================================================
+# LINEAR REGRESSION - TWO FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedWpCoefsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedWpCoefsNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedWpCoefsNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedWpCoefsNoNormNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+# =============================================================================
+# LINEAR REGRESSION - THREE FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsWpCoefsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsWpCoefsNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsWpCoefsNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersWpCoefsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersNoNormWpCoefsNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersWpCoefsNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+
+
+# =============================================================================
+# LINEAR REGRESSION - FOUR FEATURE COMBINATIONS
+# =============================================================================
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersWpCoefsArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS,
+            ItemLevelFeaturesModes.WP_COEFS_NO_INTERCEPT,
+        ],
+    )
+
+
+@register_model_config
+@dataclass
+class LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs(LinearRegressionArgs):
+    item_level_features_modes: list[ItemLevelFeaturesModes] = field(
+        default_factory=lambda: [
+            ItemLevelFeaturesModes.READING_SPEED,
+            ItemLevelFeaturesModes.FIXATION_METRICS,
+            ItemLevelFeaturesModes.S_CLUSTERS_NO_NORM,
+            ItemLevelFeaturesModes.WP_COEFS_NO_NORM_NO_INTERCEPT,
+        ],
+    )
+

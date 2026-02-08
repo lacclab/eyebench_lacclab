@@ -30,7 +30,32 @@ DATASET_TO_COLUMN = {
     'CopCo_RCS': '\\textbf{Reading Comprehension Skill} task on \\textbf{CopCo}',
     'CopCo_TYP': '\\textbf{Dyslexia Detection} task on \\textbf{CopCo}',
     'MECOL2_LEX': '\\textbf{Vocabulary Knowledge} task on \\textbf{MECOL2}',
+    'MECOL1_LEX': '\\textbf{Vocabulary Knowledge} task on \\textbf{MECOL1}',
     'OneStop_RC': '\\textbf{Reading Comprehension} task on \\textbf{OneStop}',
+    'OneStopL2_LEX': '\\textbf{Vocabulary Knowledge} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH': '\\textbf{Michigan Test} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_R': '\\textbf{Michigan Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_G': '\\textbf{Michigan Grammar} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_V': '\\textbf{Michigan Vocabulary} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_L': '\\textbf{Michigan Listening} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_LG': '\\textbf{Michigan Listening+Grammar} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_VR': '\\textbf{Michigan Vocab+Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_MICH_GVR': '\\textbf{Michigan Grammar+Vocab+Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH': '\\textbf{Log Michigan} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_R': '\\textbf{Log Michigan Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_G': '\\textbf{Log Michigan Grammar} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_V': '\\textbf{Log Michigan Vocabulary} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_L': '\\textbf{Log Michigan Listening} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_LG': '\\textbf{Log Michigan Listening+Grammar} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_VR': '\\textbf{Log Michigan Vocab+Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_LOG_MICH_GVR': '\\textbf{Log Michigan Grammar+Vocab+Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE': '\\textbf{TOEFL Total} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE_R': '\\textbf{TOEFL Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE_L': '\\textbf{TOEFL Listening} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE_S': '\\textbf{TOEFL Speaking} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE_W': '\\textbf{TOEFL Writing} task on \\textbf{OneStopL2}',
+    'OneStopL2_TOE_LR': '\\textbf{TOEFL Listening+Reading} task on \\textbf{OneStopL2}',
+    'OneStopL2_RC': '\\textbf{Reading Comprehension} task on \\textbf{OneStopL2}',
     'SBSAT_RC': '\\textbf{Reading Comprehension} task on \\textbf{SBSAT}',
     'PoTeC_RC': '\\textbf{Reading Comprehension} task on \\textbf{PoTeC}',
     'SBSAT_STD': '\\textbf{Subjective Text Difficulty} task on \\textbf{SBSAT}',
@@ -41,12 +66,37 @@ DATASET_TO_COLUMN = {
 #: Groups of tasks, in the order they should appear
 GROUPS = {
     'Reader': [
+        'MECOL1_LEX',  # Vocabulary Knowledge (continuous)
         'MECOL2_LEX',  # Vocabulary Knowledge (continuous)
         'CopCo_RCS',  # Reading Comprehension Skill (continuous)
         'CopCo_TYP',  # Dyslexia Detection
+        'OneStopL2_LEX',  # Vocabulary Knowledge (continuous)
+        'OneStopL2_MICH',  # Michigan Test (continuous)
+        'OneStopL2_MICH_R',  # Michigan Reading (continuous)
+        'OneStopL2_MICH_G',  # Michigan Grammar (continuous)
+        'OneStopL2_MICH_V',  # Michigan Vocabulary (continuous)
+        'OneStopL2_MICH_L',  # Michigan Listening (continuous)
+        'OneStopL2_MICH_LG',  # Michigan Listening+Grammar (continuous)
+        'OneStopL2_MICH_VR',  # Michigan Vocab+Reading (continuous)
+        'OneStopL2_MICH_GVR',  # Michigan Grammar+Vocab+Reading (continuous)
+        'OneStopL2_LOG_MICH',  # Log Michigan (continuous)
+        'OneStopL2_LOG_MICH_R',  # Log Michigan Reading (continuous)
+        'OneStopL2_LOG_MICH_G',  # Log Michigan Grammar (continuous)
+        'OneStopL2_LOG_MICH_V',  # Log Michigan Vocabulary (continuous)
+        'OneStopL2_LOG_MICH_L',  # Log Michigan Listening (continuous)
+        'OneStopL2_LOG_MICH_LG',  # Log Michigan Listening+Grammar (continuous)
+        'OneStopL2_LOG_MICH_VR',  # Log Michigan Vocab+Reading (continuous)
+        'OneStopL2_LOG_MICH_GVR',  # Log Michigan Grammar+Vocab+Reading (continuous)
+        'OneStopL2_TOE',  # TOEFL Total (continuous)
+        'OneStopL2_TOE_R',  # TOEFL Reading (continuous)
+        'OneStopL2_TOE_L',  # TOEFL Listening (continuous)
+        'OneStopL2_TOE_S',  # TOEFL Speaking (continuous)
+        'OneStopL2_TOE_W',  # TOEFL Writing (continuous)
+        'OneStopL2_TOE_LR',  # TOEFL Listening+Reading (continuous)
     ],
     r'Reader \& Text': [
         'OneStop_RC',  # Reading Comprehension
+        'OneStopL2_RC',  # Reading Comprehension
         'SBSAT_RC',  # Reading Comprehension
         'PoTeC_RC',  # Reading Comprehension
         'SBSAT_STD',  # Subjective Text Difficulty
@@ -62,8 +112,14 @@ REG_TASKS_STR = (
 MODEL_ORDER_CLASSIFICATION = [
     'DummyClassifierMLArgs',
     'LogisticRegressionMLArgs',
-    'Roberta',
     'LogisticMeziereArgs',
+    'LogisticFixationMetricsArgs',
+    'LogisticSClustersNoNormArgs',
+    'LogisticWpCoefsArgs',
+    'LogisticWpCoefsNoNormArgs',
+    'LogisticWpCoefsNoInterceptArgs',
+    'LogisticWpCoefsNoNormNoInterceptArgs',
+    'Roberta',
     'SupportVectorMachineMLArgs',
     # 'XGBoostMLArgs',
     'RandomForestMLArgs',
@@ -81,8 +137,15 @@ MODEL_ORDER_CLASSIFICATION = [
 MODEL_ORDER_REGRESSION = [
     'DummyRegressorMLArgs',
     'LinearRegressionArgs',
-    'Roberta',
     'LinearMeziereArgs',
+    'LinearFixationMetricsArgs',
+    'LinearSClustersArgs',
+    'LinearSClustersNoNormArgs',
+    'LinearWpCoefsArgs',
+    'LinearWpCoefsNoNormArgs',
+    'LinearWpCoefsNoInterceptArgs',
+    'LinearWpCoefsNoNormNoInterceptArgs',
+    'Roberta',
     'SupportVectorRegressorMLArgs',
     # 'XGBoostRegressorMLArgs',
     'RandomForestRegressorMLArgs',
@@ -111,6 +174,19 @@ MODEL_TO_COLUMN = {
     'Roberta': 'Text-Only Roberta',
     'LogisticMeziereArgs': 'Logistic Regression~\\cite{meziere2023using}',
     'LinearMeziereArgs': 'Logistic Regression~\\cite{meziere2023using}',
+    'LogisticFixationMetricsArgs': 'Fixation Metrics',
+    'LinearFixationMetricsArgs': 'Fixation Metrics',
+    'LogisticSClustersNoNormArgs': 'S-Clusters (No Norm)',
+    'LinearSClustersArgs': 'S-Clusters',
+    'LinearSClustersNoNormArgs': 'S-Clusters (No Norm)',
+    'LogisticWpCoefsArgs': 'Word Property Coefs',
+    'LogisticWpCoefsNoNormArgs': 'Word Property Coefs (No Norm)',
+    'LogisticWpCoefsNoInterceptArgs': 'Word Property Coefs (No Intercept)',
+    'LogisticWpCoefsNoNormNoInterceptArgs': 'Word Property Coefs (No Norm/No Intercept)',
+    'LinearWpCoefsArgs': 'Word Property Coefs',
+    'LinearWpCoefsNoNormArgs': 'Word Property Coefs (No Norm)',
+    'LinearWpCoefsNoInterceptArgs': 'Word Property Coefs (No Intercept)',
+    'LinearWpCoefsNoNormNoInterceptArgs': 'Word Property Coefs (No Norm/No Intercept)',
     'SupportVectorMachineMLArgs': 'SVM~\\cite{hollenstein2023zuco}',
     'SupportVectorRegressorMLArgs': 'SVM~\\cite{hollenstein2023zuco}',
     # 'XGBoostMLArgs': 'XGBoost',
@@ -142,6 +218,13 @@ ML_REGRESSION_TO_CLASSIFICATION = {
     'DummyRegressorMLArgs': 'DummyClassifierMLArgs',
     'LinearRegressionArgs': 'LogisticRegressionMLArgs',
     'LinearMeziereArgs': 'LogisticMeziereArgs',
+    'LinearFixationMetricsArgs': 'LogisticFixationMetricsArgs',
+    'LinearSClustersArgs': 'LogisticSClustersNoNormArgs',
+    'LinearSClustersNoNormArgs': 'LogisticSClustersNoNormArgs',
+    'LinearWpCoefsArgs': 'LogisticWpCoefsArgs',
+    'LinearWpCoefsNoNormArgs': 'LogisticWpCoefsNoNormArgs',
+    'LinearWpCoefsNoInterceptArgs': 'LogisticWpCoefsNoInterceptArgs',
+    'LinearWpCoefsNoNormNoInterceptArgs': 'LogisticWpCoefsNoNormNoInterceptArgs',
     'RandomForestRegressorMLArgs': 'RandomForestMLArgs',
     'SupportVectorRegressorMLArgs': 'SupportVectorMachineMLArgs',
     # 'XGBoostRegressorMLArgs': 'XGBoostMLArgs',
@@ -186,6 +269,54 @@ FEATURE_TYPES = {
         'Word-Level': '-',
         'Trial-Level': '\\checkmark',
         'Linguistic': '-',
+        'Embeddings': '-',
+    },
+    'LogisticFixationMetricsArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '\\checkmark',
+        'Word-Level': '-',
+        'Trial-Level': '\\checkmark',
+        'Linguistic': '-',
+        'Embeddings': '-',
+    },
+    'LogisticSClustersNoNormArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '\\checkmark',
+        'Word-Level': '-',
+        'Trial-Level': '\\checkmark',
+        'Linguistic': '-',
+        'Embeddings': '-',
+    },
+    'LogisticWpCoefsArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '-',
+        'Word-Level': '\\checkmark',
+        'Trial-Level': '-',
+        'Linguistic': '\\checkmark',
+        'Embeddings': '-',
+    },
+    'LogisticWpCoefsNoNormArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '-',
+        'Word-Level': '\\checkmark',
+        'Trial-Level': '-',
+        'Linguistic': '\\checkmark',
+        'Embeddings': '-',
+    },
+    'LogisticWpCoefsNoInterceptArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '-',
+        'Word-Level': '\\checkmark',
+        'Trial-Level': '-',
+        'Linguistic': '\\checkmark',
+        'Embeddings': '-',
+    },
+    'LogisticWpCoefsNoNormNoInterceptArgs': {
+        'Layout': '-',
+        'Saccade/Fixation': '-',
+        'Word-Level': '\\checkmark',
+        'Trial-Level': '-',
+        'Linguistic': '\\checkmark',
         'Embeddings': '-',
     },
     'SupportVectorMachineMLArgs': {
@@ -291,6 +422,7 @@ FEATURE_TYPES = {
 # Classification tasks (AUROC - higher is better)
 classification_tasks = [
     'OneStop_RC',  # Reading Comprehension (OneStop)
+    'OneStopL2_RC',  # Reading Comprehension (OneStopL2)
     'SBSAT_RC',  # Reading Comprehension (SB-SAT)
     'PoTeC_RC',  # Reading Comprehension (PoTeC)
     'PoTeC_DE',  # Domain Expertise (PoTeC)
@@ -302,12 +434,61 @@ classification_tasks = [
 regression_tasks = [
     'SBSAT_STD',  # Subjective Text Difficulty (SB-SAT)
     'CopCo_RCS',  # Reading Comprehension Skill (CopCo)
+    'MECOL1_LEX',  # Vocabulary Knowledge (MECO L1)
     'MECOL2_LEX',  # Vocabulary Knowledge (MECO L2)
+    'OneStopL2_LEX',  # Vocabulary Knowledge (OneStopL2)
+    'OneStopL2_MICH',  # Michigan Test (OneStopL2)
+    'OneStopL2_MICH_R',  # Michigan Reading (OneStopL2)
+    'OneStopL2_MICH_G',  # Michigan Grammar (OneStopL2)
+    'OneStopL2_MICH_V',  # Michigan Vocabulary (OneStopL2)
+    'OneStopL2_MICH_L',  # Michigan Listening (OneStopL2)
+    'OneStopL2_MICH_LG',  # Michigan Listening+Grammar (OneStopL2)
+    'OneStopL2_MICH_VR',  # Michigan Vocab+Reading (OneStopL2)
+    'OneStopL2_MICH_GVR',  # Michigan Grammar+Vocab+Reading (OneStopL2)
+    'OneStopL2_LOG_MICH',  # Log Michigan (OneStopL2)
+    'OneStopL2_LOG_MICH_R',  # Log Michigan Reading (OneStopL2)
+    'OneStopL2_LOG_MICH_G',  # Log Michigan Grammar (OneStopL2)
+    'OneStopL2_LOG_MICH_V',  # Log Michigan Vocabulary (OneStopL2)
+    'OneStopL2_LOG_MICH_L',  # Log Michigan Listening (OneStopL2)
+    'OneStopL2_LOG_MICH_LG',  # Log Michigan Listening+Grammar (OneStopL2)
+    'OneStopL2_LOG_MICH_VR',  # Log Michigan Vocab+Reading (OneStopL2)
+    'OneStopL2_LOG_MICH_GVR',  # Log Michigan Grammar+Vocab+Reading (OneStopL2)
+    'OneStopL2_TOE',  # TOEFL Total (OneStopL2)
+    'OneStopL2_TOE_R',  # TOEFL Reading (OneStopL2)
+    'OneStopL2_TOE_L',  # TOEFL Listening (OneStopL2)
+    'OneStopL2_TOE_S',  # TOEFL Speaking (OneStopL2)
+    'OneStopL2_TOE_W',  # TOEFL Writing (OneStopL2)
+    'OneStopL2_TOE_LR',  # TOEFL Listening+Reading (OneStopL2)
 ]
 
 # Task labels for header
 task_headers = {
+    'MECOL1_LEX': ('Vocabulary\\Knowledge \\woman{}', 'MECO L1'),
+    'OneStopL2_LEX': ('Vocab.\\Knowledge \\woman{}', 'OneStopL2'),
+    'OneStopL2_MICH': ('MICH\\Total', 'OneStopL2'),
+    'OneStopL2_MICH_R': ('MICH\\Reading', 'OneStopL2'),
+    'OneStopL2_MICH_G': ('MICH\\Grammar', 'OneStopL2'),
+    'OneStopL2_MICH_V': ('MICH\\Vocab', 'OneStopL2'),
+    'OneStopL2_MICH_L': ('MICH\\Listening', 'OneStopL2'),
+    'OneStopL2_MICH_LG': ('MICH\\Listen+Gram', 'OneStopL2'),
+    'OneStopL2_MICH_VR': ('MICH\\Vocab+Read', 'OneStopL2'),
+    'OneStopL2_MICH_GVR': ('MICH\\Gram+Vocab+Read', 'OneStopL2'),
+    'OneStopL2_LOG_MICH': ('Log MICH\\Total', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_R': ('Log MICH\\Reading', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_G': ('Log MICH\\Grammar', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_V': ('Log MICH\\Vocab', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_L': ('Log MICH\\Listening', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_LG': ('Log MICH\\Listen+Gram', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_VR': ('Log MICH\\Vocab+Read', 'OneStopL2'),
+    'OneStopL2_LOG_MICH_GVR': ('Log MICH\\Gram+Vocab+Read', 'OneStopL2'),
+    'OneStopL2_TOE': ('TOEFL\\Total', 'OneStopL2'),
+    'OneStopL2_TOE_R': ('TOEFL\\Reading', 'OneStopL2'),
+    'OneStopL2_TOE_L': ('TOEFL\\Listening', 'OneStopL2'),
+    'OneStopL2_TOE_S': ('TOEFL\\Speaking', 'OneStopL2'),
+    'OneStopL2_TOE_W': ('TOEFL\\Writing', 'OneStopL2'),
+    'OneStopL2_TOE_LR': ('TOEFL\\Listen+Read', 'OneStopL2'),
     'OneStop_RC': ('Reading Compr.', 'OneStop'),
+    'OneStopL2_RC': ('Reading Compr.', 'OneStopL2'),
     'SBSAT_RC': ('Reading Compr.', 'SB-SAT'),
     'PoTeC_RC': ('Reading Compr.', 'PoTeC'),
     'PoTeC_DE': ('Domain\\\\Expertise', 'PoTeC'),

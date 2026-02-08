@@ -80,7 +80,7 @@
       "program": "src/run/single_run/test_ml.py",
       "console": "integratedTerminal",
       "justMyCode": false,
-      "args": [ "--data_task", "IITBHGC_CV", "--wandb_project", "IITBHGC_CV_20251104"],
+      "args": [ "--data_task", "OneStopL2_LEX", "--wandb_project", "EyeBench", "--wandb_run_id", "st1cv3eo" ],
       "env": {
         "CUDA_VISIBLE_DEVICES": "2",
         "PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT": "20.0",
@@ -95,7 +95,7 @@
       "justMyCode": false,
       "args": [
         "--dataset",
-        "MECOL1"
+        "OneStopL2"
       ],
       "env": {
         "PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT": "20.0",
@@ -113,7 +113,7 @@
       },
       "args": [
         "--dataset",
-        "MECOL1"
+        "OneStopL2"
       ],
     },
     {

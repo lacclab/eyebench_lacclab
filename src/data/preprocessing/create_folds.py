@@ -12,7 +12,7 @@ from loguru import logger
 from sklearn.model_selection import GroupKFold, StratifiedGroupKFold
 
 from src.configs import data
-from src.configs.constants import REGIMES, DataSets, DataType, Fields, SetNames
+from src.configs.constants import REGIMES, DataSets, DataType, Fields, SetNames, DatasetLanguage
 from src.configs.data import DataArgs, get_data_args
 from src.data.utils import load_raw_data
 
@@ -36,6 +36,7 @@ class FoldSplitter:
         self,
         item_columns: list[str],
         subject_column: str,
+        subject_group_columns: list[str],
         groupby_columns: list[str],
         num_folds: int,
         stratify: str | None,
@@ -48,7 +49,7 @@ class FoldSplitter:
         Parameters:
             item_columns (list[str]): The columns that contain the item identifiers.
             subject_column (str): The column that contains the subject identifiers.
-            groupby_columns (list[str]): The columns used to group the trials.
+            subject_group_columns (list[str]): The columns used to group the subjects.
             higher_level_split_column (str): The column used for higher level splitting.
             num_folds (int): The number of folds to split the data into.
             stratify (str): The column that contains the target values.
@@ -56,6 +57,7 @@ class FoldSplitter:
         """
         self.item_columns = item_columns
         self.subject_column = subject_column
+        self.subject_group_columns = subject_group_columns
         self.groupby_columns = groupby_columns
         self.higher_level_split_column = higher_level_split_column
         self.num_folds = num_folds
@@ -157,6 +159,7 @@ class FoldSplitter:
 
         def _split_and_collect(batch_data: pd.DataFrame, split_ind: int):
             subjects = batch_data[self.subject_column]
+            subject_group = batch_data[self.subject_group_columns].astype(str).apply('_'.join, axis=1)
             items = batch_data[self.item_columns].astype(str).apply('_'.join, axis=1)
             if self.stratify:
                 splitter = StratifiedGroupKFold(n_splits=n_splits)
@@ -166,8 +169,13 @@ class FoldSplitter:
                 y = None
 
             _, test_subjects_indx = list(
-                splitter.split(subjects, y=y, groups=subjects)
+                splitter.split(
+                    subjects,
+                    y=y,
+                    groups=subject_group,
+                )
             )[split_ind]
+
             _, test_items_indx = list(splitter.split(items, y=y, groups=items))[
                 split_ind
             ]
@@ -443,6 +451,7 @@ def split_dataset(
     splitter = FoldSplitter(
         item_columns=data_args.split_item_columns,
         subject_column=data_args.subject_column,
+        subject_group_columns=data_args.split_subject_columns,
         groupby_columns=data_args.groupby_columns,
         num_folds=data_args.n_folds,
         stratify=data_args.stratify,

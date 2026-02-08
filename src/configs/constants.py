@@ -163,9 +163,40 @@ class DatasetLanguage(StrEnum):
         DANISH (str): Represents Danish language datasets.
     """
 
+    ARABIC = 'Arabic'
+    KOREAN = 'Korean'
+    JAPANESE = 'Japanese'
+    VIETNAMESE = 'Vietnamese'
+    CHINESE = 'Chinese'
+    SPANISH = 'Spanish'
+    RUSSIAN = 'Russian'
+    HEBREW = 'Hebrew'
+    FRENCH = 'French'
+    PORTUGUESE = 'Portuguese'
     ENGLISH = 'English'
     GERMAN = 'German'
     DANISH = 'Danish'
+
+    @property
+    def group(self) -> int:
+        """
+        Group identifier for the language.
+        """
+        return {
+            DatasetLanguage.ARABIC: 1,
+            DatasetLanguage.KOREAN: 2,
+            DatasetLanguage.JAPANESE: 3,
+            DatasetLanguage.VIETNAMESE: 4,
+            DatasetLanguage.CHINESE: 5,
+            DatasetLanguage.SPANISH: 6,
+            DatasetLanguage.RUSSIAN: 7,
+            DatasetLanguage.HEBREW: 8,
+            DatasetLanguage.FRENCH: 9,
+            DatasetLanguage.PORTUGUESE: 10,
+            DatasetLanguage.ENGLISH: 11,
+            DatasetLanguage.GERMAN: 12,
+            DatasetLanguage.DANISH: 13,
+        }[self]
 
 
 class NormalizationModes(StrEnum):
@@ -253,6 +284,8 @@ class Fields(StrEnum):
     IS_CORRECT = 'is_correct'
     PRACTICE = 'practice_trial'
     QUESTION = 'question'
+    L1 = 'L1'
+    L1_GROUP = 'L1_group'
 
 
 class ItemLevelFeaturesModes(StrEnum):
@@ -267,6 +300,14 @@ class ItemLevelFeaturesModes(StrEnum):
     SVM = 'SVM'
     LOGISTIC = 'LOGISTIC'
     READING_SPEED = 'READING_SPEED'
+    S_CLUSTERS = 'S_CLUSTERS'
+    FIXATION_METRICS = 'FIXATION_METRICS'
+    S_CLUSTERS_NO_NORM = 'S_CLUSTERS_NO_NORM'
+    WP_COEFS = 'WP_COEFS'
+    WP_COEFS_NO_NORM = 'WP_COEFS_NO_NORM'
+    WP_COEFS_NO_INTERCEPT = 'WP_COEFS_NO_INTERCEPT'
+    WP_COEFS_NO_NORM_NO_INTERCEPT = 'WP_COEFS_NO_NORM_NO_INTERCEPT'
+
 
 
 class BackboneNames(StrEnum):

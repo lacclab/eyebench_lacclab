@@ -623,7 +623,7 @@ def calc_reading_speed(trial: pd.DataFrame) -> float:
 
 def find_wp_coefs(ia_trial_df: pd.DataFrame, fixation_metrics:list[str], normalize_RS:bool=True) -> dict:
     fix_met_trial_df = ia_trial_df.rename(columns=EYE_METRICS_NICKNAMES_INVERTED)
-    find_wp_coefs_inner(fix_met_trial_df, fixation_metrics, normalize_RS)
+    return find_wp_coefs_inner(fix_met_trial_df, fixation_metrics, normalize_RS)
 
 
 def find_wp_coefs_inner(subject_df: pd.DataFrame, fixation_metrics:list[str], normalize_RS:bool=True) -> dict:
@@ -720,7 +720,7 @@ def compute_ia_trial_level_features(
     # IA_REGRESSION_OUT_FULL_COUNT is Number of times word was exited to a lower IA_ID (to the left in English).
     # IA_REGRESSION_OUT_FULL_COUNT is Number of times word was exited to a lower IA_ID (to the left in English).
 
-    first_fix_prog = trial.loc[(trial["FirstFixProg"]==1)].reset_index(drop=True)
+    first_fix_prog = trial.loc[(trial["IA_FIRST_FIX_PROGRESSIVE"]==1)].reset_index(drop=True)
     first_pass_regressions = first_fix_prog['IA_REGRESSION_OUT_COUNT'].mean() # might have a problem that "IA_REGRESSION_OUT_COUNT" isnt in the data
     total_regression_words = trial['IA_REGRESSION_OUT_FULL_COUNT'].mean()
 
@@ -730,7 +730,7 @@ def compute_ia_trial_level_features(
             'skip_rate': trial['total_skip'].mean(),
             #'first_pass_skip_rate': trial['IA_SKIP'].mean(), # TODO: add to features?
             'mean_FF': trial['IA_FIRST_FIXATION_DURATION'].mean(), # first fixation duration
-            'mean_FP': trial['IA_FIRST_PASS_DWELL_TIME'].mean(), # first pass duration
+            'mean_FP': trial['IA_FIRST_RUN_DWELL_TIME'].mean(), # first pass duration
             'mean_TF': trial['IA_DWELL_TIME'].mean(),  # total fixation duration
             'first_pass_regression_rate': first_pass_regressions, 
             # 'total_regression_rate': total_regression_words, # TODO: add to features?
@@ -774,8 +774,8 @@ def compute_ia_trial_level_features(
 
 
     return RF | SVM | LOGISTIC | READING_SPEED | FIXATION_METRICS | \
-        S_CLUSTERS | S_CLUSTERS_NO_NORM \
-            | WP_COEFS | WP_COEFS_NO_NORM | WP_COEFS_NO_INTERCEPT | WP_COEFS_NO_NORM_NO_INTERCEPT
+           S_CLUSTERS | S_CLUSTERS_NO_NORM \
+           | WP_COEFS | WP_COEFS_NO_NORM | WP_COEFS_NO_INTERCEPT | WP_COEFS_NO_NORM_NO_INTERCEPT
 
 
 def save_feature_names_if_do_not_exist(

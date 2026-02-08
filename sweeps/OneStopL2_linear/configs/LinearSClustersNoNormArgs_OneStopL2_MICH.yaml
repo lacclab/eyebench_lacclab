@@ -1,0 +1,136 @@
+hyper_args:
+  base_model: LinearRegressionRegressorMLModel
+  base_models:
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  - LinearRegressionRegressorMLModel
+  data_task: OneStopL2_MICH
+  data_tasks:
+  - OneStopL2_LEX
+  - OneStopL2_MICH
+  - OneStopL2_MICH_R
+  - OneStopL2_MICH_L
+  - OneStopL2_TOE
+  - OneStopL2_TOE_LR
+  folds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  gpu_count: 1
+  model: LinearSClustersNoNormArgs
+  models:
+  - LinearRegressionArgs
+  - LinearMeziereArgs
+  - LinearFixationMetricsArgs
+  - LinearSClustersArgs
+  - LinearSClustersNoNormArgs
+  - LinearWpCoefsArgs
+  - LinearWpCoefsNoNormArgs
+  - LinearWpCoefsNoInterceptArgs
+  - LinearWpCoefsNoNormNoInterceptArgs
+  - LinearReadingSpeedFixationMetricsArgs
+  - LinearReadingSpeedSClustersArgs
+  - LinearReadingSpeedSClustersNoNormArgs
+  - LinearReadingSpeedWpCoefsArgs
+  - LinearReadingSpeedWpCoefsNoNormArgs
+  - LinearReadingSpeedWpCoefsNoInterceptArgs
+  - LinearReadingSpeedWpCoefsNoNormNoInterceptArgs
+  - LinearReadingSpeedFixationMetricsSClustersArgs
+  - LinearReadingSpeedFixationMetricsSClustersNoNormArgs
+  - LinearReadingSpeedFixationMetricsWpCoefsArgs
+  - LinearReadingSpeedFixationMetricsWpCoefsNoNormArgs
+  - LinearReadingSpeedFixationMetricsWpCoefsNoInterceptArgs
+  - LinearReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs
+  - LinearReadingSpeedSClustersWpCoefsArgs
+  - LinearReadingSpeedSClustersNoNormWpCoefsNoNormArgs
+  - LinearReadingSpeedSClustersWpCoefsNoInterceptArgs
+  - LinearReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs
+  - LinearReadingSpeedFixationMetricsSClustersWpCoefsArgs
+  - LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs
+  - LinearReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs
+  - LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs
+  num_duplicates_per_gpu: 1
+  run_cap: 250
+  search_algorithm: grid
+  slurm_cpus: 10
+  slurm_mailto: shubi@campus.technion.ac.il
+  slurm_mem: 75G
+  trainer: TrainerML
+  trainers:
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  - TrainerML
+  wandb_entity: EyeRead
+  wandb_project: OneStopL2_linear
+sweep_ids:
+- bi2f1wuw
+- 555qni5j
+- u6w7wkcc
+- tl4f1h52
+- ywfuao1c
+- 6x9c62nv
+- xfglp9c2
+- ep1xzae0
+- t7woju07
+- 0mzsjdus

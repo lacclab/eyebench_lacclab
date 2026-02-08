@@ -11,7 +11,7 @@ from tap import Tap
 from text_metrics.utils import is_content_word
 from tqdm import tqdm
 
-from src.configs.constants import DataType, Fields
+from src.configs.constants import DataType, Fields, DatasetLanguage
 from src.configs.models.base_model import BaseModelArgs
 from src.configs.models.dl.BEyeLSTM import BEyeLSTMArgs
 from src.configs.models.dl.PLMASF import PLMASfArgs
@@ -108,6 +108,11 @@ class OneStopProcessor(DatasetProcessor):
 
             df = df.drop(columns=['ptb_pos']).rename(columns={'Reduced_POS': 'ptb_pos'})
             df = our_processing(df=df, args=cfg)
+
+            if Fields.L1 in df.columns:
+                df[Fields.L1_GROUP] = df[Fields.L1].map(
+                    lambda x: DatasetLanguage(str(x)).group
+                )
 
             # add unique_trial_id column
             df['unique_trial_id'] = (
