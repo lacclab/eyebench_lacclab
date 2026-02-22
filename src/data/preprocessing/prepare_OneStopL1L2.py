@@ -85,20 +85,27 @@ def prepare_final_data_folders(dataset_org, mode, cond):
         for subdir in SUBDIRS_TO_PREPARE[1:]:
             run_str = f"cp data/{dataset_org}_{mode}_{cond}/{subdir}/{FILE_NAMES[file]} data/{dataset_org}_{mode}_{cond}/{subdir}/{NEW_FILE_NAMES[file]}"
 
-def prepare_all_folders(datasets=DATASETS, modes=MODES, conditions=CONDS):
+def prepare_all_folders(datasets=DATASETS, modes=MODES, conditions=CONDS, dry_run=False):
     for dataset_org in datasets:
         for mode in modes:
             for cond in conditions:
-                print(f"{dataset_org}_{mode}_{cond}")
-                sync_data_to_folders(dataset_org, mode, cond)
-                prepare_final_data_folders(dataset_org, mode, cond)
+                if dry_run:
+                    print(f"[DRY RUN] Would prepare folders and sync data for: {dataset_org}_{mode}_{cond}")
+                else:
+                    print(f"{dataset_org}_{mode}_{cond}")
+                    sync_data_to_folders(dataset_org, mode, cond)
+                    prepare_final_data_folders(dataset_org, mode, cond)
 
-def run_dataset(dataset_org, mode, cond):
+def run_dataset(dataset_org, mode, cond, dry_run=False):
     # assuming preperation is done, run the final processing script
     preprocess_str = f"python src/data/preprocessing/preprocess_data.py --dataset {dataset_org}_{mode}_{cond}"
     create_folds_str = f"python src/data/preprocessing/create_folds.py --dataset {dataset_org}_{mode}_{cond}"
-    os.system(preprocess_str)
-    os.system(create_folds_str)
+    if dry_run:
+        print(f"[DRY RUN] Would execute: {preprocess_str}")
+        print(f"[DRY RUN] Would execute: {create_folds_str}")
+    else:
+        os.system(preprocess_str)
+        os.system(create_folds_str)
 
 def run_all_datasests(datasets=DATASETS, modes=MODES, conditions=CONDS):
     for dataset_org in datasets:
@@ -106,10 +113,12 @@ def run_all_datasests(datasets=DATASETS, modes=MODES, conditions=CONDS):
             for cond in conditions:
                 run_dataset(dataset_org, mode, cond)
 
-def run_all_datasets_parallel(datasets=DATASETS, modes=MODES, conditions=CONDS, max_workers=None):
+
+
+def run_all_datasets_parallel(datasets=DATASETS, modes=MODES, conditions=CONDS, max_workers=None, dry_run=False):
     """Run dataset processing in parallel."""
     tasks = [
-        (dataset_org, mode, cond)
+        (dataset_org, mode, cond, dry_run)
         for dataset_org in datasets
         for mode in modes
         for cond in conditions
@@ -125,9 +134,11 @@ def run_all_datasets_parallel(datasets=DATASETS, modes=MODES, conditions=CONDS, 
             except Exception as e:
                 print(f"Failed: {task} with error: {e}")
 
+
+
 def main():
-    prepare_all_folders()
-    run_all_datasets_parallel(max_workers = 12)
+    prepare_all_folders(dry_run=True)
+    run_all_datasets_parallel(max_workers = 12, dry_run=True)
 
 if __name__ == "__main__":
     main()
