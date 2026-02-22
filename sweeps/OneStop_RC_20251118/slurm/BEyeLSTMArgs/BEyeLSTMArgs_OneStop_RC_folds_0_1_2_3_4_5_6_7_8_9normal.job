@@ -3,10 +3,10 @@
 #SBATCH --job-name=BEyeLSTMArgs_OneStop_RC-array
 #SBATCH --output=logs/BEyeLSTMArgs_OneStop_RC-%A_%a.out
 #SBATCH --error=logs/BEyeLSTMArgs_OneStop_RC-%A_%a.err
-#SBATCH --partition=work,mig
+#SBATCH --partition=work
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --gpus=1
+
 #SBATCH --qos=normal
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=75G
@@ -14,17 +14,17 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=shubi@campus.technion.ac.il
 
-sweep_ids=(yx0uuwce 5bik76bs kirp2g73 k0d4y3m0 jaaqmzko cckkdsbr jbbqyoxz mfk3ppbi ylk92a1c qzh0w8ir)
+sweep_ids=(8spz9xf5 2qnhwvj3 4wb87zqb v56skt4u 1vwqg4k5 0oo1zewd kr86d2if ywmcfixa eh9zr03t k3l9tft0)
 SWEEP_ID=${sweep_ids[$SLURM_ARRAY_TASK_ID]}
 
 
-srun --overlap --ntasks=1 --nodes=1 --cpus-per-task=$SLURM_CPUS_PER_TASK -p work,mig \
+srun --overlap --ntasks=1 --nodes=1 --cpus-per-task=$SLURM_CPUS_PER_TASK -p work \
     --container-image=/rg/berzak_prj/shubi/prj/rev05_pytorchlightning+pytorch_lightning.sqsh \
     --container-mounts="/rg/berzak_prj/shubi:/home/shubi" \
     --container-workdir=/home/shubi/eyebench_private \
     bash -c "
 echo 'Starting job on $(date)'
 source /home/shubi/prj/nvidia_pytorch_25_03_py3_mamba_wrapper.sh
-conda activate eyebench
+conda activate prof_env
 wandb agent EyeRead/OneStop_RC_20251118/$SWEEP_ID"
     

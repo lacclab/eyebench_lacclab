@@ -62,7 +62,7 @@
       "justMyCode": false,
       "args": [
         "+model=SupportVectorMachineMLArgs", // SupportVectorRegressorMLArgs DummyRegressorMLArgs  RandomForestRegressorMLArgs LinearMeziereArgs LinearRegressionArgs XGBoostRegressorMLArgs
-        "+data=SBSAT_RC",
+        "+data=OneStopL2_TOE",
         "+trainer=TrainerML",
         "data.fold_index=0",
         "trainer.wandb_job_type=DEBUG",

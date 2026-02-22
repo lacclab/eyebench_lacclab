@@ -8,6 +8,8 @@
 #   --folds        Comma-separated list of folds (default: 0)
 #   --wandb_project  Name of the wandb project (default: auto-generated)
 #   --regression   Set to true for regression tasks (default: false)
+#   --accelerator  gpu|cpu (default: gpu)
+#   --cpu_count    Number of CPU devices when accelerator=cpu (default: 1)
 #   -h, --help     Show this help message and exit
 # The script will set the wandb_project variable to a default value based on the selected data tasks and folds,
 # unless overridden.
@@ -20,12 +22,16 @@ folds=(0 1 2 3)
 wandb_project="CopCo_RCS"
 run_cap=1000
 regression="false"
+accelerator="gpu"
+cpu_count=1
 print_help() {
     echo "Usage: $0 [--data_tasks task1,task2,...] [--folds fold1,fold2,...] [--wandb_project name]"
     echo "Options:"
     echo "  --data_tasks     Comma-separated list of data tasks (default: CopCo_TYP)"
     echo "  --folds          Comma-separated list of folds (default: 0)"
     echo "  --wandb_project  Name of the wandb project (default: auto-generated)"
+    echo "  --accelerator    gpu|cpu (default: gpu)"
+    echo "  --cpu_count      Number of CPU devices when accelerator=cpu (default: 1)"
     echo "  -h, --help       Show this help message and exit"
 }
 
@@ -49,6 +55,14 @@ while [[ $# -gt 0 ]]; do
         regression="$2"
         shift 2
         ;;
+    --accelerator)
+        accelerator="$2"
+        shift 2
+        ;;
+    --cpu_count)
+        cpu_count="$2"
+        shift 2
+        ;;
     -h | --help)
         print_help
         exit 0
@@ -70,6 +84,8 @@ echo "Wandb project: $wandb_project"
 echo "Data tasks: ${data_tasks[@]}"
 echo "Folds: ${folds[@]}"
 echo "Regression: $regression"
+echo "Accelerator: $accelerator"
+echo "CPU count: $cpu_count"
 
 dl_models=(
     "AhnCNN AhnCNNModel TrainerDL"
@@ -124,4 +140,6 @@ python src/run/multi_run/sweep_creator.py \
     --data_tasks "${data_tasks[@]}" \
     --folds "${folds[@]}" \
     --wandb_project "${wandb_project}" \
-    --run_cap "$run_cap"
+    --run_cap "$run_cap" \
+    --accelerator "$accelerator" \
+    --cpu_count "$cpu_count"

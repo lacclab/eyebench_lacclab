@@ -704,6 +704,7 @@ class ETDataset(TorchDataset):
             folds_folder_name=cfg.data.folds_folder_name,
             set_name=self.set_name,
             regime_name=self.regime_name,
+            query=cfg.data.prerun_query if self.ia_feature_cols else None,
         )
 
         ia_data = load_data_partial(data_type=DataType.IA)

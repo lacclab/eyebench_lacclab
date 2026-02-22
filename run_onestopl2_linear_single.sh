@@ -11,45 +11,62 @@ PROJECT="EyeBench"
 FOLDS=(0 1 2 3 4 5 6 7 8 9)
 
 MODELS=(
-    # LinearRegressionArgs
-    LinearFixationMetricsArgs
-    LinearSClustersArgs
-    #LinearSClustersNoNormArgs
-    LinearWpCoefsArgs
-    #LinearWpCoefsNoNormArgs
-    #LinearWpCoefsNoInterceptArgs
-    #LinearWpCoefsNoNormNoInterceptArgs
-#   LinearReadingSpeedFixationMetricsArgs
-#   LinearReadingSpeedSClustersArgs
-#   LinearReadingSpeedSClustersNoNormArgs
-#   LinearReadingSpeedWpCoefsArgs
-#   LinearReadingSpeedWpCoefsNoNormArgs
-#   LinearReadingSpeedWpCoefsNoInterceptArgs
-#   LinearReadingSpeedWpCoefsNoNormNoInterceptArgs
-#   LinearReadingSpeedFixationMetricsSClustersArgs
-#   LinearReadingSpeedFixationMetricsSClustersNoNormArgs
-#   LinearReadingSpeedFixationMetricsWpCoefsArgs
-#   LinearReadingSpeedFixationMetricsWpCoefsNoNormArgs
-#   LinearReadingSpeedFixationMetricsWpCoefsNoInterceptArgs
-#   LinearReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs
-#   LinearReadingSpeedSClustersWpCoefsArgs
-#   LinearReadingSpeedSClustersNoNormWpCoefsNoNormArgs
-#   LinearReadingSpeedSClustersWpCoefsNoInterceptArgs
-#   LinearReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs
-#   LinearReadingSpeedFixationMetricsSClustersWpCoefsArgs
-#   LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs
-#   LinearReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs
-#   LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs
+  LinearRegressionArgs
+  LinearFixationMetricsArgs
+  LinearSClustersArgs
+  LinearSClustersNoNormArgs
+  LinearWpCoefsArgs
+  LinearWpCoefsNoNormArgs
+  LinearWpCoefsNoInterceptArgs
+  LinearWpCoefsNoNormNoInterceptArgs
+  LinearReadingSpeedFixationMetricsArgs
+  LinearReadingSpeedSClustersArgs
+  LinearReadingSpeedSClustersNoNormArgs
+  LinearReadingSpeedWpCoefsArgs
+  LinearReadingSpeedWpCoefsNoNormArgs
+  LinearReadingSpeedWpCoefsNoInterceptArgs
+  LinearReadingSpeedWpCoefsNoNormNoInterceptArgs
+  LinearReadingSpeedFixationMetricsSClustersArgs
+  LinearReadingSpeedFixationMetricsSClustersNoNormArgs
+  LinearReadingSpeedFixationMetricsWpCoefsArgs
+  LinearReadingSpeedFixationMetricsWpCoefsNoNormArgs
+  LinearReadingSpeedFixationMetricsWpCoefsNoInterceptArgs
+  LinearReadingSpeedFixationMetricsWpCoefsNoNormNoInterceptArgs
+  LinearReadingSpeedSClustersWpCoefsArgs
+  LinearReadingSpeedSClustersNoNormWpCoefsNoNormArgs
+  LinearReadingSpeedSClustersWpCoefsNoInterceptArgs
+  LinearReadingSpeedSClustersNoNormWpCoefsNoNormNoInterceptArgs
+  LinearReadingSpeedFixationMetricsSClustersWpCoefsArgs
+  LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormArgs
+  LinearReadingSpeedFixationMetricsSClustersWpCoefsNoInterceptArgs
+  LinearReadingSpeedFixationMetricsSClustersNoNormWpCoefsNoNormNoInterceptArgs
 )
 
 DATA_TASKS=(
   OneStopL2_MICH
   OneStopL2_LEX
-#   OneStopL2_MICH_R
-#   OneStopL2_MICH_L
-#   OneStopL2_TOE
-#   OneStopL2_TOE_LR
+  OneStopL2_MICH_R
+  OneStopL2_MICH_L
+  OneStopL2_TOE
+  OneStopL2_TOE_LR
+
+  OneStopL1
 )
+
+DATASETS=(L2 L1L2)
+TYPES=(REP ORD)
+PREVS=(HUNT GATH ALL)
+TASK_SUFFIXES=(MICH LEX MICH_R MICH_L TOE TOE_LR)
+
+for dataset in "${DATASETS[@]}"; do
+  for type in "${TYPES[@]}"; do
+    for prev in "${PREVS[@]}"; do
+      for task in "${TASK_SUFFIXES[@]}"; do
+        DATA_TASKS+=("OneStop_${dataset}_${type}_${prev}_${task}")
+      done
+    done
+  done
+done
 
 for data in "${DATA_TASKS[@]}"; do
   for model in "${MODELS[@]}"; do

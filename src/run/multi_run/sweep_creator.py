@@ -41,6 +41,8 @@ class HyperArgs(Tap):
     wandb_entity: str = 'EyeRead'  # Name of the wandb entity to log to.
     folds: list[int] = [0]  # List of fold indices to run.
     gpu_count: int = 1  # Number of GPUs to use. >1  not tested.
+    accelerator: Literal['gpu', 'cpu'] = 'gpu'  # Hardware accelerator to use.
+    cpu_count: int = 1  # Number of CPU devices to use when accelerator=cpu.
     search_algorithm: Literal['bayes', 'grid', 'random'] = (
         'grid'  # Search algorithm to use.
     )
@@ -66,6 +68,10 @@ class HyperArgs(Tap):
     base_model: str | None = None
 
 
+def get_trainer_devices(args: HyperArgs) -> int:
+    return args.gpu_count if args.accelerator == 'gpu' else args.cpu_count
+
+
 def create_sweep_configs(args: HyperArgs) -> list[dict]:
     """
     Create sweep configurations for the given hyperparameters.
@@ -84,6 +90,13 @@ def create_sweep_configs(args: HyperArgs) -> list[dict]:
         logger.warning(
             f'Warning: The number of hyperparameter configurations ({total_count}) is less than the run cap ({args.run_cap}).'
         )
+
+    trainer_overrides = [
+        f'trainer.devices={get_trainer_devices(args)}',
+        f'trainer.wandb_job_type={args.model}_{args.data_task}',
+    ]
+    if args.trainer == 'TrainerDL':
+        trainer_overrides.insert(0, f'trainer.accelerator={args.accelerator}')
 
     sweep_configs = [
         {
@@ -107,8 +120,7 @@ def create_sweep_configs(args: HyperArgs) -> list[dict]:
                 f'+data={args.data_task}',
                 f'+trainer={args.trainer}',
                 f'data.fold_index={fold_idx}',
-                f'trainer.devices={args.gpu_count}',
-                f'trainer.wandb_job_type={args.model}_{args.data_task}',
+                *trainer_overrides,
             ],
         }
         for fold_idx in args.folds
@@ -140,6 +152,7 @@ def write_bash_script(
     main_command: str,
     sweep_ids: list[str],
     mode: Literal['lacc', 'david'],
+    accelerator: Literal['gpu', 'cpu'],
 ) -> None:
     """
     Write a bash script to launch wandb agents in tmux sessions.
@@ -152,9 +165,11 @@ def write_bash_script(
     if mode == 'lacc':
         conda_path = 'source $HOME/miniforge3/etc/profile.d/conda.sh'
         cd_path = 'cd $HOME/eyebench_private'
+        default_conda_env = '/data/home/ido.falah/miniforge3/envs/prof_env'
     elif mode == 'david':
         conda_path = 'source ~/.conda/envs/eyebench/etc/profile.d/mamba.sh'
         cd_path = 'cd /mnt/mlshare/reich3/eyebench_private'
+        default_conda_env = 'eyebench'
     else:
         raise ValueError(f'Invalid mode: {mode}')
 
@@ -168,12 +183,13 @@ fi
 {conda_path}
 {cd_path}
 
+CONDA_ENV=${{CONDA_ENV:-{default_conda_env}}}
 GPU_NUM=$1
 RUNS_ON_GPU=${{2:-1}}
 for ((i=1; i<=RUNS_ON_GPU; i++)); do
-    session_name="wandb-gpu${{GPU_NUM}}-dup${{i}}-unified-{sweep_ids[0]}-{len(sweep_ids)}"
-    tmux new-session -d -s "${{session_name}}" "{main_command}"; tmux set-option -t "${{session_name}}" remain-on-exit off
-    echo "Launched W&B agent for GPU ${{GPU_NUM}}, Dup ${{i}} in tmux session ${{session_name}}"
+    session_name="wandb-{accelerator}${{GPU_NUM}}-dup${{i}}-unified-{sweep_ids[0]}-{len(sweep_ids)}"
+    tmux new-session -d -s "${{session_name}}" "{conda_path}; {cd_path}; conda activate ${{CONDA_ENV}}; {main_command}"; tmux set-option -t "${{session_name}}" remain-on-exit on
+    echo "Launched W&B agent for {accelerator.upper()} ${{GPU_NUM}}, Dup ${{i}} in tmux session ${{session_name}}"
 done
 """
 
@@ -198,15 +214,16 @@ def write_slurm_script(
         sweep_ids (list[str]): List of sweep ids.
         slurm_qos (str): Slurm quality of service (normal or basic).
     """
+    slurm_partition = 'work,mig' if hyper_args.accelerator == 'gpu' else 'work'
     base_srun_command = f"""
-srun --overlap --ntasks=1 --nodes=1 --cpus-per-task=$SLURM_CPUS_PER_TASK -p work,mig \\
+srun --overlap --ntasks=1 --nodes=1 --cpus-per-task=$SLURM_CPUS_PER_TASK -p {slurm_partition} \\
     --container-image=/rg/berzak_prj/shubi/prj/rev05_pytorchlightning+pytorch_lightning.sqsh \\
     --container-mounts="/rg/berzak_prj/shubi:/home/shubi" \\
     --container-workdir=/home/shubi/eyebench_private \\
     bash -c "
 echo 'Starting job on $(date)'
 source /home/shubi/prj/nvidia_pytorch_25_03_py3_mamba_wrapper.sh
-conda activate eyebench
+conda activate prof_env
 wandb agent {hyper_args.wandb_entity}/{hyper_args.wandb_project}/$SWEEP_ID"
     """
     srun_command = f"""{base_srun_command}"""
@@ -216,6 +233,12 @@ wandb agent {hyper_args.wandb_entity}/{hyper_args.wandb_project}/$SWEEP_ID"
             srun_command += f"""{base_srun_command}\nsleep 10\n"""
         srun_command += 'wait'
 
+    gpus_directive = (
+        f'#SBATCH --gpus={hyper_args.gpu_count}'
+        if hyper_args.accelerator == 'gpu'
+        else ''
+    )
+
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(
             f"""#!/bin/bash
@@ -223,10 +246,10 @@ wandb agent {hyper_args.wandb_entity}/{hyper_args.wandb_project}/$SWEEP_ID"
 #SBATCH --job-name={hyper_args.model}_{hyper_args.data_task}-array
 #SBATCH --output=logs/{hyper_args.model}_{hyper_args.data_task}-%A_%a.out
 #SBATCH --error=logs/{hyper_args.model}_{hyper_args.data_task}-%A_%a.err
-#SBATCH --partition=work,mig
+#SBATCH --partition={slurm_partition}
 #SBATCH --ntasks={hyper_args.num_duplicates_per_gpu}
 #SBATCH --nodes=1
-#SBATCH --gpus={hyper_args.gpu_count}
+{gpus_directive}
 #SBATCH --qos={slurm_qos}
 #SBATCH --cpus-per-task={hyper_args.slurm_cpus}
 #SBATCH --mem={hyper_args.slurm_mem}
@@ -263,16 +286,24 @@ def create_bash_scripts(
         + '_'.join(map(str, hyper_args.folds))
         + '.sh'
     )
+    wandb_agent_prefix = (
+        'CUDA_VISIBLE_DEVICES=${GPU_NUM} '
+        if hyper_args.accelerator == 'gpu'
+        else ''
+    )
     main_command = '; '.join(
-        ['conda activate eyebench']
-        + [
-            f'CUDA_VISIBLE_DEVICES=${{GPU_NUM}} wandb agent '
+        [
+            f'{wandb_agent_prefix}wandb agent '
             f'{hyper_args.wandb_entity}/{hyper_args.wandb_project}/{sweep_id}'
             for sweep_id in sweep_ids
         ]
     )
     write_bash_script(
-        filename=filename, main_command=main_command, sweep_ids=sweep_ids, mode=mode
+        filename=filename,
+        main_command=main_command,
+        sweep_ids=sweep_ids,
+        mode=mode,
+        accelerator=hyper_args.accelerator,
     )
 
 

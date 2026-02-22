@@ -52,13 +52,14 @@ find results/raw -type d -name "*DEBUG" -exec rm -rf {} +
 
 ```bash
 # Create sweeps
-bash run_commands/utils/sweep_wrapper.sh --data_tasks OneStop_RC --folds 0,1,2,3,4,5,6,7,8,9 --wandb_project OneStop_RC_20251118
+bash run_commands/utils/sweep_wrapper.sh --data_tasks OneStop_RC --folds 0,1,2,3,4,5,6,7,8,9 --wandb_project OneStop_RC_20251118 --accelerator cpu --cpu_count 1
 
 # Create test wrapper
 bash run_commands/utils/test_wrapper_creator.sh --data_task OneStop_RC --project_name OneStop_RC_20251118
 ```
 
 ### 5. Training
+
 
 ```bash
 sbatch sweeps/OneStop_RC_20251118/slurm/BEyeLSTMArgs/BEyeLSTMArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9normal.job
@@ -84,11 +85,11 @@ sbatch sweeps/OneStop_RC_20251118/slurm/PostFusion/PostFusion_OneStop_RC_folds_0
 ```
 
 ```bash
-bash sweeps/OneStop_RC_20251104/bash/lacc/DummyClassifierMLArgs/DummyClassifierMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
-bash sweeps/OneStop_RC_20251104/bash/lacc/SupportVectorMachineMLArgs/SupportVectorMachineMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
-bash sweeps/OneStop_RC_20251104/bash/lacc/LogisticRegressionMLArgs/LogisticRegressionMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
-bash sweeps/OneStop_RC_20251104/bash/lacc/LogisticMeziereArgs/LogisticMeziereArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
-bash sweeps/OneStop_RC_20251104/bash/lacc/RandomForestMLArgs/RandomForestMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
+bash sweeps/OneStop_RC_20251118/bash/lacc/DummyClassifierMLArgs/DummyClassifierMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
+bash sweeps/OneStop_RC_20251118/bash/lacc/SupportVectorMachineMLArgs/SupportVectorMachineMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
+bash sweeps/OneStop_RC_20251118/bash/lacc/LogisticRegressionMLArgs/LogisticRegressionMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
+bash sweeps/OneStop_RC_20251118/bash/lacc/LogisticMeziereArgs/LogisticMeziereArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
+bash sweeps/OneStop_RC_20251118/bash/lacc/RandomForestMLArgs/RandomForestMLArgs_OneStop_RC_folds_0_1_2_3_4_5_6_7_8_9.sh
 ```
 
 ### 6. Post-Training Evaluation
@@ -104,7 +105,7 @@ bash run_commands/utils/sync_outputs_between_servers.sh
 tmux new-session -d -s eval_onestop_rc_dl "CUDA_VISIBLE_DEVICES=0 bash sweeps/OneStop_RC_20251118/test_dl_wrapper.sh"
 
 # Evaluate ML models
-tmux new-session -d -s eval_onestop_rc_ml "python src/run/single_run/test_ml.py --data_task OneStop_RC --wandb_project OneStop_RC_20251104"
+tmux new-session -d -s eval_onestop_rc_ml "python src/run/single_run/test_ml.py --data_task OneStop_RC --wandb_project OneStop_RC_20251118"
 ```
 
 ### 7. Final Step

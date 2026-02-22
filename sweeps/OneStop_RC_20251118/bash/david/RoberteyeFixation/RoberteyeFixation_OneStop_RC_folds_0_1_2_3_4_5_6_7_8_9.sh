@@ -8,10 +8,11 @@ fi
 source ~/.conda/envs/eyebench/etc/profile.d/mamba.sh
 cd /mnt/mlshare/reich3/eyebench_private
 
+CONDA_ENV=${CONDA_ENV:-eyebench}
 GPU_NUM=$1
 RUNS_ON_GPU=${2:-1}
 for ((i=1; i<=RUNS_ON_GPU; i++)); do
-    session_name="wandb-gpu${GPU_NUM}-dup${i}-unified-f4ncvy06-10"
-    tmux new-session -d -s "${session_name}" "conda activate eyebench; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/f4ncvy06; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/ikgh4n3t; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/vmuzycko; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/hd3cwnr4; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/zr2wru5f; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/e6supq28; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/fjjfpl56; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/xibd4llg; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/evwe1pvo; CUDA_VISIBLE_DEVICES=${GPU_NUM} wandb agent EyeRead/OneStop_RC_20251118/txrk28dj"; tmux set-option -t "${session_name}" remain-on-exit off
-    echo "Launched W&B agent for GPU ${GPU_NUM}, Dup ${i} in tmux session ${session_name}"
+    session_name="wandb-cpu${GPU_NUM}-dup${i}-unified-2p2mnqc7-10"
+    tmux new-session -d -s "${session_name}" "source ~/.conda/envs/eyebench/etc/profile.d/mamba.sh; cd /mnt/mlshare/reich3/eyebench_private; conda activate ${CONDA_ENV}; wandb agent EyeRead/OneStop_RC_20251118/2p2mnqc7; wandb agent EyeRead/OneStop_RC_20251118/ebchyz7v; wandb agent EyeRead/OneStop_RC_20251118/y25cv9ng; wandb agent EyeRead/OneStop_RC_20251118/6tfqps7b; wandb agent EyeRead/OneStop_RC_20251118/5der57r7; wandb agent EyeRead/OneStop_RC_20251118/yzpz1glr; wandb agent EyeRead/OneStop_RC_20251118/dql3gg8z; wandb agent EyeRead/OneStop_RC_20251118/somjbf3a; wandb agent EyeRead/OneStop_RC_20251118/4gz4nswb; wandb agent EyeRead/OneStop_RC_20251118/eq8msrfh"; tmux set-option -t "${session_name}" remain-on-exit on
+    echo "Launched W&B agent for CPU ${GPU_NUM}, Dup ${i} in tmux session ${session_name}"
 done

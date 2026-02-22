@@ -11,6 +11,7 @@ from loguru import logger
 from text_metrics.ling_metrics_funcs import get_metrics
 from text_metrics.surprisal_extractors.extractor_switch import get_surp_extractor
 from text_metrics.surprisal_extractors.extractors_constants import SurpExtractorType
+from torch import fix_
 from tqdm import tqdm
 import os
 
@@ -306,6 +307,10 @@ class MECOProcessor(DatasetProcessor):
             + fix_df[Fields.UNIQUE_PARAGRAPH_ID].astype(str)
         )
 
+        ia_df.rename(columns={'lang_x': Fields.L1}, inplace=True)
+        fix_df.rename(columns={'lang_x': Fields.L1}, inplace=True)
+
+
         # load stimuli because ia_df seems to contain different number of aois
         # in this way we can be sure to that all paragraphs are what MECO authors provide
         if self.type == 'L2':    
@@ -316,6 +321,7 @@ class MECOProcessor(DatasetProcessor):
                 columns={'trialid': 'unique_paragraph_id', 'text': 'paragraph'},
             )
             stimuli_df = stimuli_df.drop(columns=['question1', 'question2'])
+            
 
         else:
             stimuli_df = pd.read_excel(
@@ -379,9 +385,9 @@ class MECOProcessor(DatasetProcessor):
         float_cols = ['TOWRE_word', 'TOWRE_nonword']
         for col in float_cols:
             if col in enriched_fix_df.columns:
-                enriched_fix_df[col] = enriched_fix_df[col].astype(float)
+                enriched_fix_df[col] = pd.to_numeric(enriched_fix_df[col], errors='coerce').astype(float)
             if col in ia_df.columns:
-                ia_df[col] = ia_df[col].astype(float)
+                ia_df[col] = pd.to_numeric(ia_df[col], errors='coerce').astype(float)
 
         enriched_fix_df['TRIAL_IA_COUNT'] = enriched_fix_df['TRIAL_IA_COUNT'].fillna(0)
 

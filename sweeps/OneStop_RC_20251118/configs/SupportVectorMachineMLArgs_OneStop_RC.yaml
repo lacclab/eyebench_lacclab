@@ -1,4 +1,5 @@
 hyper_args:
+  accelerator: cpu
   base_model: SupportVectorMachineMLModel
   base_models:
   - AhnCNNModel
@@ -17,6 +18,7 @@ hyper_args:
   - LogisticRegressionMLModel
   - LogisticRegressionMLModel
   - DummyClassifierMLModel
+  cpu_count: 42
   data_task: OneStop_RC
   data_tasks:
   - OneStop_RC
@@ -77,13 +79,13 @@ hyper_args:
   wandb_entity: EyeRead
   wandb_project: OneStop_RC_20251118
 sweep_ids:
-- tsnjyztp
-- 26d6i6te
-- 3khnpfl2
-- tme02snt
-- wmwfcmkn
-- pmn2f75f
-- z8fotgtm
-- ifj36w91
-- e6vknesu
-- x026b717
+- ypky4mo8
+- 4j9pbru9
+- 2jth7bb6
+- mco3mwap
+- cyp3wi93
+- 1n3w47om
+- pgv9f5uk
+- qfnfl5hn
+- 46oqchca
+- 2hff7gxp

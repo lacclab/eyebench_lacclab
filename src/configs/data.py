@@ -51,6 +51,7 @@ class DataArgs:
     unique_trial_id_column: str = Fields.UNIQUE_TRIAL_ID
     ia_query: str | None = None
     fixation_query: str | None = None
+    prerun_query: str = ''
     split_item_columns: list[str | None] = field(
         default_factory=lambda: [Fields.UNIQUE_PARAGRAPH_ID]
     )
@@ -109,6 +110,14 @@ class DataArgs:
         self.ia_path = self.processed_data_path / 'ia.feather'
         self.fixations_path = self.processed_data_path / 'fixations.feather'
         self.trial_level_path = self.processed_data_path / 'trial_level.feather'
+
+        self.prerun_query = f'{self.target_column} >= 0'
+
+    @staticmethod
+    def _combine_queries(base_query: str | None, extra_query: str) -> str:
+        if base_query is None:
+            return extra_query
+        return f'({base_query}) & ({extra_query})'
 
     @property
     def dataset_name(self) -> str:
@@ -267,9 +276,10 @@ class MECOL2(DataArgs):
             Fields.UNIQUE_PARAGRAPH_ID,
         ]
     )
+
     split_subject_columns: list[str] = field(
         default_factory=lambda: [
-            Fields.L1_GROUP,
+            Fields.L1,
         ]
     )
 

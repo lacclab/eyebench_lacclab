@@ -69,6 +69,7 @@ def load_fold_data(
     data_type: DataType,
     regime_name: SetNames,
     set_name: SetNames,
+    query: str | None = None,
 ) -> pd.DataFrame:
     """
     Load data for a specific fold, data type, regime, and set.
@@ -83,7 +84,7 @@ def load_fold_data(
         data_type (DataType): The type of data to load (e.g., train, test, etc.).
         regime_name (SetNames): The name of the regime (e.g., validation, training, etc.).
         set_name (SetNames): The name of the set (e.g., train, test, etc.).
-
+        query (str | None): A query string to filter the data. If None, no filtering is applied.
     Returns:
         pd.DataFrame: A DataFrame containing the loaded data.
 
@@ -97,6 +98,8 @@ def load_fold_data(
         / f'fold_{fold_index}'
         / f'{data_type}_{set_name}_{regime_name}.feather'
     )
+    if query is not None:
+        df = df.query(query)
     for should_be_bool in ['total_skip', 'start_of_line', 'end_of_line']:
         if should_be_bool in df.columns:
             df[should_be_bool] = df[should_be_bool].astype(bool)
@@ -562,6 +565,9 @@ def create_s_clusters_dict_inner(fix_met_trial_df:pd.DataFrame, fixation_metrics
     Create syntactic clusters dictionary inner function
     """
 
+    # TODO: decide if we want to return -1 or np.nan or something else if there's no criterion column in the data (or add criterion column manually)
+    if criterion not in fix_met_trial_df.columns or fix_met_trial_df[criterion].isna().all():
+        return {f"{criterion}_{col}": -1.0 for col in fixation_metrics}
     # Group by the criterion and calculate the average fixation times
     cluster_means = fix_met_trial_df.groupby(criterion)[fixation_metrics].mean().reset_index()
     total_means = fix_met_trial_df[fixation_metrics].mean().to_frame().T
@@ -639,9 +645,16 @@ def find_wp_coefs_inner(subject_df: pd.DataFrame, fixation_metrics:list[str], no
     
     # Iterate over each fixation measure
     for eye_metric in fixation_metrics:
-    
+        # TODO: decide how to handle nans
+        if eye_metric not in subject_df.columns or subject_df[eye_metric].isna().all() or not all(col in subject_df.columns for col in WORD_PROPERTY_COLUMNS) or subject_df[WORD_PROPERTY_COLUMNS].isna().any().any():
+            coefs[f"{eye_metric}_intercept"] = -1.0
+            for wp in WORD_PROPERTY_COLUMNS:
+                coefs[f"{eye_metric}_{wp}_coef"] = -1.0
+            continue
+
         # Prepare the regression model
         X = subject_df[WORD_PROPERTY_COLUMNS]
+        # guardrails for if the eye_metric is not in the data or is all NaN
         if eye_metric == "SKIP": # TODO: check if this is even a thing or that skip is irrelevant
             y = subject_df[eye_metric].astype(int)  # Convert SKIP to binary (0/1) for logistic regression
         else:

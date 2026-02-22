@@ -1,4 +1,5 @@
 hyper_args:
+  accelerator: cpu
   base_model: Roberteye
   base_models:
   - AhnCNNModel
@@ -17,6 +18,7 @@ hyper_args:
   - LogisticRegressionMLModel
   - LogisticRegressionMLModel
   - DummyClassifierMLModel
+  cpu_count: 42
   data_task: OneStop_RC
   data_tasks:
   - OneStop_RC
@@ -77,13 +79,13 @@ hyper_args:
   wandb_entity: EyeRead
   wandb_project: OneStop_RC_20251118
 sweep_ids:
-- g6l5vuhw
-- h48gfqca
-- he2ssy5i
-- 8yhyeyb3
-- 9fjywlwb
-- cbgyvomc
-- tynl6onf
-- emiter9o
-- v90l1eqa
-- apdmc72g
+- a1dgza08
+- 11bk8wtp
+- g4wakxj9
+- 569axjmy
+- e1m1glau
+- 3r31up5b
+- hho8knsv
+- ni44bl2z
+- c59u2ajy
+- tqc9pp4i
