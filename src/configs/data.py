@@ -862,10 +862,12 @@ class OneStopL2_REP_ALL(OneStopL2):
     """
     OneStop L2 English Learners data, repeated Reading, All Preview Conditions
     """
-    
+    ia_query: str = 'practice_trial==False & repeated_reading_trial==True'
+    fixation_query: str = 'practice_trial==False & repeated_reading_trial==True'
     @property
     def dataset_name(self) -> str:
         return 'OneStopL2_REP_ALL'
+    
 
 @register_data
 @dataclass
@@ -873,7 +875,8 @@ class OneStopL2_REP_GATH(OneStopL2):
     """
     OneStop L2 English Learners data, repeated Reading, non preview (Gathering) condition
     """
-    
+    ia_query: str = 'practice_trial==False & repeated_reading_trial==True'
+    fixation_query: str = 'practice_trial==False & repeated_reading_trial==True'
     @property
     def dataset_name(self) -> str:
         return 'OneStopL2_REP_GATH'
@@ -884,7 +887,8 @@ class OneStopL2_REP_HUNT(OneStopL2):
     """
     OneStop L2 English Learners data, repeated Reading, preview (Hunting) condition
     """
-    
+    ia_query: str = 'practice_trial==False & repeated_reading_trial==True'
+    fixation_query: str = 'practice_trial==False & repeated_reading_trial==True'
     @property
     def dataset_name(self) -> str:
         return 'OneStopL2_REP_HUNT'
@@ -2675,7 +2679,9 @@ class OneStopL1L2_REP_ALL(OneStopL1L2):
     """
     OneStop L1L2 English Learners data, repeated Reading, All Preview Conditions
     """
-    
+    ia_query: str = 'practice_trial==False & repeated_reading_trial==True'
+    fixation_query: str = 'practice_trial==False & repeated_reading_trial==True'
+
     @property
     def dataset_name(self) -> str:
         return 'OneStopL1L2_REP_ALL'
@@ -2686,6 +2692,8 @@ class OneStopL1L2_REP_GATH(OneStopL1L2):
     """
     OneStop L1L2 English Learners data, repeated Reading, non preview (Gathering) condition
     """
+    ia_query: str = 'practice_trial==False & repeated_reading_trial==True'
+    fixation_query: str = 'practice_trial==False & repeated_reading_trial==True'
     
     @property
     def dataset_name(self) -> str:
